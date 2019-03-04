@@ -5,8 +5,144 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1024" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="spnTrigger" TargetType="StackPanel">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" Opacity="0.6">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF17FF00"/>
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#FF35FF21"/>
+                        <GradientStop Color="#FF35FF21"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="StackPanel.IsMouseOver" Value="True">
+                    <Setter Property = "Border.Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                                <LinearGradientBrush.RelativeTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                        <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                        <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </LinearGradientBrush.RelativeTransform>
+                                <GradientStop Color="#FF17FF00"/>
+                                <GradientStop Color="White" Offset="1"/>
+                                <GradientStop Color="#FF35FF21"/>
+                                <GradientStop Color="#FF16F500"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="btnMargin" TargetType="Button">
+            <Setter Property="Margin" Value="10"></Setter>
+            
+        </Style>
+        <Style x:Key="btnQLKhuPho" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#FF3B42FF" BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.55">
+                        <GradientStop Color="#FF3B42FF" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FF3B42FF" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" Content="Quan Ly Hoi Nguoi Cao Tuoi" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <StackPanel Name="spnAccount" Grid.Column="1" MouseDown="spnAccount_MouseDown" MouseUp="spnAccount_MouseUp" Style="{StaticResource spnTrigger}" >
+                <StackPanel.ContextMenu>
+                    <ContextMenu >
+                        <MenuItem Header="Change email"/>
+                        <MenuItem Header="Change password"/>
+                        <MenuItem Header="Logout"/>
+                    </ContextMenu>
+                </StackPanel.ContextMenu>
+                <Label Name="lblUsername" Content="Username" FontSize="22" HorizontalAlignment="Right" FontWeight="Bold" Margin="0, 0, 5, 0"></Label>
+                <Label Name="lblEmail" Content="email@gmail.com" FontSize="18" FontStyle="Italic" HorizontalAlignment="Right" Margin="0, 0, 5, 0"></Label>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button Name="btnQLKhuPho" Style="{StaticResource btnQLKhuPho}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="D:\GitRepos\QLHoiNguoiCaoTuoi\QLHoiNguoiCaoTuoi\Images\home-128.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Khu Pho" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>
