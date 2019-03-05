@@ -55,6 +55,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="QLKhuPho.xaml.cs">
+      <DependentUpon>QLKhuPho.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +70,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="QLKhuPho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,6 +103,47 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\home-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+    <Resource Include="Images\check.png" />
+    <Resource Include="Images\city.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\down.png" />
+    <Resource Include="Images\edit.png" />
+    <Resource Include="Images\exit.png" />
+    <Resource Include="Images\group.png" />
+    <Resource Include="Images\groupmember.png" />
+    <Resource Include="Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\income.png" />
+    <Resource Include="Images\manager.png" />
+    <Resource Include="Images\meeting bch member.png" />
+    <Resource Include="Images\meeting bch.png" />
+    <Resource Include="Images\meeting member.png" />
+    <Resource Include="Images\meeting.png" />
+    <Resource Include="Images\menu.png" />
+    <Resource Include="Images\outcome.png" />
+    <Resource Include="Images\people.png" />
+    <Resource Include="Images\Plus_01-66-128.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\setting.png" />
+    <Resource Include="Images\statistic.png" />
+    <Resource Include="Images\target.png" />
+    <Resource Include="Images\travel-landmark-town-128.png" />
+    <Resource Include="Images\up.png" />
+    <Resource Include="Images\walkperson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\don vi dg.png" />
+    <Resource Include="Images\phieu dong gop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\setting-512.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

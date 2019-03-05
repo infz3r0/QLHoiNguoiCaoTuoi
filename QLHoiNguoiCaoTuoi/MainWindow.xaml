@@ -49,20 +49,21 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        
         <Style x:Key="btnMargin" TargetType="Button">
             <Setter Property="Margin" Value="10"></Setter>
-            
-        </Style>
-        <Style x:Key="btnQLKhuPho" TargetType="Button" BasedOn="{StaticResource btnMargin}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="#FF3B42FF" BorderThickness="1">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="#FF6E6E6E" BorderThickness="1">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+        </Style>
+        
+        <Style x:Key="btnQLKhuPho" TargetType="Button" BasedOn="{StaticResource btnMargin}">
             <Setter Property="Background" >
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.55">
@@ -84,6 +85,164 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <Style x:Key="btnHoatDong" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                        <GradientStop Color="#FFE8FF00" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FFE8FF00" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="btnThuChi" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.6">
+                        <GradientStop Color="#FFD100FF" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FFD100FF" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="btnHop" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                        <GradientStop Color="#FF8BFF00" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FF8BFF00" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="btnTaiKhoan" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.7">
+                        <GradientStop Color="#FFFF2222" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FFFF2222" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="btnDongGop" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.6">
+                        <GradientStop Color="#FFFF8000" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FFFF8000" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="btnTimKiem_ThongKe" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.5">
+                        <GradientStop Color="#FF00F3FF" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FF00F3FF" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="btnCaiDat" TargetType="Button" BasedOn="{StaticResource btnMargin}">
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.8">
+                        <GradientStop Color="#FF6E6E6E" Offset="1"/>
+                        <GradientStop Color="White"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Button.IsMouseOver" Value="True">
+                    <Setter Property = "Background">
+                        <Setter.Value>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="1">
+                                <GradientStop Color="#FF6E6E6E" Offset="1"/>
+                                <GradientStop Color="White"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        
     </Window.Resources>
 
     <Grid>
@@ -95,6 +254,7 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <!--Account info-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -114,7 +274,7 @@
                 <Label Name="lblEmail" Content="email@gmail.com" FontSize="18" FontStyle="Italic" HorizontalAlignment="Right" Margin="0, 0, 5, 0"></Label>
             </StackPanel>
         </Grid>
-
+        <!--Menu-->
         <Grid Grid.Row="1" Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -130,15 +290,198 @@
 
             </Grid.ColumnDefinitions>
 
-            <Button Name="btnQLKhuPho" Style="{StaticResource btnQLKhuPho}" >
+            
+            <Button Grid.Row="0" Grid.Column="0" Name="btnQLKhuPho" Style="{StaticResource btnQLKhuPho}" Click="BtnQLKhuPho_Click" >
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source="D:\GitRepos\QLHoiNguoiCaoTuoi\QLHoiNguoiCaoTuoi\Images\home-128.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Image Grid.Row="0" Source=".\Images\city.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
                         <Label Grid.Row="1" Content="QL Khu Pho" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="1" Name="btnQLThanhVien" Style="{StaticResource btnQLKhuPho}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\people.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Thanh Vien" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="2" Name="btnQLCLB" Style="{StaticResource btnQLKhuPho}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\group.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL CLB" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="3" Name="btnQLBCH_ChucVu" Style="{StaticResource btnQLKhuPho}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\manager.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL BCH &amp; Chuc Vu" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="4" Name="btnQLHoatDong" Style="{StaticResource btnHoatDong}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\walkperson.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Hoat Dong" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="0" Name="btnLapPhieuThu" Style="{StaticResource btnThuChi}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\income.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Lap Phieu Thu" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="1" Name="btnLapPhieuChi" Style="{StaticResource btnThuChi}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\outcome.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Lap Phieu Chi" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="2" Name="btnQLHopBCH" Style="{StaticResource btnHop}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\meeting bch member.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Hop BCH" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="3" Name="btnQLHopThuongNien" Style="{StaticResource btnHop}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\meeting member.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Hop Thuong Nien" HorizontalAlignment="Center" FontSize="16"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="4" Name="btnQLTaiKhoan" Style="{StaticResource btnTaiKhoan}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\account.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL Tai Khoan" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="0" Name="btnQLDonViDongGop" Style="{StaticResource btnDongGop}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\don vi dg.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="QL DV Dong Gop" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="1" Name="btnLapPhieuDongGop" Style="{StaticResource btnDongGop}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\phieu dong gop.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Lap Phieu Dong Gop" HorizontalAlignment="Center" FontSize="16"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="2" Name="btnTimKiem" Style="{StaticResource btnTimKiem_ThongKe}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\search.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Tim Kiem" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="3" Name="btnThongKe" Style="{StaticResource btnTimKiem_ThongKe}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source=".\Images\statistic.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Thong Ke" HorizontalAlignment="Center" FontSize="18"/>
+                    </Grid>
+                </Button.Content>
+            </Button>
+
+            <Button Grid.Row="2" Grid.Column="4" Name="btnCaiDat" Style="{StaticResource btnCaiDat}" >
+                <Button.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*" />
+                        </Grid.RowDefinitions>
+                        <Image Grid.Row="0" Source="D:\GitRepos\QLHoiNguoiCaoTuoi\QLHoiNguoiCaoTuoi\Images\setting-512.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
+                        <Label Grid.Row="1" Content="Cai Dat" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>

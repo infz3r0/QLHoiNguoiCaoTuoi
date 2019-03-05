@@ -47,6 +47,12 @@ namespace QLHoiNguoiCaoTuoi
             }
         }
 
+        private void BtnQLKhuPho_Click(object sender, RoutedEventArgs e)
+        {
+            QLKhuPho w = new QLKhuPho();
+            w.ShowDialog();
+        }
+
 
 
 
