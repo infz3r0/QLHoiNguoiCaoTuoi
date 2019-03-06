@@ -55,8 +55,53 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="QLKhuPho.xaml.cs">
+    <Compile Include="View\CaiDat.xaml.cs">
+      <DependentUpon>CaiDat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DangNhap.xaml.cs">
+      <DependentUpon>DangNhap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLBCH.xaml.cs">
+      <DependentUpon>QLBCH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLChi.xaml.cs">
+      <DependentUpon>QLChi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLCLB.xaml.cs">
+      <DependentUpon>QLCLB.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLDonViDongGop.xaml.cs">
+      <DependentUpon>QLDonViDongGop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLHoatDong.xaml.cs">
+      <DependentUpon>QLHoatDong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLHopBCH.xaml.cs">
+      <DependentUpon>QLHopBCH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLHopTN.xaml.cs">
+      <DependentUpon>QLHopTN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLKhuPho.xaml.cs">
       <DependentUpon>QLKhuPho.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLPhieuDongGop.xaml.cs">
+      <DependentUpon>QLPhieuDongGop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLTaiKhoan.xaml.cs">
+      <DependentUpon>QLTaiKhoan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThanhVien.xaml.cs">
+      <DependentUpon>QLThanhVien.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\QLThu.xaml.cs">
+      <DependentUpon>QLThu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongKe.xaml.cs">
+      <DependentUpon>ThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TimKiem.xaml.cs">
+      <DependentUpon>TimKiem.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +115,67 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="QLKhuPho.xaml">
+    <Page Include="View\CaiDat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DangNhap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLBCH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLChi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLCLB.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLDonViDongGop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLHoatDong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLHopBCH.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLHopTN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLKhuPho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLPhieuDongGop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLTaiKhoan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLThanhVien.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\QLThu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TimKiem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QLHoiNguoiCaoTuoi
+namespace QLHoiNguoiCaoTuoi.View
 {
     /// <summary>
-    /// Interaction logic for QLKhuPho.xaml
+    /// Interaction logic for TimKiem.xaml
     /// </summary>
-    public partial class QLKhuPho : Window
+    public partial class TimKiem : Window
     {
-        public QLKhuPho()
+        public TimKiem()
         {
             InitializeComponent();
         }

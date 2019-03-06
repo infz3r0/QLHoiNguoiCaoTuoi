@@ -1,11 +1,11 @@
-﻿<Window x:Class="QLHoiNguoiCaoTuoi.QLKhuPho"
+﻿<Window x:Class="QLHoiNguoiCaoTuoi.View.QLHoatDong"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi"
+        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View"
         mc:Ignorable="d"
-        Title="QLKhuPho" Height="450" Width="800">
+        Title="QLHoatDong" Height="450" Width="800">
     <Window.Resources>
         <Style x:Key="btnBase" TargetType="Button">
             <Setter Property="Template">
@@ -42,7 +42,7 @@
                     </Setter>
                 </Trigger>
             </Style.Triggers>
-            
+
         </Style>
     </Window.Resources>
     <Grid>
@@ -56,17 +56,17 @@
         </Grid.ColumnDefinitions>
 
         <!--Icon-->
-        <Image Source=".\Images\city.png"/>
+        <Image Source="..\Images\walkperson.png" Margin="5"/>
         <!--Header-->
         <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,1">
-        <Grid  >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1.2*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Row="0" Name="lblTitle" Content="Title" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
-            <Label Grid.Row="1" Name="lblDescription" Content="Description" FontSize="12" VerticalAlignment="Center"/>
-        </Grid>
+            <Grid  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.2*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Name="lblTitle" Content="Title" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Label Grid.Row="1" Name="lblDescription" Content="Description" FontSize="12" VerticalAlignment="Center"/>
+            </Grid>
         </Border>
         <!--Tab-->
         <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
@@ -76,11 +76,11 @@
                     <GradientStop Color="#FFECFFFE" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Name="btnKhuPho" Content="Khu Pho" Style="{StaticResource btnTab}"/>
-            <Button Name="btnTest" Content="test" Style="{StaticResource btnTab}"/>
+            <Button Name="btnHoatDong" Content="Hoat Dong" Style="{StaticResource btnTab}"/>
+            <Button Name="btnTVHoatDong" Content="TV Tham Gia HD" Style="{StaticResource btnTab}"/>
         </StackPanel>
         <!--Content-->
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
+        <Border Name="brdHD" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -88,7 +88,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
-                    <Button Name="btnThem" Margin="0, 5, 5, 5">
+                    <Button Name="btnThemHD" Margin="0, 5, 5, 5">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -97,12 +97,12 @@
                         </Button.Background>
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
-                                <Image Source=".\Images\add.png"/>
+                                <Image Source="..\Images\add.png"/>
                                 <Label Content="Them" VerticalAlignment="Center"/>
-                            </StackPanel>                            
+                            </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnSua" Margin="0, 5, 5, 5">
+                    <Button Name="btnSuaHD" Margin="0, 5, 5, 5">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -111,12 +111,12 @@
                         </Button.Background>
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
-                                <Image Source=".\Images\edit.png"/>
+                                <Image Source="..\Images\edit.png"/>
                                 <Label Content="Sua" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnXoa" Margin="0, 5, 5, 5">
+                    <Button Name="btnXoaHD" Margin="0, 5, 5, 5">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -125,18 +125,73 @@
                         </Button.Background>
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
-                                <Image Source=".\Images\delete.png"/>
+                                <Image Source="..\Images\delete.png"/>
                                 <Label Content="Xoa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1"></DataGrid>
+                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
             </Grid>
         </Border>
+
+        <Border Name="brdTVHD" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
+                    <Button Name="btnThemTVHD" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFB3FFBD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\add.png"/>
+                                <Label Content="Them" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="btnSuaTVHD" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFFFF8B3" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\edit.png"/>
+                                <Label Content="Sua" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="btnXoaTVHD" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFFF7878" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\delete.png"/>
+                                <Label Content="Xoa" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+            </Grid>
+        </Border>
+
+
     </Grid>
-
-
-
 </Window>
