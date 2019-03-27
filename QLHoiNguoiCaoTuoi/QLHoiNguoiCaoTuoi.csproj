@@ -250,5 +250,6 @@
   <ItemGroup>
     <Resource Include="Images\setting-512.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

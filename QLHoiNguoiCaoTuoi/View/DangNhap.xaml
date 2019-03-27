@@ -3,10 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View.TaiKhoan"
+        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View"
         mc:Ignorable="d"
         Title="Đăng nhập" Height="210" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFD9FFFA" Offset="1"/>
+                <GradientStop Color="#FF2E37FF"/>
+                <GradientStop Color="#FFFBACFB"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"></ColumnDefinition>
             <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -33,5 +40,6 @@
                 Thoát
             </Button>
         </StackPanel>
+        <ProgressBar Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="5" Margin="0,0,0,-17" IsIndeterminate="False" Background="{x:Null}" Foreground="#FF7C94FF"/>
     </Grid>
 </Window>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using QLHoiNguoiCaoTuoi.View;
 
 namespace QLHoiNguoiCaoTuoi
 {
@@ -51,6 +52,11 @@ namespace QLHoiNguoiCaoTuoi
         {
             QLKhuPho w = new QLKhuPho();
             w.ShowDialog();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
 
 

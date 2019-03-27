@@ -29,11 +29,34 @@ namespace QLHoiNguoiCaoTuoi.View
             lblTitle.Content = "Đăng nhập";
             loggedin = false;
 
+            DisableControls();
+            //Test connection to DB
+
+
+            EnableControls();
+
             txbUsername.Focus();
+        }
+
+        private void EnableControls()
+        {
+            txbUsername.IsEnabled = true;
+            txbPassword.IsEnabled = true;
+            btnLogin.IsEnabled = true;
+            btnExit.IsEnabled = true;
+        }
+
+        private void DisableControls()
+        {
+            txbUsername.IsEnabled = false;
+            txbPassword.IsEnabled = false;
+            btnLogin.IsEnabled = false;
+            btnExit.IsEnabled = false;
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+
             //username
             if (string.IsNullOrEmpty(txbUsername.Text) || string.IsNullOrWhiteSpace(txbUsername.Text))
             {
