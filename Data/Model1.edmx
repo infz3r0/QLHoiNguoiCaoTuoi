@@ -403,9 +403,18 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="F_CHECKLOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT" ReturnType="varchar2">
+          <Parameter Name="V_USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+        </Function>
         <Function Name="F_TONGTIENHIENTAI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT" ReturnType="number" />
-        <Function Name="SP_CAI_DAT_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_TEN_THAM_SO" Type="varchar2" Mode="In" />
+        <Function Name="SP_AUTH_CHANGEEMAIL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_AUTH_CHANGEPASSWORD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
         </Function>
         <Function Name="SP_CAI_DAT_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_TEN_THAM_SO" Type="varchar2" Mode="In" />
@@ -414,6 +423,11 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
         <Function Name="SP_CAI_DAT_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_TEN_THAM_SO" Type="varchar2" Mode="In" />
           <Parameter Name="V_GIA_TRI" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_CHECKLOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_LOGGEDIN" Type="varchar2" Mode="Out" />
         </Function>
         <Function Name="SP_CHI_TIET_HOP_BCH_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_CUOC_HOP_BCH" Type="number" Mode="In" />
@@ -431,17 +445,8 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <Parameter Name="V_MA_CUOC_HOP_TN" Type="number" Mode="In" />
           <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
         </Function>
-        <Function Name="SP_CHUC_VU_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
-        </Function>
-        <Function Name="SP_CHUC_VU_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
-          <Parameter Name="V_TEN_CHUC_VU" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_HE_SO_LUONG" Type="number" Mode="In" />
-        </Function>
         <Function Name="SP_CHUC_VU_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
-          <Parameter Name="V_TEN_CHUC_VU" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_HE_SO_LUONG" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_CLB_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
@@ -531,15 +536,11 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
         <Function Name="SP_PHIEU_CHI_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_PHIEU_CHI" Type="number" Mode="In" />
         </Function>
-        <Function Name="SP_PHIEU_CHI_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Type="date" Mode="In" />
-          <Parameter Name="V_NOI_DUNG_CHI" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_SO_TIEN_CHI" Type="number" Mode="In" />
-          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
-          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
-        </Function>
-        <Function Name="SP_PHIEU_CHI_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+        <Function Name="SP_PHIEU_CHI_DUYET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_PHIEU_CHI" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_DUYET" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_CHI_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Type="date" Mode="In" />
           <Parameter Name="V_NOI_DUNG_CHI" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_SO_TIEN_CHI" Type="number" Mode="In" />
@@ -564,14 +565,6 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <Parameter Name="V_MA_PHIEU_THU" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_PHIEU_THU_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_NGAY_LAP_PHIEU_THU" Type="date" Mode="In" />
-          <Parameter Name="V_NOI_DUNG_PHIEU_THU" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_SO_TIEN_THU" Type="number" Mode="In" />
-          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
-          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
-        </Function>
-        <Function Name="SP_PHIEU_THU_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_MA_PHIEU_THU" Type="number" Mode="In" />
           <Parameter Name="V_NGAY_LAP_PHIEU_THU" Type="date" Mode="In" />
           <Parameter Name="V_NOI_DUNG_PHIEU_THU" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_SO_TIEN_THU" Type="number" Mode="In" />
@@ -608,11 +601,6 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_THANH_VIEN_CLB_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
-          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
-          <Parameter Name="V_NGAY_THAM_GIA_CLB" Type="date" Mode="In" />
-        </Function>
-        <Function Name="SP_THANH_VIEN_CLB_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
           <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
           <Parameter Name="V_NGAY_THAM_GIA_CLB" Type="date" Mode="In" />
@@ -663,7 +651,6 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <Parameter Name="V_TRINH_DO_HOC_VAN" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_TRINH_DO_CHUYEN_MON" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_LUONG" Type="number" Mode="In" />
           <Parameter Name="V_USERNAME" Type="varchar2" Mode="In" />
           <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
           <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
@@ -1197,7 +1184,6 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           </FunctionImport>
           <FunctionImport Name="SP_CHUC_VU_UPDATE">
             <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
-            <Parameter Name="V_TEN_CHUC_VU" Mode="In" Type="String" />
             <Parameter Name="V_HE_SO_LUONG" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_CLB_DELETE">
@@ -1394,7 +1380,6 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
             <Parameter Name="V_TRINH_DO_HOC_VAN" Mode="In" Type="String" />
             <Parameter Name="V_TRINH_DO_CHUYEN_MON" Mode="In" Type="String" />
             <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Mode="In" Type="String" />
-            <Parameter Name="V_LUONG" Mode="In" Type="Decimal" />
             <Parameter Name="V_USERNAME" Mode="In" Type="String" />
             <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
             <Parameter Name="V_EMAIL" Mode="In" Type="String" />
@@ -1414,29 +1399,46 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <EntitySet Name="V_THONGKETHUCHI" EntityType="Model.V_THONGKETHUCHI" />
           <EntitySet Name="V_THONGKETIENDONGGOP" EntityType="Model.V_THONGKETIENDONGGOP" />
           <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" ReturnType="Collection(Model.SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI_Result)">
-            <Parameter Name="DIACHI" Mode="In" Type="String" />
+          <Parameter Name="DIACHI" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" ReturnType="Collection(Model.SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL_Result)">
-            <Parameter Name="EMAIL" Mode="In" Type="String" />
+          <Parameter Name="EMAIL" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" ReturnType="Collection(Model.SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN_Result)">
-            <Parameter Name="TEN" Mode="In" Type="String" />
+          <Parameter Name="TEN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" ReturnType="Collection(Model.SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG_Result)">
-            <Parameter Name="ND" Mode="In" Type="String" />
+          <Parameter Name="ND" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" ReturnType="Collection(Model.SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM_Result)">
             <Parameter Name="M" Mode="In" Type="Decimal" />
             <Parameter Name="Y" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" ReturnType="Collection(Model.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI_Result)">
-            <Parameter Name="DIACHI" Mode="In" Type="String" />
+          <Parameter Name="DIACHI" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" ReturnType="Collection(Model.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result)">
-            <Parameter Name="HO_TEN" Mode="In" Type="String" />
+          <Parameter Name="HO_TEN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" ReturnType="Collection(Model.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG_Result)">
-            <Parameter Name="NGAYTG" Mode="In" Type="DateTime" />
+          <Parameter Name="NGAYTG" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AUTH_CHANGEEMAIL">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AUTH_CHANGEPASSWORD">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_CHI_DUYET">
+            <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_DUYET" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHECKLOGIN">
+            <Parameter Name="V_USERNAME" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_LOGGEDIN" Mode="Out" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="V_THONGKETHUCHI">
@@ -1724,14 +1726,11 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
             </EndProperty>
           </AssociationSetMapping>
           <FunctionImportMapping FunctionImportName="SP_CAI_DAT_INSERT" FunctionName="Model.Store.SP_CAI_DAT_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_CAI_DAT_DELETE" FunctionName="Model.Store.SP_CAI_DAT_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_CAI_DAT_UPDATE" FunctionName="Model.Store.SP_CAI_DAT_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_BCH_DELETE" FunctionName="Model.Store.SP_CHI_TIET_HOP_BCH_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_BCH_INSERT" FunctionName="Model.Store.SP_CHI_TIET_HOP_BCH_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_TN_DELETE" FunctionName="Model.Store.SP_CHI_TIET_HOP_TN_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_TN_INSERT" FunctionName="Model.Store.SP_CHI_TIET_HOP_TN_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_CHUC_VU_DELETE" FunctionName="Model.Store.SP_CHUC_VU_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_CHUC_VU_INSERT" FunctionName="Model.Store.SP_CHUC_VU_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_CHUC_VU_UPDATE" FunctionName="Model.Store.SP_CHUC_VU_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_CLB_DELETE" FunctionName="Model.Store.SP_CLB_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_CLB_INSERT" FunctionName="Model.Store.SP_CLB_INSERT" />
@@ -1753,16 +1752,13 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <FunctionImportMapping FunctionImportName="SP_KHU_PHO_UPDATE" FunctionName="Model.Store.SP_KHU_PHO_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DELETE" FunctionName="Model.Store.SP_PHIEU_CHI_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_INSERT" FunctionName="Model.Store.SP_PHIEU_CHI_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_UPDATE" FunctionName="Model.Store.SP_PHIEU_CHI_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_DELETE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_INSERT" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_UPDATE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_DELETE" FunctionName="Model.Store.SP_PHIEU_THU_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_INSERT" FunctionName="Model.Store.SP_PHIEU_THU_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_UPDATE" FunctionName="Model.Store.SP_PHIEU_THU_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_CLB_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_CLB_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_UPDATE" FunctionName="Model.Store.SP_THANH_VIEN_CLB_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_THAM_GIA_HD_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_THAM_GIA_HD_DELETE" />
@@ -1895,6 +1891,10 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_AUTH_CHANGEEMAIL" FunctionName="Model.Store.SP_AUTH_CHANGEEMAIL" />
+          <FunctionImportMapping FunctionImportName="SP_AUTH_CHANGEPASSWORD" FunctionName="Model.Store.SP_AUTH_CHANGEPASSWORD" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DUYET" FunctionName="Model.Store.SP_PHIEU_CHI_DUYET" />
+          <FunctionImportMapping FunctionImportName="SP_CHECKLOGIN" FunctionName="Model.Store.SP_CHECKLOGIN" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
