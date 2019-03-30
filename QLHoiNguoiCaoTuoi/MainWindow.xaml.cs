@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using QLHoiNguoiCaoTuoi.View;
+using QLHoiNguoiCaoTuoi.View.DangNhapWindows;
 
 namespace QLHoiNguoiCaoTuoi
 {
@@ -22,10 +23,33 @@ namespace QLHoiNguoiCaoTuoi
     public partial class MainWindow : Window
     {
         private bool spnAccount_isMouseDown;
+        private bool logout;
+        private TV_BAN_CHAP_HANH bch;
 
-        public MainWindow()
+        private void GetAccount(string username)
+        {
+            using (Entities db = new Entities())
+            {
+                bch = db.TV_BAN_CHAP_HANH.FirstOrDefault(x => x.USERNAME.Equals(username));
+            }
+        }
+
+        private void LoadInfoAccount()
+        {
+            if (bch != null)
+            {
+                lblUsername.Content = bch.USERNAME;
+                lblEmail.Content = bch.EMAIL;
+            }
+        }
+
+        public MainWindow(string username)
         {
             InitializeComponent();
+
+            logout = false;
+
+            GetAccount(username);
         }
 
         private void spnAccount_MouseDown(object sender, MouseButtonEventArgs e)
@@ -56,9 +80,61 @@ namespace QLHoiNguoiCaoTuoi
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            LoadInfoAccount();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (!logout)
+            {
+                Exit();
+            }
+            
+        }
+
+        private void Logout()
+        {
+            logout = true;
+            //DangNhap window
+            DangNhap w = (DangNhap)this.Owner;
+            w.Show();
+            w.Activate();
+            w.InitForm();
+            this.Close();
+        }
+
+        private void Exit()
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MnuLogout_Click(object sender, RoutedEventArgs e)
+        {
+            Logout();
+        }
+
+        private void MnuExit_Click(object sender, RoutedEventArgs e)
+        {
+            Exit();
+        }
+
+        private void MnuChangeEmail_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeEmail w = new ChangeEmail(bch);
+            w.Owner = this;
+            w.ShowDialog();
+            //Reload account info
+            GetAccount(bch.USERNAME);
+            LoadInfoAccount();
 
         }
 
+        private void MnuChangePassword_Click(object sender, RoutedEventArgs e)
+        {
+            ChangePassword w = new ChangePassword(bch);
+            w.Owner = this;
+            w.ShowDialog();
+        }
 
 
 

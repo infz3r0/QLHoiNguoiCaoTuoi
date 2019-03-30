@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class ThanhVienCLBDAO
+    public class ThanhVienCLBDAO
     {
         /// <summary>
         /// Thêm thành viên vào CLB

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class TVBanChapHanhDAO
+    public class TVBanChapHanhDAO
     {
         /// <summary>
         /// Thêm tv bch mới

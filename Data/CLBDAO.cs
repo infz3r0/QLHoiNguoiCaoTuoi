@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class CLBDAO
+    public class CLBDAO
     {
         /// <summary>
         /// Thêm CLB mới

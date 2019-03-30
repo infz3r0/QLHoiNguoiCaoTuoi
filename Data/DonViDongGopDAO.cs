@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class DonViDongGopDAO
+    public class DonViDongGopDAO
     {
         /// <summary>
         /// Thêm đơn vị

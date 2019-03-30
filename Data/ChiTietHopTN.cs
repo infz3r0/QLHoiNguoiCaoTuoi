@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class ChiTietHopTN
+    public class ChiTietHopTN
     {
         /// <summary>
         /// Thêm tv tham gia họp

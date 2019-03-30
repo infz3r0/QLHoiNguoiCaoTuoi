@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class PhieuThuDAO
+    public class PhieuThuDAO
     {
         /// <summary>
         /// Lập phiếu thu

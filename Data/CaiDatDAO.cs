@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class CaiDatDAO
+    public class CaiDatDAO
     {
         /// <summary>
         /// Cập nhật giá trị tham số

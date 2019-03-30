@@ -1,0 +1,1714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="12.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CAI_DAT">
+          <Key>
+            <PropertyRef Name="TEN_THAM_SO" />
+          </Key>
+          <Property Name="TEN_THAM_SO" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="GIA_TRI" Type="varchar2" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHI_TIET_HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHI_TIET_HOP_TN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUC_VU">
+          <Key>
+            <PropertyRef Name="MA_CHUC_VU" />
+          </Key>
+          <Property Name="MA_CHUC_VU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CHUC_VU" Type="nvarchar2" MaxLength="30" Nullable="false" />
+          <Property Name="HE_SO_LUONG" Type="number" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+          </Key>
+          <Property Name="MA_CLB" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CLB" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NGAY_THANH_LAP_CLB" Type="date" Nullable="false" />
+          <Property Name="MA_QUAN_LY" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DON_VI_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_DON_VI" />
+          </Key>
+          <Property Name="MA_DON_VI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HOAT_DONG">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="NGAY_BAT_DAU" Type="date" Nullable="false" />
+          <Property Name="NGAY_KET_THUC" Type="date" Nullable="false" />
+          <Property Name="DIEM_TOI_DA" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="DIEM_DAT_DUOC" Type="number" Precision="3" Scale="0" />
+        </EntityType>
+        <EntityType Name="HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="nvarchar2" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HOP_THUONG_NIEN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="nvarchar2" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KHU_PHO">
+          <Key>
+            <PropertyRef Name="MA_KHU_PHO" />
+          </Key>
+          <Property Name="MA_KHU_PHO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_KHU_PHO" Type="nvarchar2" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEU_CHI">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_CHI" />
+          </Key>
+          <Property Name="MA_PHIEU_CHI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_CHI" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_CHI" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="SO_TIEN_CHI" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="DA_DUYET" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="NGAY_DUYET" Type="date" />
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEU_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_DONG_GOP" />
+          </Key>
+          <Property Name="MA_PHIEU_DONG_GOP" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_DONG_GOP" Type="date" Nullable="false" />
+          <Property Name="SO_TIEN_DONG_GOP" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_DON_VI" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEU_THU">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_THU" />
+          </Key>
+          <Property Name="MA_PHIEU_THU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_THU" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_PHIEU_THU" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="SO_TIEN_THU" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="THANH_VIEN">
+          <Key>
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HO" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NGAY_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="THANG_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="NAM_SINH" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="GIOI_TINH" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="NGAY_THAM_GIA" Type="date" Nullable="false" />
+          <Property Name="MA_KHU_PHO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THANH_VIEN_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CLB" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_THAM_GIA_CLB" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THANH_VIEN_THAM_GIA_HD">
+          <Key>
+            <PropertyRef Name="MA_THANH_VIEN" />
+            <PropertyRef Name="MA_HOAT_DONG" />
+          </Key>
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TV_BAN_CHAP_HANH">
+          <Key>
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DAN_TOC" Type="nvarchar2" MaxLength="20" />
+          <Property Name="TON_GIAO" Type="nvarchar2" MaxLength="20" />
+          <Property Name="NGHE_NGHIEP" Type="nvarchar2" MaxLength="30" />
+          <Property Name="DON_VI_CONG_TAC" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TRINH_DO_HOC_VAN" Type="nvarchar2" MaxLength="20" />
+          <Property Name="TRINH_DO_CHUYEN_MON" Type="nvarchar2" MaxLength="30" />
+          <Property Name="TRINH_DO_LY_LUAN_CHINH_TRI" Type="nvarchar2" MaxLength="30" />
+          <Property Name="LUONG" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="40" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+          <Property Name="MA_CHUC_VU" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6047: The Entity Framework provider in use reported the primary key column NAM on table V_THONGKETHUCHI to be nullable. Entity Framework does not allow nullable primary keys, therefore it will assume the column is not nullable and any null values stored in this column may cause errors at runtime.
+warning 6047: The Entity Framework provider in use reported the primary key column THANG on table V_THONGKETHUCHI to be nullable. Entity Framework does not allow nullable primary keys, therefore it will assume the column is not nullable and any null values stored in this column may cause errors at runtime.-->
+        <EntityType Name="V_THONGKETHUCHI">
+          <Key>
+            <PropertyRef Name="NAM" />
+            <PropertyRef Name="THANG" />
+          </Key>
+          <Property Name="NAM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="THANG" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TONG_THU" Type="number" Precision="38" Scale="0" />
+          <Property Name="TONG_CHI" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6047: The Entity Framework provider in use reported the primary key column NAM on table V_THONGKETIENDONGGOP to be nullable. Entity Framework does not allow nullable primary keys, therefore it will assume the column is not nullable and any null values stored in this column may cause errors at runtime.-->
+        <EntityType Name="V_THONGKETIENDONGGOP">
+          <Key>
+            <PropertyRef Name="NAM" />
+            <PropertyRef Name="MA_DON_VI" />
+          </Key>
+          <Property Name="NAM" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_DON_VI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="TONG_TIEN" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="SYS_C009249">
+          <End Role="KHU_PHO" Type="Self.KHU_PHO" Multiplicity="1" />
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_PHO">
+              <PropertyRef Name="MA_KHU_PHO" />
+            </Principal>
+            <Dependent Role="THANH_VIEN">
+              <PropertyRef Name="MA_KHU_PHO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009250">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="CLB" Type="Self.CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="CLB">
+              <PropertyRef Name="MA_QUAN_LY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009251">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="THANH_VIEN_CLB" Type="Self.THANH_VIEN_CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_CLB">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009252">
+          <End Role="CLB" Type="Self.CLB" Multiplicity="1" />
+          <End Role="THANH_VIEN_CLB" Type="Self.THANH_VIEN_CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB">
+              <PropertyRef Name="MA_CLB" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_CLB">
+              <PropertyRef Name="MA_CLB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009253">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009254">
+          <End Role="CHUC_VU" Type="Self.CHUC_VU" Multiplicity="1" />
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUC_VU">
+              <PropertyRef Name="MA_CHUC_VU" />
+            </Principal>
+            <Dependent Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_CHUC_VU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009255">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="0..1" />
+          <End Role="PHIEU_THU" Type="Self.PHIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="PHIEU_THU">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009256">
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="1" />
+          <End Role="PHIEU_THU" Type="Self.PHIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Principal>
+            <Dependent Role="PHIEU_THU">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009263">
+          <End Role="HOAT_DONG" Type="Self.HOAT_DONG" Multiplicity="1" />
+          <End Role="THANH_VIEN_THAM_GIA_HD" Type="Self.THANH_VIEN_THAM_GIA_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOAT_DONG">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_THAM_GIA_HD">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009264">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="THANH_VIEN_THAM_GIA_HD" Type="Self.THANH_VIEN_THAM_GIA_HD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_THAM_GIA_HD">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009265">
+          <End Role="DON_VI_DONG_GOP" Type="Self.DON_VI_DONG_GOP" Multiplicity="1" />
+          <End Role="PHIEU_DONG_GOP" Type="Self.PHIEU_DONG_GOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DON_VI_DONG_GOP">
+              <PropertyRef Name="MA_DON_VI" />
+            </Principal>
+            <Dependent Role="PHIEU_DONG_GOP">
+              <PropertyRef Name="MA_DON_VI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009577">
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="1" />
+          <End Role="PHIEU_CHI" Type="Self.PHIEU_CHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Principal>
+            <Dependent Role="PHIEU_CHI">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009578">
+          <End Role="HOAT_DONG" Type="Self.HOAT_DONG" Multiplicity="0..1" />
+          <End Role="PHIEU_CHI" Type="Self.PHIEU_CHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOAT_DONG">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Principal>
+            <Dependent Role="PHIEU_CHI">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009580">
+          <End Role="HOP_THUONG_NIEN" Type="Self.HOP_THUONG_NIEN" Multiplicity="1" />
+          <End Role="CHI_TIET_HOP_TN" Type="Self.CHI_TIET_HOP_TN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOP_THUONG_NIEN">
+              <PropertyRef Name="MA_CUOC_HOP_TN" />
+            </Principal>
+            <Dependent Role="CHI_TIET_HOP_TN">
+              <PropertyRef Name="MA_CUOC_HOP_TN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009581">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="CHI_TIET_HOP_TN" Type="Self.CHI_TIET_HOP_TN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="CHI_TIET_HOP_TN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009582">
+          <End Role="HOP_BCH" Type="Self.HOP_BCH" Multiplicity="1" />
+          <End Role="CHI_TIET_HOP_BCH" Type="Self.CHI_TIET_HOP_BCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOP_BCH">
+              <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            </Principal>
+            <Dependent Role="CHI_TIET_HOP_BCH">
+              <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009583">
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="1" />
+          <End Role="CHI_TIET_HOP_BCH" Type="Self.CHI_TIET_HOP_BCH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Principal>
+            <Dependent Role="CHI_TIET_HOP_BCH">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_AUTH_CHANGEEMAIL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_AUTH_CHANGEPASSWORD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_CAI_DAT_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_TEN_THAM_SO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_GIA_TRI" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_CAI_DAT_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_TEN_THAM_SO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_GIA_TRI" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_CHECKLOGIN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_LOGGEDIN" Type="varchar2" Mode="Out" />
+        </Function>
+        <Function Name="SP_CHI_TIET_HOP_BCH_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CHI_TIET_HOP_BCH_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CHI_TIET_HOP_TN_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_TN" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CHI_TIET_HOP_TN_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_TN" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CHUC_VU_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
+          <Parameter Name="V_HE_SO_LUONG" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CLB_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CLB_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_TEN_CLB" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_THANH_LAP_CLB" Type="date" Mode="In" />
+          <Parameter Name="V_MA_QUAN_LY" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CLB_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
+          <Parameter Name="V_TEN_CLB" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_THANH_LAP_CLB" Type="date" Mode="In" />
+          <Parameter Name="V_MA_QUAN_LY" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DON_VI_DONG_GOP_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_DON_VI" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DON_VI_DONG_GOP_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_TEN_DON_VI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_CHI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_DON_VI_DONG_GOP_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_DON_VI" Type="number" Mode="In" />
+          <Parameter Name="V_TEN_DON_VI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_CHI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_HOAT_DONG_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_HOAT_DONG_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NOI_DUNG_HOAT_DONG" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_BAT_DAU" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_KET_THUC" Type="date" Mode="In" />
+          <Parameter Name="V_DIEM_TOI_DA" Type="number" Mode="In" />
+          <Parameter Name="V_DIEM_DAT_DUOC" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_HOAT_DONG_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_HOAT_DONG" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_BAT_DAU" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_KET_THUC" Type="date" Mode="In" />
+          <Parameter Name="V_DIEM_TOI_DA" Type="number" Mode="In" />
+          <Parameter Name="V_DIEM_DAT_DUOC" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_BCH_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_BCH" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_BCH_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NGAY_GIO_HOP" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_HOP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_DIEM_HOP" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_BCH_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_GIO_HOP" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_HOP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_DIEM_HOP" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_THUONG_NIEN_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_TN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_THUONG_NIEN_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NGAY_GIO_HOP" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_HOP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_DIEM_HOP" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_HOP_THUONG_NIEN_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CUOC_HOP_TN" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_GIO_HOP" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_HOP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DIA_DIEM_HOP" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_KHU_PHO_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_KHU_PHO" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_KHU_PHO_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_TEN_KHU_PHO" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_KHU_PHO_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_KHU_PHO" Type="number" Mode="In" />
+          <Parameter Name="V_TEN_KHU_PHO" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_CHI_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_PHIEU_CHI" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_CHI_DUYET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_PHIEU_CHI" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_DUYET" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_CHI_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_CHI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_SO_TIEN_CHI" Type="number" Mode="In" />
+          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_DONG_GOP_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_PHIEU_DONG_GOP" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_DONG_GOP_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NGAY_DONG_GOP" Type="date" Mode="In" />
+          <Parameter Name="V_SO_TIEN_DONG_GOP" Type="number" Mode="In" />
+          <Parameter Name="V_MA_DON_VI" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_DONG_GOP_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_PHIEU_DONG_GOP" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_DONG_GOP" Type="date" Mode="In" />
+          <Parameter Name="V_SO_TIEN_DONG_GOP" Type="number" Mode="In" />
+          <Parameter Name="V_MA_DON_VI" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_THU_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_PHIEU_THU" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PHIEU_THU_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_NGAY_LAP_PHIEU_THU" Type="date" Mode="In" />
+          <Parameter Name="V_NOI_DUNG_PHIEU_THU" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_SO_TIEN_THU" Type="number" Mode="In" />
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="DIACHI" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="EMAIL" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="TEN" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="ND" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="M" Type="number" Mode="In" />
+          <Parameter Name="Y" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="DIACHI" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="HO_TEN" Type="nvarchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="NGAYTG" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_CLB_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_CLB_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+          <Parameter Name="V_NGAY_THAM_GIA_CLB" Type="date" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_HO" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TEN" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_THANG_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_NAM_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_GIOI_TINH" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIA_CHI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_THAM_GIA" Type="date" Mode="In" />
+          <Parameter Name="V_MA_KHU_PHO" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_THAM_GIA_HD_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_THAM_GIA_HD_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_THANH_VIEN_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
+          <Parameter Name="V_HO" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TEN" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGAY_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_THANG_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_NAM_SINH" Type="number" Mode="In" />
+          <Parameter Name="V_GIOI_TINH" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIA_CHI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_MA_KHU_PHO" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_TINHLUONG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT" />
+        <Function Name="SP_TV_BAN_CHAP_HANH_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_TV_BAN_CHAP_HANH_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_DAN_TOC" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TON_GIAO" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGHE_NGHIEP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DON_VI_CONG_TAC" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_HOC_VAN" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_CHUYEN_MON" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_USERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_EMAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_TV_BAN_CHAP_HANH_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
+          <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
+          <Parameter Name="V_DAN_TOC" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TON_GIAO" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_NGHE_NGHIEP" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_DON_VI_CONG_TAC" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_HOC_VAN" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_CHUYEN_MON" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Type="nvarchar2" Mode="In" />
+          <Parameter Name="V_MA_CHUC_VU" Type="number" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CAI_DAT" EntityType="Self.CAI_DAT" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="CHI_TIET_HOP_BCH" EntityType="Self.CHI_TIET_HOP_BCH" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="CHI_TIET_HOP_TN" EntityType="Self.CHI_TIET_HOP_TN" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="CHUC_VU" EntityType="Self.CHUC_VU" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="CLB" EntityType="Self.CLB" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="DON_VI_DONG_GOP" EntityType="Self.DON_VI_DONG_GOP" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="HOAT_DONG" EntityType="Self.HOAT_DONG" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="HOP_BCH" EntityType="Self.HOP_BCH" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="HOP_THUONG_NIEN" EntityType="Self.HOP_THUONG_NIEN" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="KHU_PHO" EntityType="Self.KHU_PHO" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="PHIEU_CHI" EntityType="Self.PHIEU_CHI" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="PHIEU_DONG_GOP" EntityType="Self.PHIEU_DONG_GOP" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="PHIEU_THU" EntityType="Self.PHIEU_THU" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="THANH_VIEN" EntityType="Self.THANH_VIEN" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="THANH_VIEN_CLB" EntityType="Self.THANH_VIEN_CLB" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="THANH_VIEN_THAM_GIA_HD" EntityType="Self.THANH_VIEN_THAM_GIA_HD" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="TV_BAN_CHAP_HANH" EntityType="Self.TV_BAN_CHAP_HANH" Schema="C##QLNCT" store:Type="Tables" />
+          <EntitySet Name="V_THONGKETHUCHI" EntityType="Self.V_THONGKETHUCHI" Schema="C##QLNCT" store:Type="Views" />
+          <EntitySet Name="V_THONGKETIENDONGGOP" EntityType="Self.V_THONGKETIENDONGGOP" Schema="C##QLNCT" store:Type="Views" />
+          <AssociationSet Name="SYS_C009249" Association="Self.SYS_C009249">
+            <End Role="KHU_PHO" EntitySet="KHU_PHO" />
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009250" Association="Self.SYS_C009250">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="CLB" EntitySet="CLB" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009251" Association="Self.SYS_C009251">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="THANH_VIEN_CLB" EntitySet="THANH_VIEN_CLB" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009252" Association="Self.SYS_C009252">
+            <End Role="CLB" EntitySet="CLB" />
+            <End Role="THANH_VIEN_CLB" EntitySet="THANH_VIEN_CLB" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009253" Association="Self.SYS_C009253">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009254" Association="Self.SYS_C009254">
+            <End Role="CHUC_VU" EntitySet="CHUC_VU" />
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009255" Association="Self.SYS_C009255">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="PHIEU_THU" EntitySet="PHIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009256" Association="Self.SYS_C009256">
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+            <End Role="PHIEU_THU" EntitySet="PHIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009263" Association="Self.SYS_C009263">
+            <End Role="HOAT_DONG" EntitySet="HOAT_DONG" />
+            <End Role="THANH_VIEN_THAM_GIA_HD" EntitySet="THANH_VIEN_THAM_GIA_HD" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009264" Association="Self.SYS_C009264">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="THANH_VIEN_THAM_GIA_HD" EntitySet="THANH_VIEN_THAM_GIA_HD" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009265" Association="Self.SYS_C009265">
+            <End Role="DON_VI_DONG_GOP" EntitySet="DON_VI_DONG_GOP" />
+            <End Role="PHIEU_DONG_GOP" EntitySet="PHIEU_DONG_GOP" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009577" Association="Self.SYS_C009577">
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+            <End Role="PHIEU_CHI" EntitySet="PHIEU_CHI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009578" Association="Self.SYS_C009578">
+            <End Role="HOAT_DONG" EntitySet="HOAT_DONG" />
+            <End Role="PHIEU_CHI" EntitySet="PHIEU_CHI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009580" Association="Self.SYS_C009580">
+            <End Role="HOP_THUONG_NIEN" EntitySet="HOP_THUONG_NIEN" />
+            <End Role="CHI_TIET_HOP_TN" EntitySet="CHI_TIET_HOP_TN" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009581" Association="Self.SYS_C009581">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="CHI_TIET_HOP_TN" EntitySet="CHI_TIET_HOP_TN" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009582" Association="Self.SYS_C009582">
+            <End Role="HOP_BCH" EntitySet="HOP_BCH" />
+            <End Role="CHI_TIET_HOP_BCH" EntitySet="CHI_TIET_HOP_BCH" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009583" Association="Self.SYS_C009583">
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+            <End Role="CHI_TIET_HOP_BCH" EntitySet="CHI_TIET_HOP_BCH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CAI_DAT">
+          <Key>
+            <PropertyRef Name="TEN_THAM_SO" />
+          </Key>
+          <Property Name="TEN_THAM_SO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GIA_TRI" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CHUC_VU">
+          <Key>
+            <PropertyRef Name="MA_CHUC_VU" />
+          </Key>
+          <Property Name="MA_CHUC_VU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CHUC_VU" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HE_SO_LUONG" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <NavigationProperty Name="TV_BAN_CHAP_HANH" Relationship="Self.SYS_C009254" FromRole="CHUC_VU" ToRole="TV_BAN_CHAP_HANH" />
+        </EntityType>
+        <EntityType Name="CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+          </Key>
+          <Property Name="MA_CLB" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CLB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAY_THANH_LAP_CLB" Type="DateTime" Nullable="false" />
+          <Property Name="MA_QUAN_LY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.SYS_C009250" FromRole="CLB" ToRole="THANH_VIEN" />
+          <NavigationProperty Name="THANH_VIEN_CLB" Relationship="Self.SYS_C009252" FromRole="CLB" ToRole="THANH_VIEN_CLB" />
+        </EntityType>
+        <EntityType Name="DON_VI_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_DON_VI" />
+          </Key>
+          <Property Name="MA_DON_VI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEU_DONG_GOP" Relationship="Self.SYS_C009265" FromRole="DON_VI_DONG_GOP" ToRole="PHIEU_DONG_GOP" />
+        </EntityType>
+        <EntityType Name="HOAT_DONG">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAY_BAT_DAU" Type="DateTime" Nullable="false" />
+          <Property Name="NGAY_KET_THUC" Type="DateTime" Nullable="false" />
+          <Property Name="DIEM_TOI_DA" Type="Byte" Nullable="false" />
+          <Property Name="DIEM_DAT_DUOC" Type="Byte" />
+          <NavigationProperty Name="PHIEU_CHI" Relationship="Self.SYS_C009578" FromRole="HOAT_DONG" ToRole="PHIEU_CHI" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.THANH_VIEN_THAM_GIA_HD" FromRole="HOAT_DONG" ToRole="THANH_VIEN" />
+        </EntityType>
+        <EntityType Name="HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TV_BAN_CHAP_HANH" Relationship="Self.CHI_TIET_HOP_BCH" FromRole="HOP_BCH" ToRole="TV_BAN_CHAP_HANH" />
+        </EntityType>
+        <EntityType Name="HOP_THUONG_NIEN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.CHI_TIET_HOP_TN" FromRole="HOP_THUONG_NIEN" ToRole="THANH_VIEN" />
+        </EntityType>
+        <EntityType Name="KHU_PHO">
+          <Key>
+            <PropertyRef Name="MA_KHU_PHO" />
+          </Key>
+          <Property Name="MA_KHU_PHO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_KHU_PHO" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.SYS_C009249" FromRole="KHU_PHO" ToRole="THANH_VIEN" />
+        </EntityType>
+        <EntityType Name="PHIEU_CHI">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_CHI" />
+          </Key>
+          <Property Name="MA_PHIEU_CHI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_CHI" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_CHI" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SO_TIEN_CHI" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="DA_DUYET" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGAY_DUYET" Type="DateTime" />
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="MA_BCH" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="HOAT_DONG" Relationship="Self.SYS_C009578" FromRole="PHIEU_CHI" ToRole="HOAT_DONG" />
+          <NavigationProperty Name="TV_BAN_CHAP_HANH" Relationship="Self.SYS_C009577" FromRole="PHIEU_CHI" ToRole="TV_BAN_CHAP_HANH" />
+        </EntityType>
+        <EntityType Name="PHIEU_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_DONG_GOP" />
+          </Key>
+          <Property Name="MA_PHIEU_DONG_GOP" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_DONG_GOP" Type="DateTime" Nullable="false" />
+          <Property Name="SO_TIEN_DONG_GOP" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_DON_VI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="DON_VI_DONG_GOP" Relationship="Self.SYS_C009265" FromRole="PHIEU_DONG_GOP" ToRole="DON_VI_DONG_GOP" />
+        </EntityType>
+        <EntityType Name="PHIEU_THU">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_THU" />
+          </Key>
+          <Property Name="MA_PHIEU_THU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_THU" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_PHIEU_THU" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SO_TIEN_THU" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_BCH" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.SYS_C009255" FromRole="PHIEU_THU" ToRole="THANH_VIEN" />
+          <NavigationProperty Name="TV_BAN_CHAP_HANH" Relationship="Self.SYS_C009256" FromRole="PHIEU_THU" ToRole="TV_BAN_CHAP_HANH" />
+        </EntityType>
+        <EntityType Name="THANH_VIEN">
+          <Key>
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TEN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAY_SINH" Type="Byte" />
+          <Property Name="THANG_SINH" Type="Byte" />
+          <Property Name="NAM_SINH" Type="Int16" Nullable="false" />
+          <Property Name="GIOI_TINH" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NGAY_THAM_GIA" Type="DateTime" Nullable="false" />
+          <Property Name="MA_KHU_PHO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CLBs" Relationship="Self.SYS_C009250" FromRole="THANH_VIEN" ToRole="CLB" />
+          <NavigationProperty Name="KHU_PHO" Relationship="Self.SYS_C009249" FromRole="THANH_VIEN" ToRole="KHU_PHO" />
+          <NavigationProperty Name="PHIEU_THU" Relationship="Self.SYS_C009255" FromRole="THANH_VIEN" ToRole="PHIEU_THU" />
+          <NavigationProperty Name="THANH_VIEN_CLB" Relationship="Self.SYS_C009251" FromRole="THANH_VIEN" ToRole="THANH_VIEN_CLB" />
+          <NavigationProperty Name="TV_BAN_CHAP_HANH" Relationship="Self.SYS_C009253" FromRole="THANH_VIEN" ToRole="TV_BAN_CHAP_HANH" />
+          <NavigationProperty Name="HOP_THUONG_NIEN" Relationship="Self.CHI_TIET_HOP_TN" FromRole="THANH_VIEN" ToRole="HOP_THUONG_NIEN" />
+          <NavigationProperty Name="HOAT_DONG" Relationship="Self.THANH_VIEN_THAM_GIA_HD" FromRole="THANH_VIEN" ToRole="HOAT_DONG" />
+        </EntityType>
+        <EntityType Name="THANH_VIEN_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CLB" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_THAM_GIA_CLB" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CLB" Relationship="Self.SYS_C009252" FromRole="THANH_VIEN_CLB" ToRole="CLB" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.SYS_C009251" FromRole="THANH_VIEN_CLB" ToRole="THANH_VIEN" />
+        </EntityType>
+        <EntityType Name="TV_BAN_CHAP_HANH">
+          <Key>
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_BCH" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DAN_TOC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TON_GIAO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGHE_NGHIEP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DON_VI_CONG_TAC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_HOC_VAN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_CHUYEN_MON" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_LY_LUAN_CHINH_TRI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LUONG" Type="Decimal" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MA_CHUC_VU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="CHUC_VU" Relationship="Self.SYS_C009254" FromRole="TV_BAN_CHAP_HANH" ToRole="CHUC_VU" />
+          <NavigationProperty Name="PHIEU_CHI" Relationship="Self.SYS_C009577" FromRole="TV_BAN_CHAP_HANH" ToRole="PHIEU_CHI" />
+          <NavigationProperty Name="PHIEU_THU" Relationship="Self.SYS_C009256" FromRole="TV_BAN_CHAP_HANH" ToRole="PHIEU_THU" />
+          <NavigationProperty Name="THANH_VIEN" Relationship="Self.SYS_C009253" FromRole="TV_BAN_CHAP_HANH" ToRole="THANH_VIEN" />
+          <NavigationProperty Name="HOP_BCH" Relationship="Self.CHI_TIET_HOP_BCH" FromRole="TV_BAN_CHAP_HANH" ToRole="HOP_BCH" />
+        </EntityType>
+        <EntityType Name="V_THONGKETHUCHI">
+          <Key>
+            <PropertyRef Name="NAM" />
+            <PropertyRef Name="THANG" />
+          </Key>
+          <Property Name="NAM" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="THANG" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TONG_THU" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="TONG_CHI" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="V_THONGKETIENDONGGOP">
+          <Key>
+            <PropertyRef Name="NAM" />
+            <PropertyRef Name="MA_DON_VI" />
+          </Key>
+          <Property Name="NAM" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MA_DON_VI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DIA_CHI" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TONG_TIEN" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="SYS_C009254">
+          <End Role="CHUC_VU" Type="Self.CHUC_VU" Multiplicity="1" />
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUC_VU">
+              <PropertyRef Name="MA_CHUC_VU" />
+            </Principal>
+            <Dependent Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_CHUC_VU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009250">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="CLB" Type="Self.CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="CLB">
+              <PropertyRef Name="MA_QUAN_LY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009252">
+          <End Role="CLB" Type="Self.CLB" Multiplicity="1" />
+          <End Role="THANH_VIEN_CLB" Type="Self.THANH_VIEN_CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLB">
+              <PropertyRef Name="MA_CLB" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_CLB">
+              <PropertyRef Name="MA_CLB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009265">
+          <End Role="DON_VI_DONG_GOP" Type="Self.DON_VI_DONG_GOP" Multiplicity="1" />
+          <End Role="PHIEU_DONG_GOP" Type="Self.PHIEU_DONG_GOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DON_VI_DONG_GOP">
+              <PropertyRef Name="MA_DON_VI" />
+            </Principal>
+            <Dependent Role="PHIEU_DONG_GOP">
+              <PropertyRef Name="MA_DON_VI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009578">
+          <End Role="HOAT_DONG" Type="Self.HOAT_DONG" Multiplicity="0..1" />
+          <End Role="PHIEU_CHI" Type="Self.PHIEU_CHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOAT_DONG">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Principal>
+            <Dependent Role="PHIEU_CHI">
+              <PropertyRef Name="MA_HOAT_DONG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009249">
+          <End Role="KHU_PHO" Type="Self.KHU_PHO" Multiplicity="1" />
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_PHO">
+              <PropertyRef Name="MA_KHU_PHO" />
+            </Principal>
+            <Dependent Role="THANH_VIEN">
+              <PropertyRef Name="MA_KHU_PHO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009577">
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="1" />
+          <End Role="PHIEU_CHI" Type="Self.PHIEU_CHI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Principal>
+            <Dependent Role="PHIEU_CHI">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009255">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="0..1" />
+          <End Role="PHIEU_THU" Type="Self.PHIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="PHIEU_THU">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009256">
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="1" />
+          <End Role="PHIEU_THU" Type="Self.PHIEU_THU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Principal>
+            <Dependent Role="PHIEU_THU">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009251">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="THANH_VIEN_CLB" Type="Self.THANH_VIEN_CLB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="THANH_VIEN_CLB">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C009253">
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="1" />
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="THANH_VIEN">
+              <PropertyRef Name="MA_THANH_VIEN" />
+            </Principal>
+            <Dependent Role="TV_BAN_CHAP_HANH">
+              <PropertyRef Name="MA_BCH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CHI_TIET_HOP_BCH">
+          <End Role="HOP_BCH" Type="Self.HOP_BCH" Multiplicity="*" />
+          <End Role="TV_BAN_CHAP_HANH" Type="Self.TV_BAN_CHAP_HANH" Multiplicity="*" />
+        </Association>
+        <Association Name="CHI_TIET_HOP_TN">
+          <End Role="HOP_THUONG_NIEN" Type="Self.HOP_THUONG_NIEN" Multiplicity="*" />
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="*" />
+        </Association>
+        <Association Name="THANH_VIEN_THAM_GIA_HD">
+          <End Role="HOAT_DONG" Type="Self.HOAT_DONG" Multiplicity="*" />
+          <End Role="THANH_VIEN" Type="Self.THANH_VIEN" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CAI_DAT" EntityType="Self.CAI_DAT" />
+          <EntitySet Name="CHUC_VU" EntityType="Self.CHUC_VU" />
+          <EntitySet Name="CLBs" EntityType="Self.CLB" />
+          <EntitySet Name="DON_VI_DONG_GOP" EntityType="Self.DON_VI_DONG_GOP" />
+          <EntitySet Name="HOAT_DONG" EntityType="Self.HOAT_DONG" />
+          <EntitySet Name="HOP_BCH" EntityType="Self.HOP_BCH" />
+          <EntitySet Name="HOP_THUONG_NIEN" EntityType="Self.HOP_THUONG_NIEN" />
+          <EntitySet Name="KHU_PHO" EntityType="Self.KHU_PHO" />
+          <EntitySet Name="PHIEU_CHI" EntityType="Self.PHIEU_CHI" />
+          <EntitySet Name="PHIEU_DONG_GOP" EntityType="Self.PHIEU_DONG_GOP" />
+          <EntitySet Name="PHIEU_THU" EntityType="Self.PHIEU_THU" />
+          <EntitySet Name="THANH_VIEN" EntityType="Self.THANH_VIEN" />
+          <EntitySet Name="THANH_VIEN_CLB" EntityType="Self.THANH_VIEN_CLB" />
+          <EntitySet Name="TV_BAN_CHAP_HANH" EntityType="Self.TV_BAN_CHAP_HANH" />
+          <EntitySet Name="V_THONGKETHUCHI" EntityType="Self.V_THONGKETHUCHI" />
+          <EntitySet Name="V_THONGKETIENDONGGOP" EntityType="Self.V_THONGKETIENDONGGOP" />
+          <AssociationSet Name="SYS_C009254" Association="Self.SYS_C009254">
+            <End Role="CHUC_VU" EntitySet="CHUC_VU" />
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009250" Association="Self.SYS_C009250">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="CLB" EntitySet="CLBs" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009252" Association="Self.SYS_C009252">
+            <End Role="CLB" EntitySet="CLBs" />
+            <End Role="THANH_VIEN_CLB" EntitySet="THANH_VIEN_CLB" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009265" Association="Self.SYS_C009265">
+            <End Role="DON_VI_DONG_GOP" EntitySet="DON_VI_DONG_GOP" />
+            <End Role="PHIEU_DONG_GOP" EntitySet="PHIEU_DONG_GOP" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009578" Association="Self.SYS_C009578">
+            <End Role="HOAT_DONG" EntitySet="HOAT_DONG" />
+            <End Role="PHIEU_CHI" EntitySet="PHIEU_CHI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009249" Association="Self.SYS_C009249">
+            <End Role="KHU_PHO" EntitySet="KHU_PHO" />
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009577" Association="Self.SYS_C009577">
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+            <End Role="PHIEU_CHI" EntitySet="PHIEU_CHI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009255" Association="Self.SYS_C009255">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="PHIEU_THU" EntitySet="PHIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009256" Association="Self.SYS_C009256">
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+            <End Role="PHIEU_THU" EntitySet="PHIEU_THU" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009251" Association="Self.SYS_C009251">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="THANH_VIEN_CLB" EntitySet="THANH_VIEN_CLB" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C009253" Association="Self.SYS_C009253">
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+          </AssociationSet>
+          <AssociationSet Name="CHI_TIET_HOP_BCH" Association="Self.CHI_TIET_HOP_BCH">
+            <End Role="HOP_BCH" EntitySet="HOP_BCH" />
+            <End Role="TV_BAN_CHAP_HANH" EntitySet="TV_BAN_CHAP_HANH" />
+          </AssociationSet>
+          <AssociationSet Name="CHI_TIET_HOP_TN" Association="Self.CHI_TIET_HOP_TN">
+            <End Role="HOP_THUONG_NIEN" EntitySet="HOP_THUONG_NIEN" />
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+          </AssociationSet>
+          <AssociationSet Name="THANH_VIEN_THAM_GIA_HD" Association="Self.THANH_VIEN_THAM_GIA_HD">
+            <End Role="HOAT_DONG" EntitySet="HOAT_DONG" />
+            <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
+          </AssociationSet>
+          <FunctionImport Name="SP_AUTH_CHANGEEMAIL">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_AUTH_CHANGEPASSWORD">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CAI_DAT_INSERT">
+            <Parameter Name="V_TEN_THAM_SO" Mode="In" Type="String" />
+            <Parameter Name="V_GIA_TRI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CAI_DAT_UPDATE">
+            <Parameter Name="V_TEN_THAM_SO" Mode="In" Type="String" />
+            <Parameter Name="V_GIA_TRI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHI_TIET_HOP_BCH_DELETE">
+            <Parameter Name="V_MA_CUOC_HOP_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHI_TIET_HOP_BCH_INSERT">
+            <Parameter Name="V_MA_CUOC_HOP_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHI_TIET_HOP_TN_DELETE">
+            <Parameter Name="V_MA_CUOC_HOP_TN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHI_TIET_HOP_TN_INSERT">
+            <Parameter Name="V_MA_CUOC_HOP_TN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHUC_VU_UPDATE">
+            <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
+            <Parameter Name="V_HE_SO_LUONG" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CLB_DELETE">
+          <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CLB_INSERT">
+            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_THANH_LAP_CLB" Mode="In" Type="DateTime" />
+            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CLB_UPDATE">
+            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_THANH_LAP_CLB" Mode="In" Type="DateTime" />
+            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DON_VI_DONG_GOP_DELETE">
+          <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DON_VI_DONG_GOP_INSERT">
+            <Parameter Name="V_TEN_DON_VI" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DON_VI_DONG_GOP_UPDATE">
+            <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TEN_DON_VI" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOAT_DONG_DELETE">
+          <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOAT_DONG_INSERT">
+            <Parameter Name="V_NOI_DUNG_HOAT_DONG" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_BAT_DAU" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NGAY_KET_THUC" Mode="In" Type="DateTime" />
+            <Parameter Name="V_DIEM_TOI_DA" Mode="In" Type="Decimal" />
+            <Parameter Name="V_DIEM_DAT_DUOC" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOAT_DONG_UPDATE">
+            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOI_DUNG_HOAT_DONG" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_BAT_DAU" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NGAY_KET_THUC" Mode="In" Type="DateTime" />
+            <Parameter Name="V_DIEM_TOI_DA" Mode="In" Type="Decimal" />
+            <Parameter Name="V_DIEM_DAT_DUOC" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_BCH_DELETE">
+          <Parameter Name="V_MA_CUOC_HOP_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_BCH_INSERT">
+            <Parameter Name="V_NGAY_GIO_HOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_HOP" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_DIEM_HOP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_BCH_UPDATE">
+            <Parameter Name="V_MA_CUOC_HOP_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_GIO_HOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_HOP" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_DIEM_HOP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_THUONG_NIEN_DELETE">
+          <Parameter Name="V_MA_CUOC_HOP_TN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_THUONG_NIEN_INSERT">
+            <Parameter Name="V_NGAY_GIO_HOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_HOP" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_DIEM_HOP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_HOP_THUONG_NIEN_UPDATE">
+            <Parameter Name="V_MA_CUOC_HOP_TN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_GIO_HOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_HOP" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_DIEM_HOP" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_KHU_PHO_DELETE">
+          <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_KHU_PHO_INSERT">
+          <Parameter Name="V_TEN_KHU_PHO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_KHU_PHO_UPDATE">
+            <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TEN_KHU_PHO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_CHI_DELETE">
+          <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_CHI_DUYET">
+            <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_DUYET" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_CHI_INSERT">
+            <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_SO_TIEN_CHI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_DONG_GOP_DELETE">
+          <Parameter Name="V_MA_PHIEU_DONG_GOP" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_DONG_GOP_INSERT">
+            <Parameter Name="V_NGAY_DONG_GOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_SO_TIEN_DONG_GOP" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_DONG_GOP_UPDATE">
+            <Parameter Name="V_MA_PHIEU_DONG_GOP" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_DONG_GOP" Mode="In" Type="DateTime" />
+            <Parameter Name="V_SO_TIEN_DONG_GOP" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_THU_DELETE">
+          <Parameter Name="V_MA_PHIEU_THU" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_THU_INSERT">
+            <Parameter Name="V_NGAY_LAP_PHIEU_THU" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NOI_DUNG_PHIEU_THU" Mode="In" Type="String" />
+            <Parameter Name="V_SO_TIEN_THU" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI">
+          <Parameter Name="DIACHI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL">
+          <Parameter Name="EMAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN">
+          <Parameter Name="TEN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG">
+          <Parameter Name="ND" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM">
+            <Parameter Name="M" Mode="In" Type="Decimal" />
+            <Parameter Name="Y" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI">
+          <Parameter Name="DIACHI" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN">
+          <Parameter Name="HO_TEN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG">
+          <Parameter Name="NGAYTG" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_CLB_DELETE">
+            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_CLB_INSERT">
+            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_THAM_GIA_CLB" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_DELETE">
+          <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_INSERT">
+            <Parameter Name="V_HO" Mode="In" Type="String" />
+            <Parameter Name="V_TEN" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_THANG_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NAM_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_GIOI_TINH" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_THAM_GIA" Mode="In" Type="DateTime" />
+            <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_THAM_GIA_HD_DELETE">
+            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_THAM_GIA_HD_INSERT">
+            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_UPDATE">
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_HO" Mode="In" Type="String" />
+            <Parameter Name="V_TEN" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_THANG_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NAM_SINH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_GIOI_TINH" Mode="In" Type="String" />
+            <Parameter Name="V_DIA_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TINHLUONG" />
+          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_DELETE">
+          <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_INSERT">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_DAN_TOC" Mode="In" Type="String" />
+            <Parameter Name="V_TON_GIAO" Mode="In" Type="String" />
+            <Parameter Name="V_NGHE_NGHIEP" Mode="In" Type="String" />
+            <Parameter Name="V_DON_VI_CONG_TAC" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_HOC_VAN" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_CHUYEN_MON" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Mode="In" Type="String" />
+            <Parameter Name="V_USERNAME" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+            <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_UPDATE">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_DAN_TOC" Mode="In" Type="String" />
+            <Parameter Name="V_TON_GIAO" Mode="In" Type="String" />
+            <Parameter Name="V_NGHE_NGHIEP" Mode="In" Type="String" />
+            <Parameter Name="V_DON_VI_CONG_TAC" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_HOC_VAN" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_CHUYEN_MON" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Mode="In" Type="String" />
+            <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CHECKLOGIN">
+            <Parameter Name="V_USERNAME" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_LOGGEDIN" Mode="Out" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="CAI_DAT">
+            <EntityTypeMapping TypeName="Model.CAI_DAT">
+              <MappingFragment StoreEntitySet="CAI_DAT">
+                <ScalarProperty Name="TEN_THAM_SO" ColumnName="TEN_THAM_SO" />
+                <ScalarProperty Name="GIA_TRI" ColumnName="GIA_TRI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUC_VU">
+            <EntityTypeMapping TypeName="Model.CHUC_VU">
+              <MappingFragment StoreEntitySet="CHUC_VU">
+                <ScalarProperty Name="MA_CHUC_VU" ColumnName="MA_CHUC_VU" />
+                <ScalarProperty Name="TEN_CHUC_VU" ColumnName="TEN_CHUC_VU" />
+                <ScalarProperty Name="HE_SO_LUONG" ColumnName="HE_SO_LUONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLBs">
+            <EntityTypeMapping TypeName="Model.CLB">
+              <MappingFragment StoreEntitySet="CLB">
+                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
+                <ScalarProperty Name="TEN_CLB" ColumnName="TEN_CLB" />
+                <ScalarProperty Name="NGAY_THANH_LAP_CLB" ColumnName="NGAY_THANH_LAP_CLB" />
+                <ScalarProperty Name="MA_QUAN_LY" ColumnName="MA_QUAN_LY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DON_VI_DONG_GOP">
+            <EntityTypeMapping TypeName="Model.DON_VI_DONG_GOP">
+              <MappingFragment StoreEntitySet="DON_VI_DONG_GOP">
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOAT_DONG">
+            <EntityTypeMapping TypeName="Model.HOAT_DONG">
+              <MappingFragment StoreEntitySet="HOAT_DONG">
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
+                <ScalarProperty Name="NGAY_BAT_DAU" ColumnName="NGAY_BAT_DAU" />
+                <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
+                <ScalarProperty Name="DIEM_TOI_DA" ColumnName="DIEM_TOI_DA" />
+                <ScalarProperty Name="DIEM_DAT_DUOC" ColumnName="DIEM_DAT_DUOC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOP_BCH">
+            <EntityTypeMapping TypeName="Model.HOP_BCH">
+              <MappingFragment StoreEntitySet="HOP_BCH">
+                <ScalarProperty Name="MA_CUOC_HOP_BCH" ColumnName="MA_CUOC_HOP_BCH" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="NOI_DUNG_HOP" ColumnName="NOI_DUNG_HOP" />
+                <ScalarProperty Name="DIA_DIEM_HOP" ColumnName="DIA_DIEM_HOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOP_THUONG_NIEN">
+            <EntityTypeMapping TypeName="Model.HOP_THUONG_NIEN">
+              <MappingFragment StoreEntitySet="HOP_THUONG_NIEN">
+                <ScalarProperty Name="MA_CUOC_HOP_TN" ColumnName="MA_CUOC_HOP_TN" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="NOI_DUNG_HOP" ColumnName="NOI_DUNG_HOP" />
+                <ScalarProperty Name="DIA_DIEM_HOP" ColumnName="DIA_DIEM_HOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHU_PHO">
+            <EntityTypeMapping TypeName="Model.KHU_PHO">
+              <MappingFragment StoreEntitySet="KHU_PHO">
+                <ScalarProperty Name="MA_KHU_PHO" ColumnName="MA_KHU_PHO" />
+                <ScalarProperty Name="TEN_KHU_PHO" ColumnName="TEN_KHU_PHO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEU_CHI">
+            <EntityTypeMapping TypeName="Model.PHIEU_CHI">
+              <MappingFragment StoreEntitySet="PHIEU_CHI">
+                <ScalarProperty Name="MA_PHIEU_CHI" ColumnName="MA_PHIEU_CHI" />
+                <ScalarProperty Name="NGAY_LAP_PHIEU_CHI" ColumnName="NGAY_LAP_PHIEU_CHI" />
+                <ScalarProperty Name="NOI_DUNG_CHI" ColumnName="NOI_DUNG_CHI" />
+                <ScalarProperty Name="SO_TIEN_CHI" ColumnName="SO_TIEN_CHI" />
+                <ScalarProperty Name="DA_DUYET" ColumnName="DA_DUYET" />
+                <ScalarProperty Name="NGAY_DUYET" ColumnName="NGAY_DUYET" />
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEU_DONG_GOP">
+            <EntityTypeMapping TypeName="Model.PHIEU_DONG_GOP">
+              <MappingFragment StoreEntitySet="PHIEU_DONG_GOP">
+                <ScalarProperty Name="MA_PHIEU_DONG_GOP" ColumnName="MA_PHIEU_DONG_GOP" />
+                <ScalarProperty Name="NGAY_DONG_GOP" ColumnName="NGAY_DONG_GOP" />
+                <ScalarProperty Name="SO_TIEN_DONG_GOP" ColumnName="SO_TIEN_DONG_GOP" />
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEU_THU">
+            <EntityTypeMapping TypeName="Model.PHIEU_THU">
+              <MappingFragment StoreEntitySet="PHIEU_THU">
+                <ScalarProperty Name="MA_PHIEU_THU" ColumnName="MA_PHIEU_THU" />
+                <ScalarProperty Name="NGAY_LAP_PHIEU_THU" ColumnName="NGAY_LAP_PHIEU_THU" />
+                <ScalarProperty Name="NOI_DUNG_PHIEU_THU" ColumnName="NOI_DUNG_PHIEU_THU" />
+                <ScalarProperty Name="SO_TIEN_THU" ColumnName="SO_TIEN_THU" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THANH_VIEN">
+            <EntityTypeMapping TypeName="Model.THANH_VIEN">
+              <MappingFragment StoreEntitySet="THANH_VIEN">
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+                <ScalarProperty Name="THANG_SINH" ColumnName="THANG_SINH" />
+                <ScalarProperty Name="NAM_SINH" ColumnName="NAM_SINH" />
+                <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="NGAY_THAM_GIA" ColumnName="NGAY_THAM_GIA" />
+                <ScalarProperty Name="MA_KHU_PHO" ColumnName="MA_KHU_PHO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THANH_VIEN_CLB">
+            <EntityTypeMapping TypeName="Model.THANH_VIEN_CLB">
+              <MappingFragment StoreEntitySet="THANH_VIEN_CLB">
+                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="NGAY_THAM_GIA_CLB" ColumnName="NGAY_THAM_GIA_CLB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TV_BAN_CHAP_HANH">
+            <EntityTypeMapping TypeName="Model.TV_BAN_CHAP_HANH">
+              <MappingFragment StoreEntitySet="TV_BAN_CHAP_HANH">
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="DAN_TOC" ColumnName="DAN_TOC" />
+                <ScalarProperty Name="TON_GIAO" ColumnName="TON_GIAO" />
+                <ScalarProperty Name="NGHE_NGHIEP" ColumnName="NGHE_NGHIEP" />
+                <ScalarProperty Name="DON_VI_CONG_TAC" ColumnName="DON_VI_CONG_TAC" />
+                <ScalarProperty Name="TRINH_DO_HOC_VAN" ColumnName="TRINH_DO_HOC_VAN" />
+                <ScalarProperty Name="TRINH_DO_CHUYEN_MON" ColumnName="TRINH_DO_CHUYEN_MON" />
+                <ScalarProperty Name="TRINH_DO_LY_LUAN_CHINH_TRI" ColumnName="TRINH_DO_LY_LUAN_CHINH_TRI" />
+                <ScalarProperty Name="LUONG" ColumnName="LUONG" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="MA_CHUC_VU" ColumnName="MA_CHUC_VU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_THONGKETHUCHI">
+            <EntityTypeMapping TypeName="Model.V_THONGKETHUCHI">
+              <MappingFragment StoreEntitySet="V_THONGKETHUCHI">
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="THANG" ColumnName="THANG" />
+                <ScalarProperty Name="TONG_THU" ColumnName="TONG_THU" />
+                <ScalarProperty Name="TONG_CHI" ColumnName="TONG_CHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_THONGKETIENDONGGOP">
+            <EntityTypeMapping TypeName="Model.V_THONGKETIENDONGGOP">
+              <MappingFragment StoreEntitySet="V_THONGKETIENDONGGOP">
+                <ScalarProperty Name="NAM" ColumnName="NAM" />
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="TONG_TIEN" ColumnName="TONG_TIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CHI_TIET_HOP_BCH" TypeName="Model.CHI_TIET_HOP_BCH" StoreEntitySet="CHI_TIET_HOP_BCH">
+            <EndProperty Name="HOP_BCH">
+              <ScalarProperty Name="MA_CUOC_HOP_BCH" ColumnName="MA_CUOC_HOP_BCH" />
+            </EndProperty>
+            <EndProperty Name="TV_BAN_CHAP_HANH">
+              <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="CHI_TIET_HOP_TN" TypeName="Model.CHI_TIET_HOP_TN" StoreEntitySet="CHI_TIET_HOP_TN">
+            <EndProperty Name="HOP_THUONG_NIEN">
+              <ScalarProperty Name="MA_CUOC_HOP_TN" ColumnName="MA_CUOC_HOP_TN" />
+            </EndProperty>
+            <EndProperty Name="THANH_VIEN">
+              <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="THANH_VIEN_THAM_GIA_HD" TypeName="Model.THANH_VIEN_THAM_GIA_HD" StoreEntitySet="THANH_VIEN_THAM_GIA_HD">
+            <EndProperty Name="HOAT_DONG">
+              <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+            </EndProperty>
+            <EndProperty Name="THANH_VIEN">
+              <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="SP_AUTH_CHANGEEMAIL" FunctionName="Model.Store.SP_AUTH_CHANGEEMAIL" />
+          <FunctionImportMapping FunctionImportName="SP_AUTH_CHANGEPASSWORD" FunctionName="Model.Store.SP_AUTH_CHANGEPASSWORD" />
+          <FunctionImportMapping FunctionImportName="SP_CAI_DAT_INSERT" FunctionName="Model.Store.SP_CAI_DAT_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CAI_DAT_UPDATE" FunctionName="Model.Store.SP_CAI_DAT_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_BCH_DELETE" FunctionName="Model.Store.SP_CHI_TIET_HOP_BCH_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_BCH_INSERT" FunctionName="Model.Store.SP_CHI_TIET_HOP_BCH_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_TN_DELETE" FunctionName="Model.Store.SP_CHI_TIET_HOP_TN_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_TN_INSERT" FunctionName="Model.Store.SP_CHI_TIET_HOP_TN_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CHUC_VU_UPDATE" FunctionName="Model.Store.SP_CHUC_VU_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_CLB_DELETE" FunctionName="Model.Store.SP_CLB_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_CLB_INSERT" FunctionName="Model.Store.SP_CLB_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CLB_UPDATE" FunctionName="Model.Store.SP_CLB_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_DELETE" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_INSERT" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_UPDATE" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_HOAT_DONG_DELETE" FunctionName="Model.Store.SP_HOAT_DONG_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_HOAT_DONG_INSERT" FunctionName="Model.Store.SP_HOAT_DONG_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_HOAT_DONG_UPDATE" FunctionName="Model.Store.SP_HOAT_DONG_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_BCH_DELETE" FunctionName="Model.Store.SP_HOP_BCH_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_BCH_INSERT" FunctionName="Model.Store.SP_HOP_BCH_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_BCH_UPDATE" FunctionName="Model.Store.SP_HOP_BCH_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_THUONG_NIEN_DELETE" FunctionName="Model.Store.SP_HOP_THUONG_NIEN_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_THUONG_NIEN_INSERT" FunctionName="Model.Store.SP_HOP_THUONG_NIEN_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_HOP_THUONG_NIEN_UPDATE" FunctionName="Model.Store.SP_HOP_THUONG_NIEN_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_KHU_PHO_DELETE" FunctionName="Model.Store.SP_KHU_PHO_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_KHU_PHO_INSERT" FunctionName="Model.Store.SP_KHU_PHO_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_KHU_PHO_UPDATE" FunctionName="Model.Store.SP_KHU_PHO_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DELETE" FunctionName="Model.Store.SP_PHIEU_CHI_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DUYET" FunctionName="Model.Store.SP_PHIEU_CHI_DUYET" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_INSERT" FunctionName="Model.Store.SP_PHIEU_CHI_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_DELETE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_INSERT" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_UPDATE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_DELETE" FunctionName="Model.Store.SP_PHIEU_THU_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_INSERT" FunctionName="Model.Store.SP_PHIEU_THU_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" FunctionName="Model.Store.SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" FunctionName="Model.Store.SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_CLB_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_CLB_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_THAM_GIA_HD_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_THAM_GIA_HD_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_THAM_GIA_HD_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_THAM_GIA_HD_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_UPDATE" FunctionName="Model.Store.SP_THANH_VIEN_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_TINHLUONG" FunctionName="Model.Store.SP_TINHLUONG" />
+          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_DELETE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_INSERT" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_UPDATE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_CHECKLOGIN" FunctionName="Model.Store.SP_CHECKLOGIN" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

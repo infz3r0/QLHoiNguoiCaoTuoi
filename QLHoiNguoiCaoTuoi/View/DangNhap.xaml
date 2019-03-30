@@ -27,10 +27,10 @@
         <Label x:Name="lblTitle" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Title}" Content="AQqpPHJjkK"></Label>
 
         <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Label}">Username:</Label>
-        <TextBox x:Name="txbUsername" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputText}" />
+        <TextBox x:Name="txbUsername" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbUsername_GotFocus" />
 
         <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource Label}">Password:</Label>
-        <PasswordBox x:Name="txbPassword" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputPassword}" />
+        <PasswordBox x:Name="txbPassword" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputPassword}" GotFocus="TxbPassword_GotFocus" />
 
         <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" Margin="5,10,5,0" HorizontalAlignment="Right">
             <Button x:Name="btnLogin" Style="{StaticResource ButtonOK}" Width="100" Margin="5,0" IsDefault="True" Click="btnLogin_Click" >
@@ -40,6 +40,6 @@
                 Thoát
             </Button>
         </StackPanel>
-        <ProgressBar Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="5" Margin="0,0,0,-17" IsIndeterminate="False" Background="{x:Null}" Foreground="#FF7C94FF"/>
+        <ProgressBar Name="pgbLoading"  Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Bottom" Height="5" Margin="0,0,0,-11" IsIndeterminate="False" Background="{x:Null}" Foreground="#FF7C94FF"/>
     </Grid>
 </Window>

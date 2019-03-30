@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="16d46a3b284c4fe9ba60740552499839" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CAI_DAT" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CHUC_VU" Width="1.5" PointX="9" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CLB" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DON_VI_DONG_GOP" Width="1.5" PointX="5.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HOAT_DONG" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HOP_BCH" Width="1.5" PointX="9" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.HOP_THUONG_NIEN" Width="1.5" PointX="3.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.KHU_PHO" Width="1.5" PointX="3.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PHIEU_CHI" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PHIEU_DONG_GOP" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PHIEU_THU" Width="1.5" PointX="11.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.THANH_VIEN" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.THANH_VIEN_CLB" Width="1.5" PointX="10.5" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TV_BAN_CHAP_HANH" Width="1.5" PointX="11.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.V_THONGKETHUCHI" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.V_THONGKETIENDONGGOP" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Model.SYS_C009254" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009250" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009252" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009265" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009578" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009249" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009577" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009255" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009256" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009251" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SYS_C009253" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CHI_TIET_HOP_BCH" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.CHI_TIET_HOP_TN" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.THANH_VIEN_THAM_GIA_HD" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

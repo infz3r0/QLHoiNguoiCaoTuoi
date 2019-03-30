@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class ChucVuDAO
+    public class ChucVuDAO
     {
         /// <summary>
         /// Cập nhật TT chức vụ

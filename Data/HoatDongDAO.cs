@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class HoatDongDAO
+    public class HoatDongDAO
     {
         /// <summary>
         /// Thêm Hoạt động mới

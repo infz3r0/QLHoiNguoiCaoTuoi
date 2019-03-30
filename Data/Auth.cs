@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class Auth
+    public class Auth
     {
         public void ChangeEmail(TV_BAN_CHAP_HANH n)
         {
