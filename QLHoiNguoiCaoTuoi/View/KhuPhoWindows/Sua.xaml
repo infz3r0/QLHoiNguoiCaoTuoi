@@ -1,0 +1,32 @@
+﻿<Window x:Class="QLHoiNguoiCaoTuoi.View.KhuPhoWindows.Sua"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View.KhuPhoWindows"
+        mc:Ignorable="d"
+        Title="Thông tin khu phố" Height="170" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTitle" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Title}" Content="Khu Phố"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Label}" Content="Tên khu phố:"/>
+        <TextBox x:Name="txbTenKhuPho" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputText}" MaxLength="50" GotFocus="TxbTenKhuPho_GotFocus"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Margin="5,10,5,0" HorizontalAlignment="Right">
+            <Button x:Name="btnOK" Style="{StaticResource ButtonOK}" Width="50" Margin="5,0" IsDefault="True" Click="BtnOK_Click" Content="OK"/>
+            <Button x:Name="btnClose" Style="{StaticResource ButtonClose}" Margin="5,0" Width="50" IsCancel="True" Click="BtnClose_Click" Content="Close" />
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

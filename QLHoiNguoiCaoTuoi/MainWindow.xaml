@@ -300,7 +300,7 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\city.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Khu Pho" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Khu phố" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>

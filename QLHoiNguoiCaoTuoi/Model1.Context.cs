@@ -43,6 +43,22 @@ namespace QLHoiNguoiCaoTuoi
         public virtual DbSet<TV_BAN_CHAP_HANH> TV_BAN_CHAP_HANH { get; set; }
         public virtual DbSet<V_THONGKETHUCHI> V_THONGKETHUCHI { get; set; }
         public virtual DbSet<V_THONGKETIENDONGGOP> V_THONGKETIENDONGGOP { get; set; }
+        public virtual DbSet<V_CHI_TIET_HOP_BCH> V_CHI_TIET_HOP_BCH { get; set; }
+        public virtual DbSet<V_CHI_TIET_HOP_TN> V_CHI_TIET_HOP_TN { get; set; }
+        public virtual DbSet<V_CHUC_VU> V_CHUC_VU { get; set; }
+        public virtual DbSet<V_CLB> V_CLB { get; set; }
+        public virtual DbSet<V_DON_VI_DONG_GOP> V_DON_VI_DONG_GOP { get; set; }
+        public virtual DbSet<V_HOAT_DONG> V_HOAT_DONG { get; set; }
+        public virtual DbSet<V_HOP_BCH> V_HOP_BCH { get; set; }
+        public virtual DbSet<V_HOP_THUONG_NIEN> V_HOP_THUONG_NIEN { get; set; }
+        public virtual DbSet<V_KHU_PHO> V_KHU_PHO { get; set; }
+        public virtual DbSet<V_PHIEU_CHI> V_PHIEU_CHI { get; set; }
+        public virtual DbSet<V_PHIEU_DONG_GOP> V_PHIEU_DONG_GOP { get; set; }
+        public virtual DbSet<V_PHIEU_THU> V_PHIEU_THU { get; set; }
+        public virtual DbSet<V_THANH_VIEN> V_THANH_VIEN { get; set; }
+        public virtual DbSet<V_THANH_VIEN_CLB> V_THANH_VIEN_CLB { get; set; }
+        public virtual DbSet<V_THANH_VIEN_THAM_GIA_HD> V_THANH_VIEN_THAM_GIA_HD { get; set; }
+        public virtual DbSet<V_TV_BAN_CHAP_HANH> V_TV_BAN_CHAP_HANH { get; set; }
     
         public virtual int SP_AUTH_CHANGEEMAIL(Nullable<decimal> v_MA_BCH, string v_EMAIL)
         {

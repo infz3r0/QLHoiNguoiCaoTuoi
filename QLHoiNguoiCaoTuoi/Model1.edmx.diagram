@@ -35,6 +35,22 @@
         <AssociationConnector Association="Model.CHI_TIET_HOP_BCH" ManuallyRouted="false" />
         <AssociationConnector Association="Model.CHI_TIET_HOP_TN" ManuallyRouted="false" />
         <AssociationConnector Association="Model.THANH_VIEN_THAM_GIA_HD" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Model.V_CHI_TIET_HOP_BCH" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.V_CHI_TIET_HOP_TN" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.V_CHUC_VU" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.V_CLB" Width="1.5" PointX="2.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.V_DON_VI_DONG_GOP" Width="1.5" PointX="13.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.V_HOAT_DONG" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.V_HOP_BCH" Width="1.5" PointX="13.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.V_HOP_THUONG_NIEN" Width="1.5" PointX="13.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.V_KHU_PHO" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="Model.V_PHIEU_CHI" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.V_PHIEU_DONG_GOP" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.V_PHIEU_THU" Width="1.5" PointX="8.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.V_THANH_VIEN" Width="1.5" PointX="15.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.V_THANH_VIEN_CLB" Width="1.5" PointX="15.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.V_THANH_VIEN_THAM_GIA_HD" Width="1.5" PointX="15.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.V_TV_BAN_CHAP_HANH" Width="1.5" PointX="10.75" PointY="15.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

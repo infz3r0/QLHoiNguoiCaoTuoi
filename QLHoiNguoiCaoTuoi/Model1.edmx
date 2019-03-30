@@ -174,6 +174,237 @@
           <Property Name="MA_CHUC_VU" Type="number" Precision="38" Scale="0" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_CHI_TIET_HOP_BCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_CHI_TIET_HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_CHI_TIET_HOP_TN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_CHI_TIET_HOP_TN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_CHUC_VU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_CHUC_VU">
+          <Key>
+            <PropertyRef Name="MA_CHUC_VU" />
+            <PropertyRef Name="TEN_CHUC_VU" />
+            <PropertyRef Name="HE_SO_LUONG" />
+          </Key>
+          <Property Name="MA_CHUC_VU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CHUC_VU" Type="nvarchar2" MaxLength="30" Nullable="false" />
+          <Property Name="HE_SO_LUONG" Type="number" Precision="5" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_CLB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="TEN_CLB" />
+            <PropertyRef Name="NGAY_THANH_LAP_CLB" />
+            <PropertyRef Name="MA_QUAN_LY" />
+          </Key>
+          <Property Name="MA_CLB" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CLB" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NGAY_THANH_LAP_CLB" Type="date" Nullable="false" />
+          <Property Name="MA_QUAN_LY" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_DON_VI_DONG_GOP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DON_VI_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_DON_VI" />
+            <PropertyRef Name="TEN_DON_VI" />
+            <PropertyRef Name="DIA_CHI" />
+          </Key>
+          <Property Name="MA_DON_VI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_HOAT_DONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_HOAT_DONG">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="NGAY_BAT_DAU" />
+            <PropertyRef Name="NGAY_KET_THUC" />
+            <PropertyRef Name="DIEM_TOI_DA" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="NGAY_BAT_DAU" Type="date" Nullable="false" />
+          <Property Name="NGAY_KET_THUC" Type="date" Nullable="false" />
+          <Property Name="DIEM_TOI_DA" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="DIEM_DAT_DUOC" Type="number" Precision="3" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_HOP_BCH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="NOI_DUNG_HOP" />
+            <PropertyRef Name="DIA_DIEM_HOP" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="nvarchar2" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_HOP_THUONG_NIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_HOP_THUONG_NIEN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="NOI_DUNG_HOP" />
+            <PropertyRef Name="DIA_DIEM_HOP" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_GIO_HOP" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="DIA_DIEM_HOP" Type="nvarchar2" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_KHU_PHO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_KHU_PHO">
+          <Key>
+            <PropertyRef Name="MA_KHU_PHO" />
+            <PropertyRef Name="TEN_KHU_PHO" />
+          </Key>
+          <Property Name="MA_KHU_PHO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_KHU_PHO" Type="nvarchar2" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_PHIEU_CHI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PHIEU_CHI">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_CHI" />
+            <PropertyRef Name="NGAY_LAP_PHIEU_CHI" />
+            <PropertyRef Name="NOI_DUNG_CHI" />
+            <PropertyRef Name="SO_TIEN_CHI" />
+            <PropertyRef Name="DA_DUYET" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_PHIEU_CHI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_CHI" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_CHI" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="SO_TIEN_CHI" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="DA_DUYET" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="NGAY_DUYET" Type="date" />
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_PHIEU_DONG_GOP' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PHIEU_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_DONG_GOP" />
+            <PropertyRef Name="NGAY_DONG_GOP" />
+            <PropertyRef Name="SO_TIEN_DONG_GOP" />
+            <PropertyRef Name="MA_DON_VI" />
+            <PropertyRef Name="TEN_DON_VI" />
+          </Key>
+          <Property Name="MA_PHIEU_DONG_GOP" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_DONG_GOP" Type="date" Nullable="false" />
+          <Property Name="SO_TIEN_DONG_GOP" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_DON_VI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_DON_VI" Type="nvarchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_PHIEU_THU' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_PHIEU_THU">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_THU" />
+            <PropertyRef Name="NGAY_LAP_PHIEU_THU" />
+            <PropertyRef Name="NOI_DUNG_PHIEU_THU" />
+            <PropertyRef Name="SO_TIEN_THU" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_PHIEU_THU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NGAY_LAP_PHIEU_THU" Type="date" Nullable="false" />
+          <Property Name="NOI_DUNG_PHIEU_THU" Type="nvarchar2" MaxLength="128" Nullable="false" />
+          <Property Name="SO_TIEN_THU" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTENBCH" Type="nvarchar2" MaxLength="71" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" />
+          <Property Name="HOTENTV" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_THANH_VIEN' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_THANH_VIEN">
+          <Key>
+            <PropertyRef Name="MA_THANH_VIEN" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="NAM_SINH" />
+            <PropertyRef Name="GIOI_TINH" />
+            <PropertyRef Name="DIA_CHI" />
+            <PropertyRef Name="NGAY_THAM_GIA" />
+            <PropertyRef Name="MA_KHU_PHO" />
+            <PropertyRef Name="TEN_KHU_PHO" />
+          </Key>
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HO" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NGAY_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="THANG_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="NAM_SINH" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="GIOI_TINH" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="NGAY_THAM_GIA" Type="date" Nullable="false" />
+          <Property Name="MA_KHU_PHO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_KHU_PHO" Type="nvarchar2" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_THANH_VIEN_CLB' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_THANH_VIEN_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="TEN_CLB" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CLB" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CLB" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_THANH_VIEN_THAM_GIA_HD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_THANH_VIEN_THAM_GIA_HD">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6047: The Entity Framework provider in use reported the primary key column NAM on table V_THONGKETHUCHI to be nullable. Entity Framework does not allow nullable primary keys, therefore it will assume the column is not nullable and any null values stored in this column may cause errors at runtime.
 warning 6047: The Entity Framework provider in use reported the primary key column THANG on table V_THONGKETHUCHI to be nullable. Entity Framework does not allow nullable primary keys, therefore it will assume the column is not nullable and any null values stored in this column may cause errors at runtime.-->
         <EntityType Name="V_THONGKETHUCHI">
@@ -198,6 +429,31 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <Property Name="TEN_DON_VI" Type="nvarchar2" MaxLength="50" Nullable="false" />
           <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
           <Property Name="TONG_TIEN" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_TV_BAN_CHAP_HANH">
+          <Key>
+            <PropertyRef Name="MA_BCH" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="LUONG" />
+            <PropertyRef Name="MA_CHUC_VU" />
+            <PropertyRef Name="TEN_CHUC_VU" />
+          </Key>
+          <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HO" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="DAN_TOC" Type="nvarchar2" MaxLength="20" />
+          <Property Name="TON_GIAO" Type="nvarchar2" MaxLength="20" />
+          <Property Name="NGHE_NGHIEP" Type="nvarchar2" MaxLength="30" />
+          <Property Name="DON_VI_CONG_TAC" Type="nvarchar2" MaxLength="100" />
+          <Property Name="TRINH_DO_HOC_VAN" Type="nvarchar2" MaxLength="20" />
+          <Property Name="TRINH_DO_CHUYEN_MON" Type="nvarchar2" MaxLength="30" />
+          <Property Name="TRINH_DO_LY_LUAN_CHINH_TRI" Type="nvarchar2" MaxLength="30" />
+          <Property Name="LUONG" Type="number" Precision="20" Scale="0" Nullable="false" />
+          <Property Name="MA_CHUC_VU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TEN_CHUC_VU" Type="nvarchar2" MaxLength="30" Nullable="false" />
         </EntityType>
         <Association Name="SYS_C009249">
           <End Role="KHU_PHO" Type="Self.KHU_PHO" Multiplicity="1" />
@@ -682,6 +938,161 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <EntitySet Name="TV_BAN_CHAP_HANH" EntityType="Self.TV_BAN_CHAP_HANH" Schema="C##QLNCT" store:Type="Tables" />
           <EntitySet Name="V_THONGKETHUCHI" EntityType="Self.V_THONGKETHUCHI" Schema="C##QLNCT" store:Type="Views" />
           <EntitySet Name="V_THONGKETIENDONGGOP" EntityType="Self.V_THONGKETIENDONGGOP" Schema="C##QLNCT" store:Type="Views" />
+          <EntitySet Name="V_CHI_TIET_HOP_BCH" EntityType="Self.V_CHI_TIET_HOP_BCH" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_CHI_TIET_HOP_BCH"."MA_CUOC_HOP_BCH" AS "MA_CUOC_HOP_BCH", 
+"V_CHI_TIET_HOP_BCH"."NGAY_GIO_HOP" AS "NGAY_GIO_HOP", 
+"V_CHI_TIET_HOP_BCH"."MA_BCH" AS "MA_BCH", 
+"V_CHI_TIET_HOP_BCH"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_CHI_TIET_HOP_BCH" "V_CHI_TIET_HOP_BCH"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_CHI_TIET_HOP_TN" EntityType="Self.V_CHI_TIET_HOP_TN" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_CHI_TIET_HOP_TN"."MA_CUOC_HOP_TN" AS "MA_CUOC_HOP_TN", 
+"V_CHI_TIET_HOP_TN"."NGAY_GIO_HOP" AS "NGAY_GIO_HOP", 
+"V_CHI_TIET_HOP_TN"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
+"V_CHI_TIET_HOP_TN"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_CHI_TIET_HOP_TN" "V_CHI_TIET_HOP_TN"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_CHUC_VU" EntityType="Self.V_CHUC_VU" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_CHUC_VU"."MA_CHUC_VU" AS "MA_CHUC_VU", 
+"V_CHUC_VU"."TEN_CHUC_VU" AS "TEN_CHUC_VU", 
+"V_CHUC_VU"."HE_SO_LUONG" AS "HE_SO_LUONG"
+FROM "C##QLNCT"."V_CHUC_VU" "V_CHUC_VU"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_CLB" EntityType="Self.V_CLB" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_CLB"."MA_CLB" AS "MA_CLB", 
+"V_CLB"."TEN_CLB" AS "TEN_CLB", 
+"V_CLB"."NGAY_THANH_LAP_CLB" AS "NGAY_THANH_LAP_CLB", 
+"V_CLB"."MA_QUAN_LY" AS "MA_QUAN_LY", 
+"V_CLB"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_CLB" "V_CLB"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_DON_VI_DONG_GOP" EntityType="Self.V_DON_VI_DONG_GOP" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_DON_VI_DONG_GOP"."MA_DON_VI" AS "MA_DON_VI", 
+"V_DON_VI_DONG_GOP"."TEN_DON_VI" AS "TEN_DON_VI", 
+"V_DON_VI_DONG_GOP"."DIA_CHI" AS "DIA_CHI", 
+"V_DON_VI_DONG_GOP"."EMAIL" AS "EMAIL"
+FROM "C##QLNCT"."V_DON_VI_DONG_GOP" "V_DON_VI_DONG_GOP"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_HOAT_DONG" EntityType="Self.V_HOAT_DONG" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_HOAT_DONG"."MA_HOAT_DONG" AS "MA_HOAT_DONG", 
+"V_HOAT_DONG"."NOI_DUNG_HOAT_DONG" AS "NOI_DUNG_HOAT_DONG", 
+"V_HOAT_DONG"."NGAY_BAT_DAU" AS "NGAY_BAT_DAU", 
+"V_HOAT_DONG"."NGAY_KET_THUC" AS "NGAY_KET_THUC", 
+"V_HOAT_DONG"."DIEM_TOI_DA" AS "DIEM_TOI_DA", 
+"V_HOAT_DONG"."DIEM_DAT_DUOC" AS "DIEM_DAT_DUOC"
+FROM "C##QLNCT"."V_HOAT_DONG" "V_HOAT_DONG"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_HOP_BCH" EntityType="Self.V_HOP_BCH" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_HOP_BCH"."MA_CUOC_HOP_BCH" AS "MA_CUOC_HOP_BCH", 
+"V_HOP_BCH"."NGAY_GIO_HOP" AS "NGAY_GIO_HOP", 
+"V_HOP_BCH"."NOI_DUNG_HOP" AS "NOI_DUNG_HOP", 
+"V_HOP_BCH"."DIA_DIEM_HOP" AS "DIA_DIEM_HOP"
+FROM "C##QLNCT"."V_HOP_BCH" "V_HOP_BCH"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_HOP_THUONG_NIEN" EntityType="Self.V_HOP_THUONG_NIEN" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_HOP_THUONG_NIEN"."MA_CUOC_HOP_TN" AS "MA_CUOC_HOP_TN", 
+"V_HOP_THUONG_NIEN"."NGAY_GIO_HOP" AS "NGAY_GIO_HOP", 
+"V_HOP_THUONG_NIEN"."NOI_DUNG_HOP" AS "NOI_DUNG_HOP", 
+"V_HOP_THUONG_NIEN"."DIA_DIEM_HOP" AS "DIA_DIEM_HOP"
+FROM "C##QLNCT"."V_HOP_THUONG_NIEN" "V_HOP_THUONG_NIEN"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_KHU_PHO" EntityType="Self.V_KHU_PHO" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_KHU_PHO"."MA_KHU_PHO" AS "MA_KHU_PHO", 
+"V_KHU_PHO"."TEN_KHU_PHO" AS "TEN_KHU_PHO"
+FROM "C##QLNCT"."V_KHU_PHO" "V_KHU_PHO"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PHIEU_CHI" EntityType="Self.V_PHIEU_CHI" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_PHIEU_CHI"."MA_PHIEU_CHI" AS "MA_PHIEU_CHI", 
+"V_PHIEU_CHI"."NGAY_LAP_PHIEU_CHI" AS "NGAY_LAP_PHIEU_CHI", 
+"V_PHIEU_CHI"."NOI_DUNG_CHI" AS "NOI_DUNG_CHI", 
+"V_PHIEU_CHI"."SO_TIEN_CHI" AS "SO_TIEN_CHI", 
+"V_PHIEU_CHI"."DA_DUYET" AS "DA_DUYET", 
+"V_PHIEU_CHI"."NGAY_DUYET" AS "NGAY_DUYET", 
+"V_PHIEU_CHI"."MA_HOAT_DONG" AS "MA_HOAT_DONG", 
+"V_PHIEU_CHI"."NOI_DUNG_HOAT_DONG" AS "NOI_DUNG_HOAT_DONG", 
+"V_PHIEU_CHI"."MA_BCH" AS "MA_BCH", 
+"V_PHIEU_CHI"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_PHIEU_CHI" "V_PHIEU_CHI"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PHIEU_DONG_GOP" EntityType="Self.V_PHIEU_DONG_GOP" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_PHIEU_DONG_GOP"."MA_PHIEU_DONG_GOP" AS "MA_PHIEU_DONG_GOP", 
+"V_PHIEU_DONG_GOP"."NGAY_DONG_GOP" AS "NGAY_DONG_GOP", 
+"V_PHIEU_DONG_GOP"."SO_TIEN_DONG_GOP" AS "SO_TIEN_DONG_GOP", 
+"V_PHIEU_DONG_GOP"."MA_DON_VI" AS "MA_DON_VI", 
+"V_PHIEU_DONG_GOP"."TEN_DON_VI" AS "TEN_DON_VI"
+FROM "C##QLNCT"."V_PHIEU_DONG_GOP" "V_PHIEU_DONG_GOP"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_PHIEU_THU" EntityType="Self.V_PHIEU_THU" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_PHIEU_THU"."MA_PHIEU_THU" AS "MA_PHIEU_THU", 
+"V_PHIEU_THU"."NGAY_LAP_PHIEU_THU" AS "NGAY_LAP_PHIEU_THU", 
+"V_PHIEU_THU"."NOI_DUNG_PHIEU_THU" AS "NOI_DUNG_PHIEU_THU", 
+"V_PHIEU_THU"."SO_TIEN_THU" AS "SO_TIEN_THU", 
+"V_PHIEU_THU"."MA_BCH" AS "MA_BCH", 
+"V_PHIEU_THU"."HOTENBCH" AS "HOTENBCH", 
+"V_PHIEU_THU"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
+"V_PHIEU_THU"."HOTENTV" AS "HOTENTV"
+FROM "C##QLNCT"."V_PHIEU_THU" "V_PHIEU_THU"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_THANH_VIEN" EntityType="Self.V_THANH_VIEN" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_THANH_VIEN"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
+"V_THANH_VIEN"."HO" AS "HO", 
+"V_THANH_VIEN"."TEN" AS "TEN", 
+"V_THANH_VIEN"."NGAY_SINH" AS "NGAY_SINH", 
+"V_THANH_VIEN"."THANG_SINH" AS "THANG_SINH", 
+"V_THANH_VIEN"."NAM_SINH" AS "NAM_SINH", 
+"V_THANH_VIEN"."GIOI_TINH" AS "GIOI_TINH", 
+"V_THANH_VIEN"."DIA_CHI" AS "DIA_CHI", 
+"V_THANH_VIEN"."NGAY_THAM_GIA" AS "NGAY_THAM_GIA", 
+"V_THANH_VIEN"."MA_KHU_PHO" AS "MA_KHU_PHO", 
+"V_THANH_VIEN"."TEN_KHU_PHO" AS "TEN_KHU_PHO"
+FROM "C##QLNCT"."V_THANH_VIEN" "V_THANH_VIEN"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_THANH_VIEN_CLB" EntityType="Self.V_THANH_VIEN_CLB" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_THANH_VIEN_CLB"."MA_CLB" AS "MA_CLB", 
+"V_THANH_VIEN_CLB"."TEN_CLB" AS "TEN_CLB", 
+"V_THANH_VIEN_CLB"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
+"V_THANH_VIEN_CLB"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_THANH_VIEN_CLB" "V_THANH_VIEN_CLB"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_THANH_VIEN_THAM_GIA_HD" EntityType="Self.V_THANH_VIEN_THAM_GIA_HD" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_THANH_VIEN_THAM_GIA_HD"."MA_HOAT_DONG" AS "MA_HOAT_DONG", 
+"V_THANH_VIEN_THAM_GIA_HD"."NOI_DUNG_HOAT_DONG" AS "NOI_DUNG_HOAT_DONG", 
+"V_THANH_VIEN_THAM_GIA_HD"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
+"V_THANH_VIEN_THAM_GIA_HD"."HOTEN" AS "HOTEN"
+FROM "C##QLNCT"."V_THANH_VIEN_THAM_GIA_HD" "V_THANH_VIEN_THAM_GIA_HD"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_TV_BAN_CHAP_HANH" EntityType="Self.V_TV_BAN_CHAP_HANH" store:Type="Views" store:Schema="C##QLNCT">
+            <DefiningQuery>SELECT 
+"V_TV_BAN_CHAP_HANH"."MA_BCH" AS "MA_BCH", 
+"V_TV_BAN_CHAP_HANH"."HO" AS "HO", 
+"V_TV_BAN_CHAP_HANH"."TEN" AS "TEN", 
+"V_TV_BAN_CHAP_HANH"."DAN_TOC" AS "DAN_TOC", 
+"V_TV_BAN_CHAP_HANH"."TON_GIAO" AS "TON_GIAO", 
+"V_TV_BAN_CHAP_HANH"."NGHE_NGHIEP" AS "NGHE_NGHIEP", 
+"V_TV_BAN_CHAP_HANH"."DON_VI_CONG_TAC" AS "DON_VI_CONG_TAC", 
+"V_TV_BAN_CHAP_HANH"."TRINH_DO_HOC_VAN" AS "TRINH_DO_HOC_VAN", 
+"V_TV_BAN_CHAP_HANH"."TRINH_DO_CHUYEN_MON" AS "TRINH_DO_CHUYEN_MON", 
+"V_TV_BAN_CHAP_HANH"."TRINH_DO_LY_LUAN_CHINH_TRI" AS "TRINH_DO_LY_LUAN_CHINH_TRI", 
+"V_TV_BAN_CHAP_HANH"."LUONG" AS "LUONG", 
+"V_TV_BAN_CHAP_HANH"."MA_CHUC_VU" AS "MA_CHUC_VU", 
+"V_TV_BAN_CHAP_HANH"."TEN_CHUC_VU" AS "TEN_CHUC_VU"
+FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="SYS_C009249" Association="Self.SYS_C009249">
             <End Role="KHU_PHO" EntitySet="KHU_PHO" />
             <End Role="THANH_VIEN" EntitySet="THANH_VIEN" />
@@ -1424,7 +1835,247 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
             <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
             <Parameter Name="V_LOGGEDIN" Mode="Out" Type="String" />
           </FunctionImport>
+          <EntitySet Name="V_CHI_TIET_HOP_BCH" EntityType="Model.V_CHI_TIET_HOP_BCH" />
+          <EntitySet Name="V_CHI_TIET_HOP_TN" EntityType="Model.V_CHI_TIET_HOP_TN" />
+          <EntitySet Name="V_CHUC_VU" EntityType="Model.V_CHUC_VU" />
+          <EntitySet Name="V_CLB" EntityType="Model.V_CLB" />
+          <EntitySet Name="V_DON_VI_DONG_GOP" EntityType="Model.V_DON_VI_DONG_GOP" />
+          <EntitySet Name="V_HOAT_DONG" EntityType="Model.V_HOAT_DONG" />
+          <EntitySet Name="V_HOP_BCH" EntityType="Model.V_HOP_BCH" />
+          <EntitySet Name="V_HOP_THUONG_NIEN" EntityType="Model.V_HOP_THUONG_NIEN" />
+          <EntitySet Name="V_KHU_PHO" EntityType="Model.V_KHU_PHO" />
+          <EntitySet Name="V_PHIEU_CHI" EntityType="Model.V_PHIEU_CHI" />
+          <EntitySet Name="V_PHIEU_DONG_GOP" EntityType="Model.V_PHIEU_DONG_GOP" />
+          <EntitySet Name="V_PHIEU_THU" EntityType="Model.V_PHIEU_THU" />
+          <EntitySet Name="V_THANH_VIEN" EntityType="Model.V_THANH_VIEN" />
+          <EntitySet Name="V_THANH_VIEN_CLB" EntityType="Model.V_THANH_VIEN_CLB" />
+          <EntitySet Name="V_THANH_VIEN_THAM_GIA_HD" EntityType="Model.V_THANH_VIEN_THAM_GIA_HD" />
+          <EntitySet Name="V_TV_BAN_CHAP_HANH" EntityType="Model.V_TV_BAN_CHAP_HANH" />
         </EntityContainer>
+        <EntityType Name="V_CHI_TIET_HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_CHI_TIET_HOP_TN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_CHUC_VU">
+          <Key>
+            <PropertyRef Name="MA_CHUC_VU" />
+            <PropertyRef Name="TEN_CHUC_VU" />
+            <PropertyRef Name="HE_SO_LUONG" />
+          </Key>
+          <Property Name="MA_CHUC_VU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_CHUC_VU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HE_SO_LUONG" Type="Decimal" Nullable="false" Precision="5" Scale="2" />
+        </EntityType>
+        <EntityType Name="V_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="TEN_CLB" />
+            <PropertyRef Name="NGAY_THANH_LAP_CLB" />
+            <PropertyRef Name="MA_QUAN_LY" />
+          </Key>
+          <Property Name="MA_CLB" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_CLB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_THANH_LAP_CLB" Type="DateTime" Nullable="false" />
+          <Property Name="MA_QUAN_LY" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_DON_VI_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_DON_VI" />
+            <PropertyRef Name="TEN_DON_VI" />
+            <PropertyRef Name="DIA_CHI" />
+          </Key>
+          <Property Name="MA_DON_VI" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_DON_VI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_CHI" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="V_HOAT_DONG">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="NGAY_BAT_DAU" />
+            <PropertyRef Name="NGAY_KET_THUC" />
+            <PropertyRef Name="DIEM_TOI_DA" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_BAT_DAU" Type="DateTime" Nullable="false" />
+          <Property Name="NGAY_KET_THUC" Type="DateTime" Nullable="false" />
+          <Property Name="DIEM_TOI_DA" Type="Byte" Nullable="false" />
+          <Property Name="DIEM_DAT_DUOC" Type="Byte" />
+        </EntityType>
+        <EntityType Name="V_HOP_BCH">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_BCH" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="NOI_DUNG_HOP" />
+            <PropertyRef Name="DIA_DIEM_HOP" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_DIEM_HOP" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_HOP_THUONG_NIEN">
+          <Key>
+            <PropertyRef Name="MA_CUOC_HOP_TN" />
+            <PropertyRef Name="NGAY_GIO_HOP" />
+            <PropertyRef Name="NOI_DUNG_HOP" />
+            <PropertyRef Name="DIA_DIEM_HOP" />
+          </Key>
+          <Property Name="MA_CUOC_HOP_TN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_GIO_HOP" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_HOP" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="DIA_DIEM_HOP" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_KHU_PHO">
+          <Key>
+            <PropertyRef Name="MA_KHU_PHO" />
+            <PropertyRef Name="TEN_KHU_PHO" />
+          </Key>
+          <Property Name="MA_KHU_PHO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_PHIEU_CHI">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_CHI" />
+            <PropertyRef Name="NGAY_LAP_PHIEU_CHI" />
+            <PropertyRef Name="NOI_DUNG_CHI" />
+            <PropertyRef Name="SO_TIEN_CHI" />
+            <PropertyRef Name="DA_DUYET" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_PHIEU_CHI" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_LAP_PHIEU_CHI" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_CHI" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SO_TIEN_CHI" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="DA_DUYET" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NGAY_DUYET" Type="DateTime" />
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_PHIEU_DONG_GOP">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_DONG_GOP" />
+            <PropertyRef Name="NGAY_DONG_GOP" />
+            <PropertyRef Name="SO_TIEN_DONG_GOP" />
+            <PropertyRef Name="MA_DON_VI" />
+            <PropertyRef Name="TEN_DON_VI" />
+          </Key>
+          <Property Name="MA_PHIEU_DONG_GOP" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_DONG_GOP" Type="DateTime" Nullable="false" />
+          <Property Name="SO_TIEN_DONG_GOP" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="MA_DON_VI" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_DON_VI" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_PHIEU_THU">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_THU" />
+            <PropertyRef Name="NGAY_LAP_PHIEU_THU" />
+            <PropertyRef Name="NOI_DUNG_PHIEU_THU" />
+            <PropertyRef Name="SO_TIEN_THU" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_PHIEU_THU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_LAP_PHIEU_THU" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_PHIEU_THU" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SO_TIEN_THU" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTENBCH" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="HOTENTV" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_THANH_VIEN">
+          <Key>
+            <PropertyRef Name="MA_THANH_VIEN" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="NAM_SINH" />
+            <PropertyRef Name="GIOI_TINH" />
+            <PropertyRef Name="DIA_CHI" />
+            <PropertyRef Name="NGAY_THAM_GIA" />
+            <PropertyRef Name="MA_KHU_PHO" />
+            <PropertyRef Name="TEN_KHU_PHO" />
+          </Key>
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_SINH" Type="Byte" />
+          <Property Name="THANG_SINH" Type="Byte" />
+          <Property Name="NAM_SINH" Type="Int16" Nullable="false" />
+          <Property Name="GIOI_TINH" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DIA_CHI" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_THAM_GIA" Type="DateTime" Nullable="false" />
+          <Property Name="MA_KHU_PHO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_THANH_VIEN_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="TEN_CLB" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_CLB" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_CLB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_THANH_VIEN_THAM_GIA_HD">
+          <Key>
+            <PropertyRef Name="MA_HOAT_DONG" />
+            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+          </Key>
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_TV_BAN_CHAP_HANH">
+          <Key>
+            <PropertyRef Name="MA_BCH" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="LUONG" />
+            <PropertyRef Name="MA_CHUC_VU" />
+            <PropertyRef Name="TEN_CHUC_VU" />
+          </Key>
+          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DAN_TOC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TON_GIAO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGHE_NGHIEP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DON_VI_CONG_TAC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_HOC_VAN" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_CHUYEN_MON" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TRINH_DO_LY_LUAN_CHINH_TRI" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="LUONG" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="MA_CHUC_VU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TEN_CHUC_VU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1688,6 +2339,193 @@ warning 6047: The Entity Framework provider in use reported the primary key colu
           <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_INSERT" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_UPDATE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_CHECKLOGIN" FunctionName="Model.Store.SP_CHECKLOGIN" />
+          <EntitySetMapping Name="V_CHI_TIET_HOP_BCH">
+            <EntityTypeMapping TypeName="Model.V_CHI_TIET_HOP_BCH">
+              <MappingFragment StoreEntitySet="V_CHI_TIET_HOP_BCH">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="MA_CUOC_HOP_BCH" ColumnName="MA_CUOC_HOP_BCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_CHI_TIET_HOP_TN">
+            <EntityTypeMapping TypeName="Model.V_CHI_TIET_HOP_TN">
+              <MappingFragment StoreEntitySet="V_CHI_TIET_HOP_TN">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="MA_CUOC_HOP_TN" ColumnName="MA_CUOC_HOP_TN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_CHUC_VU">
+            <EntityTypeMapping TypeName="Model.V_CHUC_VU">
+              <MappingFragment StoreEntitySet="V_CHUC_VU">
+                <ScalarProperty Name="HE_SO_LUONG" ColumnName="HE_SO_LUONG" />
+                <ScalarProperty Name="TEN_CHUC_VU" ColumnName="TEN_CHUC_VU" />
+                <ScalarProperty Name="MA_CHUC_VU" ColumnName="MA_CHUC_VU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_CLB">
+            <EntityTypeMapping TypeName="Model.V_CLB">
+              <MappingFragment StoreEntitySet="V_CLB">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_QUAN_LY" ColumnName="MA_QUAN_LY" />
+                <ScalarProperty Name="NGAY_THANH_LAP_CLB" ColumnName="NGAY_THANH_LAP_CLB" />
+                <ScalarProperty Name="TEN_CLB" ColumnName="TEN_CLB" />
+                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DON_VI_DONG_GOP">
+            <EntityTypeMapping TypeName="Model.V_DON_VI_DONG_GOP">
+              <MappingFragment StoreEntitySet="V_DON_VI_DONG_GOP">
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HOAT_DONG">
+            <EntityTypeMapping TypeName="Model.V_HOAT_DONG">
+              <MappingFragment StoreEntitySet="V_HOAT_DONG">
+                <ScalarProperty Name="DIEM_DAT_DUOC" ColumnName="DIEM_DAT_DUOC" />
+                <ScalarProperty Name="DIEM_TOI_DA" ColumnName="DIEM_TOI_DA" />
+                <ScalarProperty Name="NGAY_KET_THUC" ColumnName="NGAY_KET_THUC" />
+                <ScalarProperty Name="NGAY_BAT_DAU" ColumnName="NGAY_BAT_DAU" />
+                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HOP_BCH">
+            <EntityTypeMapping TypeName="Model.V_HOP_BCH">
+              <MappingFragment StoreEntitySet="V_HOP_BCH">
+                <ScalarProperty Name="DIA_DIEM_HOP" ColumnName="DIA_DIEM_HOP" />
+                <ScalarProperty Name="NOI_DUNG_HOP" ColumnName="NOI_DUNG_HOP" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="MA_CUOC_HOP_BCH" ColumnName="MA_CUOC_HOP_BCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_HOP_THUONG_NIEN">
+            <EntityTypeMapping TypeName="Model.V_HOP_THUONG_NIEN">
+              <MappingFragment StoreEntitySet="V_HOP_THUONG_NIEN">
+                <ScalarProperty Name="DIA_DIEM_HOP" ColumnName="DIA_DIEM_HOP" />
+                <ScalarProperty Name="NOI_DUNG_HOP" ColumnName="NOI_DUNG_HOP" />
+                <ScalarProperty Name="NGAY_GIO_HOP" ColumnName="NGAY_GIO_HOP" />
+                <ScalarProperty Name="MA_CUOC_HOP_TN" ColumnName="MA_CUOC_HOP_TN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_KHU_PHO">
+            <EntityTypeMapping TypeName="Model.V_KHU_PHO">
+              <MappingFragment StoreEntitySet="V_KHU_PHO">
+                <ScalarProperty Name="TEN_KHU_PHO" ColumnName="TEN_KHU_PHO" />
+                <ScalarProperty Name="MA_KHU_PHO" ColumnName="MA_KHU_PHO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PHIEU_CHI">
+            <EntityTypeMapping TypeName="Model.V_PHIEU_CHI">
+              <MappingFragment StoreEntitySet="V_PHIEU_CHI">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+                <ScalarProperty Name="NGAY_DUYET" ColumnName="NGAY_DUYET" />
+                <ScalarProperty Name="DA_DUYET" ColumnName="DA_DUYET" />
+                <ScalarProperty Name="SO_TIEN_CHI" ColumnName="SO_TIEN_CHI" />
+                <ScalarProperty Name="NOI_DUNG_CHI" ColumnName="NOI_DUNG_CHI" />
+                <ScalarProperty Name="NGAY_LAP_PHIEU_CHI" ColumnName="NGAY_LAP_PHIEU_CHI" />
+                <ScalarProperty Name="MA_PHIEU_CHI" ColumnName="MA_PHIEU_CHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PHIEU_DONG_GOP">
+            <EntityTypeMapping TypeName="Model.V_PHIEU_DONG_GOP">
+              <MappingFragment StoreEntitySet="V_PHIEU_DONG_GOP">
+                <ScalarProperty Name="TEN_DON_VI" ColumnName="TEN_DON_VI" />
+                <ScalarProperty Name="MA_DON_VI" ColumnName="MA_DON_VI" />
+                <ScalarProperty Name="SO_TIEN_DONG_GOP" ColumnName="SO_TIEN_DONG_GOP" />
+                <ScalarProperty Name="NGAY_DONG_GOP" ColumnName="NGAY_DONG_GOP" />
+                <ScalarProperty Name="MA_PHIEU_DONG_GOP" ColumnName="MA_PHIEU_DONG_GOP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_PHIEU_THU">
+            <EntityTypeMapping TypeName="Model.V_PHIEU_THU">
+              <MappingFragment StoreEntitySet="V_PHIEU_THU">
+                <ScalarProperty Name="HOTENTV" ColumnName="HOTENTV" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="HOTENBCH" ColumnName="HOTENBCH" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="SO_TIEN_THU" ColumnName="SO_TIEN_THU" />
+                <ScalarProperty Name="NOI_DUNG_PHIEU_THU" ColumnName="NOI_DUNG_PHIEU_THU" />
+                <ScalarProperty Name="NGAY_LAP_PHIEU_THU" ColumnName="NGAY_LAP_PHIEU_THU" />
+                <ScalarProperty Name="MA_PHIEU_THU" ColumnName="MA_PHIEU_THU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_THANH_VIEN">
+            <EntityTypeMapping TypeName="Model.V_THANH_VIEN">
+              <MappingFragment StoreEntitySet="V_THANH_VIEN">
+                <ScalarProperty Name="TEN_KHU_PHO" ColumnName="TEN_KHU_PHO" />
+                <ScalarProperty Name="MA_KHU_PHO" ColumnName="MA_KHU_PHO" />
+                <ScalarProperty Name="NGAY_THAM_GIA" ColumnName="NGAY_THAM_GIA" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+                <ScalarProperty Name="NAM_SINH" ColumnName="NAM_SINH" />
+                <ScalarProperty Name="THANG_SINH" ColumnName="THANG_SINH" />
+                <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_THANH_VIEN_CLB">
+            <EntityTypeMapping TypeName="Model.V_THANH_VIEN_CLB">
+              <MappingFragment StoreEntitySet="V_THANH_VIEN_CLB">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="TEN_CLB" ColumnName="TEN_CLB" />
+                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_THANH_VIEN_THAM_GIA_HD">
+            <EntityTypeMapping TypeName="Model.V_THANH_VIEN_THAM_GIA_HD">
+              <MappingFragment StoreEntitySet="V_THANH_VIEN_THAM_GIA_HD">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_TV_BAN_CHAP_HANH">
+            <EntityTypeMapping TypeName="Model.V_TV_BAN_CHAP_HANH">
+              <MappingFragment StoreEntitySet="V_TV_BAN_CHAP_HANH">
+                <ScalarProperty Name="TEN_CHUC_VU" ColumnName="TEN_CHUC_VU" />
+                <ScalarProperty Name="MA_CHUC_VU" ColumnName="MA_CHUC_VU" />
+                <ScalarProperty Name="LUONG" ColumnName="LUONG" />
+                <ScalarProperty Name="TRINH_DO_LY_LUAN_CHINH_TRI" ColumnName="TRINH_DO_LY_LUAN_CHINH_TRI" />
+                <ScalarProperty Name="TRINH_DO_CHUYEN_MON" ColumnName="TRINH_DO_CHUYEN_MON" />
+                <ScalarProperty Name="TRINH_DO_HOC_VAN" ColumnName="TRINH_DO_HOC_VAN" />
+                <ScalarProperty Name="DON_VI_CONG_TAC" ColumnName="DON_VI_CONG_TAC" />
+                <ScalarProperty Name="NGHE_NGHIEP" ColumnName="NGHE_NGHIEP" />
+                <ScalarProperty Name="TON_GIAO" ColumnName="TON_GIAO" />
+                <ScalarProperty Name="DAN_TOC" ColumnName="DAN_TOC" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

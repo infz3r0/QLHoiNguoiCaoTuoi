@@ -72,12 +72,6 @@ namespace QLHoiNguoiCaoTuoi
             }
         }
 
-        private void BtnQLKhuPho_Click(object sender, RoutedEventArgs e)
-        {
-            QLKhuPho w = new QLKhuPho();
-            w.ShowDialog();
-        }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             LoadInfoAccount();
@@ -137,6 +131,13 @@ namespace QLHoiNguoiCaoTuoi
         }
 
 
+
+        private void BtnQLKhuPho_Click(object sender, RoutedEventArgs e)
+        {
+            QLKhuPho w = new QLKhuPho();
+            w.Owner = this;
+            w.ShowDialog();
+        }
 
         //end
     }
