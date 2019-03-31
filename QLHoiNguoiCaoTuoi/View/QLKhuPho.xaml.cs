@@ -90,10 +90,10 @@ namespace QLHoiNguoiCaoTuoi.View
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString(), "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageUtliity.ShowException(ex);
                     }
 
-                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageUtliity.ShowDeleteSuccess();
                     LoadData();
                 }
                 

@@ -383,13 +383,22 @@ warning 6002: The table/view 'C##QLNCT.V_THANH_VIEN_CLB' does not have a primary
         <EntityType Name="V_THANH_VIEN_CLB">
           <Key>
             <PropertyRef Name="MA_CLB" />
-            <PropertyRef Name="TEN_CLB" />
             <PropertyRef Name="MA_THANH_VIEN" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="NAM_SINH" />
+            <PropertyRef Name="DIA_CHI" />
+            <PropertyRef Name="TEN_KHU_PHO" />
           </Key>
           <Property Name="MA_CLB" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TEN_CLB" Type="nvarchar2" MaxLength="50" Nullable="false" />
           <Property Name="MA_THANH_VIEN" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
+          <Property Name="HO" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="TEN" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NGAY_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="THANG_SINH" Type="number" Precision="2" Scale="0" />
+          <Property Name="NAM_SINH" Type="number" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="DIA_CHI" Type="nvarchar2" MaxLength="200" Nullable="false" />
+          <Property Name="TEN_KHU_PHO" Type="nvarchar2" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'C##QLNCT.V_THANH_VIEN_THAM_GIA_HD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -705,13 +714,12 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
         </Function>
         <Function Name="SP_CLB_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_TEN_CLB" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_NGAY_THANH_LAP_CLB" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_THANH_LAP_CLB" Type="varchar2" Mode="In" />
           <Parameter Name="V_MA_QUAN_LY" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_CLB_UPDATE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
           <Parameter Name="V_TEN_CLB" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_NGAY_THANH_LAP_CLB" Type="date" Mode="In" />
           <Parameter Name="V_MA_QUAN_LY" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_DON_VI_DONG_GOP_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
@@ -854,7 +862,7 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
         <Function Name="SP_THANH_VIEN_CLB_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_CLB" Type="number" Mode="In" />
           <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
-          <Parameter Name="V_NGAY_THAM_GIA_CLB" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_THAM_GIA_CLB" Type="varchar2" Mode="In" />
         </Function>
         <Function Name="SP_THANH_VIEN_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_THANH_VIEN" Type="number" Mode="In" />
@@ -867,7 +875,7 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
           <Parameter Name="V_NAM_SINH" Type="number" Mode="In" />
           <Parameter Name="V_GIOI_TINH" Type="varchar2" Mode="In" />
           <Parameter Name="V_DIA_CHI" Type="nvarchar2" Mode="In" />
-          <Parameter Name="V_NGAY_THAM_GIA" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_THAM_GIA" Type="varchar2" Mode="In" />
           <Parameter Name="V_MA_KHU_PHO" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_THANH_VIEN_THAM_GIA_HD_DELETE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
@@ -1063,9 +1071,14 @@ FROM "C##QLNCT"."V_THANH_VIEN" "V_THANH_VIEN"</DefiningQuery>
           <EntitySet Name="V_THANH_VIEN_CLB" EntityType="Self.V_THANH_VIEN_CLB" store:Type="Views" store:Schema="C##QLNCT">
             <DefiningQuery>SELECT 
 "V_THANH_VIEN_CLB"."MA_CLB" AS "MA_CLB", 
-"V_THANH_VIEN_CLB"."TEN_CLB" AS "TEN_CLB", 
 "V_THANH_VIEN_CLB"."MA_THANH_VIEN" AS "MA_THANH_VIEN", 
-"V_THANH_VIEN_CLB"."HOTEN" AS "HOTEN"
+"V_THANH_VIEN_CLB"."HO" AS "HO", 
+"V_THANH_VIEN_CLB"."TEN" AS "TEN", 
+"V_THANH_VIEN_CLB"."NGAY_SINH" AS "NGAY_SINH", 
+"V_THANH_VIEN_CLB"."THANG_SINH" AS "THANG_SINH", 
+"V_THANH_VIEN_CLB"."NAM_SINH" AS "NAM_SINH", 
+"V_THANH_VIEN_CLB"."DIA_CHI" AS "DIA_CHI", 
+"V_THANH_VIEN_CLB"."TEN_KHU_PHO" AS "TEN_KHU_PHO"
 FROM "C##QLNCT"."V_THANH_VIEN_CLB" "V_THANH_VIEN_CLB"</DefiningQuery>
           </EntitySet>
           <EntitySet Name="V_THANH_VIEN_THAM_GIA_HD" EntityType="Self.V_THANH_VIEN_THAM_GIA_HD" store:Type="Views" store:Schema="C##QLNCT">
@@ -1615,17 +1628,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImport Name="SP_CLB_DELETE">
           <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_CLB_INSERT">
-            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
-            <Parameter Name="V_NGAY_THANH_LAP_CLB" Mode="In" Type="DateTime" />
-            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_CLB_UPDATE">
-            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
-            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
-            <Parameter Name="V_NGAY_THANH_LAP_CLB" Mode="In" Type="DateTime" />
-            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
-          </FunctionImport>
           <FunctionImport Name="SP_DON_VI_DONG_GOP_DELETE">
           <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
           </FunctionImport>
@@ -1763,11 +1765,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
             <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
             <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_THANH_VIEN_CLB_INSERT">
-            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
-            <Parameter Name="V_NGAY_THAM_GIA_CLB" Mode="In" Type="DateTime" />
-          </FunctionImport>
           <FunctionImport Name="SP_THANH_VIEN_DELETE">
           <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
           </FunctionImport>
@@ -1779,7 +1776,7 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
             <Parameter Name="V_NAM_SINH" Mode="In" Type="Decimal" />
             <Parameter Name="V_GIOI_TINH" Mode="In" Type="String" />
             <Parameter Name="V_DIA_CHI" Mode="In" Type="String" />
-            <Parameter Name="V_NGAY_THAM_GIA" Mode="In" Type="DateTime" />
+            <Parameter Name="V_NGAY_THAM_GIA" Mode="In" Type="String" />
             <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_THANH_VIEN_THAM_GIA_HD_DELETE">
@@ -1802,23 +1799,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
             <Parameter Name="V_MA_KHU_PHO" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_TINHLUONG" />
-          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_DELETE">
-          <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_INSERT">
-            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
-            <Parameter Name="V_DAN_TOC" Mode="In" Type="String" />
-            <Parameter Name="V_TON_GIAO" Mode="In" Type="String" />
-            <Parameter Name="V_NGHE_NGHIEP" Mode="In" Type="String" />
-            <Parameter Name="V_DON_VI_CONG_TAC" Mode="In" Type="String" />
-            <Parameter Name="V_TRINH_DO_HOC_VAN" Mode="In" Type="String" />
-            <Parameter Name="V_TRINH_DO_CHUYEN_MON" Mode="In" Type="String" />
-            <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Mode="In" Type="String" />
-            <Parameter Name="V_USERNAME" Mode="In" Type="String" />
-            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
-            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
-            <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
-          </FunctionImport>
           <FunctionImport Name="SP_TV_BAN_CHAP_HANH_UPDATE">
             <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
             <Parameter Name="V_DAN_TOC" Mode="In" Type="String" />
@@ -1848,9 +1828,41 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <EntitySet Name="V_PHIEU_DONG_GOP" EntityType="Model.V_PHIEU_DONG_GOP" />
           <EntitySet Name="V_PHIEU_THU" EntityType="Model.V_PHIEU_THU" />
           <EntitySet Name="V_THANH_VIEN" EntityType="Model.V_THANH_VIEN" />
-          <EntitySet Name="V_THANH_VIEN_CLB" EntityType="Model.V_THANH_VIEN_CLB" />
           <EntitySet Name="V_THANH_VIEN_THAM_GIA_HD" EntityType="Model.V_THANH_VIEN_THAM_GIA_HD" />
           <EntitySet Name="V_TV_BAN_CHAP_HANH" EntityType="Model.V_TV_BAN_CHAP_HANH" />
+          <EntitySet Name="V_THANH_VIEN_CLB" EntityType="Model.V_THANH_VIEN_CLB" />
+          <FunctionImport Name="SP_CLB_INSERT">
+            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
+            <Parameter Name="V_NGAY_THANH_LAP_CLB" Mode="In" Type="String" />
+            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CLB_UPDATE">
+            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TEN_CLB" Mode="In" Type="String" />
+            <Parameter Name="V_MA_QUAN_LY" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_THANH_VIEN_CLB_INSERT">
+            <Parameter Name="V_MA_CLB" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_THAM_GIA_CLB" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_DELETE">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_TV_BAN_CHAP_HANH_INSERT">
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_DAN_TOC" Mode="In" Type="String" />
+            <Parameter Name="V_TON_GIAO" Mode="In" Type="String" />
+            <Parameter Name="V_NGHE_NGHIEP" Mode="In" Type="String" />
+            <Parameter Name="V_DON_VI_CONG_TAC" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_HOC_VAN" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_CHUYEN_MON" Mode="In" Type="String" />
+            <Parameter Name="V_TRINH_DO_LY_LUAN_CHINH_TRI" Mode="In" Type="String" />
+            <Parameter Name="V_USERNAME" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_EMAIL" Mode="In" Type="String" />
+            <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="V_CHI_TIET_HOP_BCH">
           <Key>
@@ -2031,17 +2043,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <Property Name="MA_KHU_PHO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="V_THANH_VIEN_CLB">
-          <Key>
-            <PropertyRef Name="MA_CLB" />
-            <PropertyRef Name="TEN_CLB" />
-            <PropertyRef Name="MA_THANH_VIEN" />
-          </Key>
-          <Property Name="MA_CLB" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="TEN_CLB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="V_THANH_VIEN_THAM_GIA_HD">
           <Key>
             <PropertyRef Name="MA_HOAT_DONG" />
@@ -2075,6 +2076,26 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <Property Name="LUONG" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
           <Property Name="MA_CHUC_VU" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="TEN_CHUC_VU" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_THANH_VIEN_CLB">
+          <Key>
+            <PropertyRef Name="MA_CLB" />
+            <PropertyRef Name="MA_THANH_VIEN" />
+            <PropertyRef Name="HO" />
+            <PropertyRef Name="TEN" />
+            <PropertyRef Name="NAM_SINH" />
+            <PropertyRef Name="DIA_CHI" />
+            <PropertyRef Name="TEN_KHU_PHO" />
+          </Key>
+          <Property Name="MA_CLB" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="MA_THANH_VIEN" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TEN" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NGAY_SINH" Type="Byte" />
+          <Property Name="THANG_SINH" Type="Byte" />
+          <Property Name="NAM_SINH" Type="Int16" Nullable="false" />
+          <Property Name="DIA_CHI" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2294,8 +2315,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_CHI_TIET_HOP_TN_INSERT" FunctionName="Model.Store.SP_CHI_TIET_HOP_TN_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_CHUC_VU_UPDATE" FunctionName="Model.Store.SP_CHUC_VU_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_CLB_DELETE" FunctionName="Model.Store.SP_CLB_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_CLB_INSERT" FunctionName="Model.Store.SP_CLB_INSERT" />
-          <FunctionImportMapping FunctionImportName="SP_CLB_UPDATE" FunctionName="Model.Store.SP_CLB_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_DELETE" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_INSERT" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_DON_VI_DONG_GOP_UPDATE" FunctionName="Model.Store.SP_DON_VI_DONG_GOP_UPDATE" />
@@ -2328,15 +2347,12 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_CLB_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_CLB_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_THAM_GIA_HD_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_THAM_GIA_HD_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_THAM_GIA_HD_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_THAM_GIA_HD_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_UPDATE" FunctionName="Model.Store.SP_THANH_VIEN_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_TINHLUONG" FunctionName="Model.Store.SP_TINHLUONG" />
-          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_DELETE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_INSERT" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_UPDATE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_CHECKLOGIN" FunctionName="Model.Store.SP_CHECKLOGIN" />
           <EntitySetMapping Name="V_CHI_TIET_HOP_BCH">
@@ -2487,16 +2503,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="V_THANH_VIEN_CLB">
-            <EntityTypeMapping TypeName="Model.V_THANH_VIEN_CLB">
-              <MappingFragment StoreEntitySet="V_THANH_VIEN_CLB">
-                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
-                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
-                <ScalarProperty Name="TEN_CLB" ColumnName="TEN_CLB" />
-                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="V_THANH_VIEN_THAM_GIA_HD">
             <EntityTypeMapping TypeName="Model.V_THANH_VIEN_THAM_GIA_HD">
               <MappingFragment StoreEntitySet="V_THANH_VIEN_THAM_GIA_HD">
@@ -2526,6 +2532,26 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="V_THANH_VIEN_CLB">
+            <EntityTypeMapping TypeName="Model.V_THANH_VIEN_CLB">
+              <MappingFragment StoreEntitySet="V_THANH_VIEN_CLB">
+                <ScalarProperty Name="TEN_KHU_PHO" ColumnName="TEN_KHU_PHO" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="NAM_SINH" ColumnName="NAM_SINH" />
+                <ScalarProperty Name="THANG_SINH" ColumnName="THANG_SINH" />
+                <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="MA_CLB" ColumnName="MA_CLB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_CLB_INSERT" FunctionName="Model.Store.SP_CLB_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_CLB_UPDATE" FunctionName="Model.Store.SP_CLB_UPDATE" />
+          <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_CLB_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_DELETE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_DELETE" />
+          <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_INSERT" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_INSERT" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

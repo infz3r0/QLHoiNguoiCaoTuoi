@@ -1,0 +1,82 @@
+﻿<Window x:Class="QLHoiNguoiCaoTuoi.View.BCHWindows.Them"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Thêm ban chấp hành" Height="660" Width="600" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTitle" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Title}" Content="AQqpPHJjkK"></Label>
+
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Label}">Họ tên:</Label>
+        <ComboBox x:Name="cmbHoTen" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputComboBox}" />
+
+        <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource Label}">Dân tộc:</Label>
+        <TextBox x:Name="txbDanToc" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbDanToc_GotFocus"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource Label}">Tôn giáo:</Label>
+        <TextBox x:Name="txbTonGiao" Grid.Row="3" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbTonGiao_GotFocus"/>
+
+        <Label Grid.Row="4" Grid.Column="0" Style="{StaticResource Label}">Nghề nghiệp:</Label>
+        <TextBox x:Name="txbNgheNghiep" Grid.Row="4" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbNgheNghiep_GotFocus"/>
+
+        <Label Grid.Row="5" Grid.Column="0" Style="{StaticResource Label}">Đơn vị công tác:</Label>
+        <TextBox x:Name="txbDonViCongTac" Grid.Row="5" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbDonViCongTac_GotFocus"/>
+
+        <Label Grid.Row="6" Grid.Column="0" Style="{StaticResource Label}">Trình độ học vấn:</Label>
+        <TextBox x:Name="txbTrinhDoHocVan" Grid.Row="6" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbTrinhDoHocVan_GotFocus"/>
+
+        <Label Grid.Row="7" Grid.Column="0" Style="{StaticResource Label}">Trình độ chuyên môn:</Label>
+        <TextBox x:Name="txbTrinhDoChuyenMon" Grid.Row="7" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbTrinhDoChuyenMon_GotFocus"/>
+
+        <Label Grid.Row="8" Grid.Column="0" Style="{StaticResource Label}">Trình độ lý luận chính trị:</Label>
+        <TextBox x:Name="txbTrinhDoLyLuanChinhTri" Grid.Row="8" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbTrinhDoLyLuanChinhTri_GotFocus"/>
+
+        <Label Grid.Row="9" Grid.Column="0" Style="{StaticResource Label}">Chức vụ:</Label>
+        <ComboBox x:Name="cmbChucVu" Grid.Row="9" Grid.Column="1" Style="{StaticResource InputComboBox}" />
+
+        <Label Grid.Row="10" Grid.Column="0" Style="{StaticResource Label}">Username:</Label>
+        <TextBox x:Name="txbUsername" Grid.Row="10" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbUsername_GotFocus"/>
+
+        <Label Grid.Row="11" Grid.Column="0" Style="{StaticResource Label}">Password:</Label>
+        <PasswordBox x:Name="pwdNewPassword" Grid.Row="11" Grid.Column="1" Style="{StaticResource InputPassword}" GotFocus="PwdNewPassword_GotFocus" PasswordChanged="PwdNewPassword_PasswordChanged"/>
+
+        <Label Grid.Row="12" Grid.Column="0" Style="{StaticResource Label}">Nhập lại password:</Label>
+        <PasswordBox x:Name="pwdRePassword" Grid.Row="12" Grid.Column="1" Style="{StaticResource InputPassword}" GotFocus="PwdRePassword_GotFocus" PasswordChanged="PwdRePassword_PasswordChanged"/>
+
+        <Label Grid.Row="13" Grid.Column="0" Style="{StaticResource Label}">Email:</Label>
+        <TextBox x:Name="txbEmail" Grid.Row="13" Grid.Column="1" Style="{StaticResource InputText}" GotFocus="TxbEmail_GotFocus"/>
+
+
+        <StackPanel Grid.Row="14" Grid.Column="1" Orientation="Horizontal" Margin="5,10,5,0" HorizontalAlignment="Right">
+            <Button x:Name="btnOK" Style="{StaticResource ButtonOK}" Width="50" Margin="5,0" IsDefault="True" Click="BtnOK_Click">
+                OK
+            </Button>
+            <Button x:Name="btnClose" Style="{StaticResource ButtonClose}" Margin="5,0" Width="50" IsCancel="True" Click="BtnClose_Click">
+                Close
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

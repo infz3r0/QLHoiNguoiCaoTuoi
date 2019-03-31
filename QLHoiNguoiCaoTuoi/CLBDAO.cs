@@ -16,7 +16,7 @@ namespace QLHoiNguoiCaoTuoi
         {
             using (Entities db = new Entities())
             {
-                db.SP_CLB_INSERT(n.TEN_CLB, n.NGAY_THANH_LAP_CLB, n.MA_QUAN_LY);
+                db.SP_CLB_INSERT(n.TEN_CLB, n.NGAY_THANH_LAP_CLB.ToString("dd/MM/yyyy"), n.MA_QUAN_LY);
             }
         }
 
@@ -28,7 +28,7 @@ namespace QLHoiNguoiCaoTuoi
         {
             using (Entities db = new Entities())
             {
-                db.SP_CLB_UPDATE(n.MA_CLB, n.TEN_CLB, n.NGAY_THANH_LAP_CLB, n.MA_QUAN_LY);
+                db.SP_CLB_UPDATE(n.MA_CLB, n.TEN_CLB, n.MA_QUAN_LY);
             }
         }
 

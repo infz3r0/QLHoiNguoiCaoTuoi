@@ -16,7 +16,7 @@ namespace QLHoiNguoiCaoTuoi
         {
             using (Entities db = new Entities())
             {
-                db.SP_THANH_VIEN_CLB_INSERT(n.MA_CLB, n.MA_THANH_VIEN, n.NGAY_THAM_GIA_CLB);
+                db.SP_THANH_VIEN_CLB_INSERT(n.MA_CLB, n.MA_THANH_VIEN, n.NGAY_THAM_GIA_CLB.ToString("dd/MM/yyyy"));
             }
         }
 

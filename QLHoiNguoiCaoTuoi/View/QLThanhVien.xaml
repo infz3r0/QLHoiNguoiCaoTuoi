@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View"
         mc:Ignorable="d"
-        Title="QLKhuPho" Height="450" Width="800">
+        Title="QLKhuPho" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Style x:Key="btnBase" TargetType="Button">
             <Setter Property="Template">
@@ -76,8 +75,7 @@
                     <GradientStop Color="#FFECFFFE" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Name="btnThanhVien" Content="Thanh Vien" Style="{StaticResource btnTab}"/>
-            <Button Name="btnTest" Content="test" Style="{StaticResource btnTab}"/>
+            <Button Name="btnThanhVien" Content="Thành viên" Style="{StaticResource btnTab}" Click="BtnThanhVien_Click"/>
         </StackPanel>
         <!--Content-->
         <Border Name="brdThanhVien" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
@@ -88,7 +86,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
-                    <Button Name="btnThem" Margin="0, 5, 5, 5">
+                    <Button Name="btnThem" Margin="0, 5, 5, 5" Click="BtnThem_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -98,11 +96,11 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\add.png"/>
-                                <Label Content="Them" VerticalAlignment="Center"/>
+                                <Label Content="Thêm" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnSua" Margin="0, 5, 5, 5">
+                    <Button Name="btnSua" Margin="0, 5, 5, 5" Click="BtnSua_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -112,11 +110,11 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\edit.png"/>
-                                <Label Content="Sua" VerticalAlignment="Center"/>
+                                <Label Content="Sửa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnXoa" Margin="0, 5, 5, 5">
+                    <Button Name="btnXoa" Margin="0, 5, 5, 5" Click="BtnXoa_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -126,13 +124,15 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\delete.png"/>
-                                <Label Content="Xoa" VerticalAlignment="Center"/>
+                                <Label Content="Xóa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgList" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" SelectionMode="Single" AutoGeneratingColumn="DgList_AutoGeneratingColumn">
+                    
+                </DataGrid>
             </Grid>
         </Border>
     </Grid>

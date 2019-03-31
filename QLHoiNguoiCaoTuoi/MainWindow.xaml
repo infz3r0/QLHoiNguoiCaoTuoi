@@ -261,7 +261,7 @@
                 <ColumnDefinition Width="300"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" Content="Quan Ly Hoi Nguoi Cao Tuoi" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+            <Label Grid.Column="0" Content="Quản Lý Hội Người Cao Tuổi" FontSize="40" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
             <StackPanel Name="spnAccount" Grid.Column="1" MouseDown="spnAccount_MouseDown" MouseUp="spnAccount_MouseUp" Style="{StaticResource spnTrigger}" >
                 <StackPanel.ContextMenu>
                     <ContextMenu >
@@ -305,7 +305,7 @@
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="0" Grid.Column="1" Name="btnQLThanhVien" Style="{StaticResource btnQLKhuPho}" >
+            <Button Grid.Row="0" Grid.Column="1" Name="btnQLThanhVien" Style="{StaticResource btnQLKhuPho}" Click="BtnQLThanhVien_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -318,7 +318,7 @@
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="0" Grid.Column="2" Name="btnQLCLB" Style="{StaticResource btnQLKhuPho}" >
+            <Button Grid.Row="0" Grid.Column="2" Name="btnQLCLB" Style="{StaticResource btnQLKhuPho}" Click="BtnQLCLB_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -331,7 +331,7 @@
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="0" Grid.Column="3" Name="btnQLBCH_ChucVu" Style="{StaticResource btnQLKhuPho}" >
+            <Button Grid.Row="0" Grid.Column="3" Name="btnQLBCH_ChucVu" Style="{StaticResource btnQLKhuPho}" Click="BtnQLBCH_ChucVu_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>

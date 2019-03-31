@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View"
         mc:Ignorable="d"
-        Title="QLCLB" Height="450" Width="800">
+        Title="QLCLB" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Style x:Key="btnBase" TargetType="Button">
             <Setter Property="Template">
@@ -76,8 +75,8 @@
                     <GradientStop Color="#FFECFFFE" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Name="btnCLB" Content="CLB" Style="{StaticResource btnTab}"/>
-            <Button Name="btnTVCLB" Content="Thanh Vien CLB" Style="{StaticResource btnTab}"/>
+            <Button Name="btnCLB" Content="CLB" Style="{StaticResource btnTab}" Click="BtnCLB_Click"/>
+            <Button Name="btnTVCLB" Content="Thanh Vien CLB" Style="{StaticResource btnTab}" Click="BtnTVCLB_Click"/>
         </StackPanel>
         <!--Content-->
         <Border Name="brdCLB" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
@@ -88,7 +87,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
-                    <Button Name="btnThemCLB" Margin="0, 5, 5, 5">
+                    <Button Name="btnThemCLB" Margin="0, 5, 5, 5" Click="BtnThemCLB_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -98,11 +97,11 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\add.png"/>
-                                <Label Content="Them" VerticalAlignment="Center"/>
+                                <Label Content="Thêm" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnSuaCLB" Margin="0, 5, 5, 5">
+                    <Button Name="btnSuaCLB" Margin="0, 5, 5, 5" Click="BtnSuaCLB_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -112,11 +111,11 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\edit.png"/>
-                                <Label Content="Sua" VerticalAlignment="Center"/>
+                                <Label Content="Sửa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnXoaCLB" Margin="0, 5, 5, 5">
+                    <Button Name="btnXoaCLB" Margin="0, 5, 5, 5" Click="BtnXoaCLB_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -126,17 +125,17 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\delete.png"/>
-                                <Label Content="Xoa" VerticalAlignment="Center"/>
+                                <Label Content="Xóa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgCLB" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" SelectionMode="Single" AutoGeneratingColumn="DgCLB_AutoGeneratingColumn"></DataGrid>
             </Grid>
         </Border>
 
-        <Border Name="brdTVCLB" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+        <Border Name="brdTVCLB" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -144,8 +143,8 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
-                    <ComboBox Name="cmbCLB" Margin="5"/>
-                    <Button Name="btnThemTV" Margin="0, 5, 5, 5">
+                    <ComboBox Name="cmbCLB" Margin="5" Style="{StaticResource InputComboBox}" SelectionChanged="CmbCLB_SelectionChanged"/>
+                    <Button Name="btnThemTV" Margin="0, 5, 5, 5" Click="BtnThemTV_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -155,11 +154,11 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\add.png"/>
-                                <Label Content="Them" VerticalAlignment="Center"/>
+                                <Label Content="Thêm" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                    <Button Name="btnXoaTV" Margin="0, 5, 5, 5">
+                    <Button Name="btnXoaTV" Margin="0, 5, 5, 5" Click="BtnXoaTV_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -169,13 +168,13 @@
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <Image Source="..\Images\delete.png"/>
-                                <Label Content="Xoa" VerticalAlignment="Center"/>
+                                <Label Content="Xóa" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button.Content>
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgTVCLB" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True" SelectionMode="Single"></DataGrid>
             </Grid>
         </Border>
     </Grid>

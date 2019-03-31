@@ -15,8 +15,13 @@ namespace QLHoiNguoiCaoTuoi
     public partial class V_THANH_VIEN_CLB
     {
         public decimal MA_CLB { get; set; }
-        public string TEN_CLB { get; set; }
         public decimal MA_THANH_VIEN { get; set; }
-        public string HOTEN { get; set; }
+        public string HO { get; set; }
+        public string TEN { get; set; }
+        public Nullable<byte> NGAY_SINH { get; set; }
+        public Nullable<byte> THANG_SINH { get; set; }
+        public short NAM_SINH { get; set; }
+        public string DIA_CHI { get; set; }
+        public string TEN_KHU_PHO { get; set; }
     }
 }

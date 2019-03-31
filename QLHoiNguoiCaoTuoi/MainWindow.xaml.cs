@@ -139,6 +139,27 @@ namespace QLHoiNguoiCaoTuoi
             w.ShowDialog();
         }
 
+        private void BtnQLThanhVien_Click(object sender, RoutedEventArgs e)
+        {
+            QLThanhVien w = new QLThanhVien();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void BtnQLCLB_Click(object sender, RoutedEventArgs e)
+        {
+            QLCLB w = new QLCLB();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void BtnQLBCH_ChucVu_Click(object sender, RoutedEventArgs e)
+        {
+            QLBCH w = new QLBCH();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
         //end
     }
 }

@@ -1,0 +1,55 @@
+﻿<Window x:Class="QLHoiNguoiCaoTuoi.View.TVCLBWindows.Them"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Thêm thành viên" Height="500" Width="800" Loaded="Window_Loaded">
+    <Grid Margin="0,0,0,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblTitle" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Title}" Content="AQqpPHJjkK"></Label>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Style="{StaticResource Label}">Câu lạc bộ</Label>
+            <TextBox x:Name="txbCLB" Grid.Column="1" Style="{StaticResource InputText}" IsReadOnly="True"/>
+        </Grid>
+        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Style="{StaticResource Label}">Lọc theo họ tên</Label>
+            <TextBox x:Name="txbFilter" Grid.Column="1" Style="{StaticResource InputText}" MaxLength="80" GotFocus="TxbFilter_GotFocus" TextChanged="TxbFilter_TextChanged"/>
+        </Grid>
+
+        <DataGrid Grid.Row="3" Name="dgTVNotInCLB" Margin="10, 5, 10, 5" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="DgTV_SelectionChanged" AutoGeneratingColumn="DgTV_AutoGeneratingColumn" SelectionUnit="FullRow" MouseDoubleClick="DgTVNotInCLB_MouseDoubleClick">
+            
+        </DataGrid>
+
+        <DataGrid Grid.Row="4" Name="dgTVCLB" Margin="10, 5, 10, 5" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" SelectionChanged="DgTV_SelectionChanged" AutoGeneratingColumn="DgTV_AutoGeneratingColumn" SelectionUnit="FullRow" MouseDoubleClick="DgTVCLB_MouseDoubleClick">
+
+        </DataGrid>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="5,10,5,0" HorizontalAlignment="Right">
+            <Button x:Name="btnOK" Style="{StaticResource ButtonOK}" Width="50" Margin="5,0" IsDefault="True" Click="BtnOK_Click">
+                OK
+            </Button>
+            <Button x:Name="btnClose" Style="{StaticResource ButtonClose}" Margin="5,0" Width="50" IsCancel="True" Click="BtnClose_Click">
+                Close
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>
