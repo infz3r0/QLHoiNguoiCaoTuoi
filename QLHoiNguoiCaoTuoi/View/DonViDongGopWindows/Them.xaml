@@ -1,0 +1,39 @@
+﻿<Window x:Class="QLHoiNguoiCaoTuoi.View.DonViDongGopWindows.Them"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Thêm đơn vị đóng góp" Height="250" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="lblTitle" Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource Title}" Content="Đơn vị đóng góp"/>
+
+        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Label}" Content="Tên đơn vị:"/>
+        <TextBox x:Name="txbTenDonVi" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputText}" MaxLength="50" GotFocus="TxbTenDonVi_GotFocus"/>
+
+        <Label Grid.Row="2" Grid.Column="0" Style="{StaticResource Label}" Content="Địa chỉ:"/>
+        <TextBox x:Name="txbDiaChi" Grid.Row="2" Grid.Column="1" Style="{StaticResource InputText}" MaxLength="200" GotFocus="TxbDiaChi_GotFocus"/>
+
+        <Label Grid.Row="3" Grid.Column="0" Style="{StaticResource Label}" Content="Email:"/>
+        <TextBox x:Name="txbEmail" Grid.Row="3" Grid.Column="1" Style="{StaticResource InputText}" MaxLength="100" GotFocus="TxbEmail_GotFocus"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="5,10,5,0" HorizontalAlignment="Right">
+            <Button x:Name="btnOK" Style="{StaticResource ButtonOK}" Width="50" Margin="5,0" IsDefault="True" Click="BtnOK_Click" Content="OK"/>
+            <Button x:Name="btnClose" Style="{StaticResource ButtonClose}" Margin="5,0" Width="50" IsCancel="True" Click="BtnClose_Click" Content="Close" />
+        </StackPanel>
+
+
+
+    </Grid>
+</Window>

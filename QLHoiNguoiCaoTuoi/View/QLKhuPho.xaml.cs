@@ -91,6 +91,7 @@ namespace QLHoiNguoiCaoTuoi.View
                     catch (Exception ex)
                     {
                         MessageUtliity.ShowException(ex);
+                        return;
                     }
 
                     MessageUtliity.ShowDeleteSuccess();

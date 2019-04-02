@@ -91,11 +91,18 @@
     <Compile Include="DON_VI_DONG_GOP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimKiemDAO.cs" />
     <Compile Include="View\BCHWindows\Sua.xaml.cs">
       <DependentUpon>Sua.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BCHWindows\Them.xaml.cs">
       <DependentUpon>Them.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChiWindows\LapPhieuChi.xaml.cs">
+      <DependentUpon>LapPhieuChi.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ChucVuWindows\Sua.xaml.cs">
       <DependentUpon>Sua.xaml</DependentUpon>
@@ -104,6 +111,12 @@
       <DependentUpon>Sua.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\CLBWindows\Them.xaml.cs">
+      <DependentUpon>Them.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DonViDongGopWindows\Sua.xaml.cs">
+      <DependentUpon>Sua.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DonViDongGopWindows\Them.xaml.cs">
       <DependentUpon>Them.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MessageUtliity.cs" />
@@ -185,17 +198,17 @@
     <Compile Include="View\KhuPhoWindows\Them.xaml.cs">
       <DependentUpon>Them.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PhieuDongGopWindows\LapPhieuDongGop.xaml.cs">
+      <DependentUpon>LapPhieuDongGop.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\QLBCH.xaml.cs">
       <DependentUpon>QLBCH.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\QLChi.xaml.cs">
-      <DependentUpon>QLChi.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QLCLB.xaml.cs">
       <DependentUpon>QLCLB.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QLDonViDongGop.xaml.cs">
-      <DependentUpon>QLDonViDongGop.xaml</DependentUpon>
+    <Compile Include="View\QLDongGop.xaml.cs">
+      <DependentUpon>QLDongGop.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QLHoatDong.xaml.cs">
       <DependentUpon>QLHoatDong.xaml</DependentUpon>
@@ -209,17 +222,14 @@
     <Compile Include="View\QLKhuPho.xaml.cs">
       <DependentUpon>QLKhuPho.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QLPhieuDongGop.xaml.cs">
-      <DependentUpon>QLPhieuDongGop.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\QLTaiKhoan.xaml.cs">
       <DependentUpon>QLTaiKhoan.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\QLThanhVien.xaml.cs">
       <DependentUpon>QLThanhVien.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\QLThu.xaml.cs">
-      <DependentUpon>QLThu.xaml</DependentUpon>
+    <Compile Include="View\QLThuChi.xaml.cs">
+      <DependentUpon>QLThuChi.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ThanhVienWindows\Sua.xaml.cs">
       <DependentUpon>Sua.xaml</DependentUpon>
@@ -229,6 +239,9 @@
     </Compile>
     <Compile Include="View\ThongKe.xaml.cs">
       <DependentUpon>ThongKe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThuWindows\LapPhieuThu.xaml.cs">
+      <DependentUpon>LapPhieuThu.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\TimKiem.xaml.cs">
       <DependentUpon>TimKiem.xaml</DependentUpon>
@@ -314,6 +327,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ChiWindows\LapPhieuChi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ChucVuWindows\Sua.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -338,6 +355,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\DonViDongGopWindows\Sua.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DonViDongGopWindows\Them.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\KhuPhoWindows\Sua.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -346,11 +371,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QLBCH.xaml">
+    <Page Include="View\PhieuDongGopWindows\LapPhieuDongGop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QLChi.xaml">
+    <Page Include="View\QLBCH.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,7 +383,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QLDonViDongGop.xaml">
+    <Page Include="View\QLDongGop.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -378,10 +403,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QLPhieuDongGop.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\QLTaiKhoan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -390,7 +411,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\QLThu.xaml">
+    <Page Include="View\QLThuChi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -403,6 +424,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ThongKe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ThuWindows\LapPhieuThu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

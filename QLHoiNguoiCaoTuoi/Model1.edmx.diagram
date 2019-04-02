@@ -44,13 +44,13 @@
         <EntityTypeShape EntityType="Model.V_HOP_BCH" Width="1.5" PointX="13.75" PointY="6.75" />
         <EntityTypeShape EntityType="Model.V_HOP_THUONG_NIEN" Width="1.5" PointX="13.75" PointY="9.75" />
         <EntityTypeShape EntityType="Model.V_KHU_PHO" Width="1.5" PointX="13.75" PointY="12.75" />
-        <EntityTypeShape EntityType="Model.V_PHIEU_CHI" Width="1.5" PointX="6.75" PointY="14.75" />
         <EntityTypeShape EntityType="Model.V_PHIEU_DONG_GOP" Width="1.5" PointX="14.75" PointY="0.75" />
         <EntityTypeShape EntityType="Model.V_PHIEU_THU" Width="1.5" PointX="8.75" PointY="14.75" />
         <EntityTypeShape EntityType="Model.V_THANH_VIEN" Width="1.5" PointX="15.75" PointY="3.75" />
         <EntityTypeShape EntityType="Model.V_THANH_VIEN_THAM_GIA_HD" Width="1.5" PointX="15.75" PointY="10.75" />
         <EntityTypeShape EntityType="Model.V_TV_BAN_CHAP_HANH" Width="1.5" PointX="10.75" PointY="15.75" />
         <EntityTypeShape EntityType="Model.V_THANH_VIEN_CLB" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="Model.V_PHIEU_CHI" Width="1.5" PointX="15.375" PointY="15.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

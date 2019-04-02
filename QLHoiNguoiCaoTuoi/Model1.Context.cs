@@ -52,13 +52,13 @@ namespace QLHoiNguoiCaoTuoi
         public virtual DbSet<V_HOP_BCH> V_HOP_BCH { get; set; }
         public virtual DbSet<V_HOP_THUONG_NIEN> V_HOP_THUONG_NIEN { get; set; }
         public virtual DbSet<V_KHU_PHO> V_KHU_PHO { get; set; }
-        public virtual DbSet<V_PHIEU_CHI> V_PHIEU_CHI { get; set; }
         public virtual DbSet<V_PHIEU_DONG_GOP> V_PHIEU_DONG_GOP { get; set; }
         public virtual DbSet<V_PHIEU_THU> V_PHIEU_THU { get; set; }
         public virtual DbSet<V_THANH_VIEN> V_THANH_VIEN { get; set; }
         public virtual DbSet<V_THANH_VIEN_THAM_GIA_HD> V_THANH_VIEN_THAM_GIA_HD { get; set; }
         public virtual DbSet<V_TV_BAN_CHAP_HANH> V_TV_BAN_CHAP_HANH { get; set; }
         public virtual DbSet<V_THANH_VIEN_CLB> V_THANH_VIEN_CLB { get; set; }
+        public virtual DbSet<V_PHIEU_CHI> V_PHIEU_CHI { get; set; }
     
         public virtual int SP_AUTH_CHANGEEMAIL(Nullable<decimal> v_MA_BCH, string v_EMAIL)
         {
@@ -430,44 +430,6 @@ namespace QLHoiNguoiCaoTuoi
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_CHI_DELETE", v_MA_PHIEU_CHIParameter);
         }
     
-        public virtual int SP_PHIEU_CHI_DUYET(Nullable<decimal> v_MA_PHIEU_CHI, Nullable<System.DateTime> v_NGAY_DUYET)
-        {
-            var v_MA_PHIEU_CHIParameter = v_MA_PHIEU_CHI.HasValue ?
-                new ObjectParameter("V_MA_PHIEU_CHI", v_MA_PHIEU_CHI) :
-                new ObjectParameter("V_MA_PHIEU_CHI", typeof(decimal));
-    
-            var v_NGAY_DUYETParameter = v_NGAY_DUYET.HasValue ?
-                new ObjectParameter("V_NGAY_DUYET", v_NGAY_DUYET) :
-                new ObjectParameter("V_NGAY_DUYET", typeof(System.DateTime));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_CHI_DUYET", v_MA_PHIEU_CHIParameter, v_NGAY_DUYETParameter);
-        }
-    
-        public virtual int SP_PHIEU_CHI_INSERT(Nullable<System.DateTime> v_NGAY_LAP_PHIEU_CHI, string v_NOI_DUNG_CHI, Nullable<decimal> v_SO_TIEN_CHI, Nullable<decimal> v_MA_HOAT_DONG, Nullable<decimal> v_MA_BCH)
-        {
-            var v_NGAY_LAP_PHIEU_CHIParameter = v_NGAY_LAP_PHIEU_CHI.HasValue ?
-                new ObjectParameter("V_NGAY_LAP_PHIEU_CHI", v_NGAY_LAP_PHIEU_CHI) :
-                new ObjectParameter("V_NGAY_LAP_PHIEU_CHI", typeof(System.DateTime));
-    
-            var v_NOI_DUNG_CHIParameter = v_NOI_DUNG_CHI != null ?
-                new ObjectParameter("V_NOI_DUNG_CHI", v_NOI_DUNG_CHI) :
-                new ObjectParameter("V_NOI_DUNG_CHI", typeof(string));
-    
-            var v_SO_TIEN_CHIParameter = v_SO_TIEN_CHI.HasValue ?
-                new ObjectParameter("V_SO_TIEN_CHI", v_SO_TIEN_CHI) :
-                new ObjectParameter("V_SO_TIEN_CHI", typeof(decimal));
-    
-            var v_MA_HOAT_DONGParameter = v_MA_HOAT_DONG.HasValue ?
-                new ObjectParameter("V_MA_HOAT_DONG", v_MA_HOAT_DONG) :
-                new ObjectParameter("V_MA_HOAT_DONG", typeof(decimal));
-    
-            var v_MA_BCHParameter = v_MA_BCH.HasValue ?
-                new ObjectParameter("V_MA_BCH", v_MA_BCH) :
-                new ObjectParameter("V_MA_BCH", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_CHI_INSERT", v_NGAY_LAP_PHIEU_CHIParameter, v_NOI_DUNG_CHIParameter, v_SO_TIEN_CHIParameter, v_MA_HOAT_DONGParameter, v_MA_BCHParameter);
-        }
-    
         public virtual int SP_PHIEU_DONG_GOP_DELETE(Nullable<decimal> v_MA_PHIEU_DONG_GOP)
         {
             var v_MA_PHIEU_DONG_GOPParameter = v_MA_PHIEU_DONG_GOP.HasValue ?
@@ -475,23 +437,6 @@ namespace QLHoiNguoiCaoTuoi
                 new ObjectParameter("V_MA_PHIEU_DONG_GOP", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_DONG_GOP_DELETE", v_MA_PHIEU_DONG_GOPParameter);
-        }
-    
-        public virtual int SP_PHIEU_DONG_GOP_INSERT(Nullable<System.DateTime> v_NGAY_DONG_GOP, Nullable<decimal> v_SO_TIEN_DONG_GOP, Nullable<decimal> v_MA_DON_VI)
-        {
-            var v_NGAY_DONG_GOPParameter = v_NGAY_DONG_GOP.HasValue ?
-                new ObjectParameter("V_NGAY_DONG_GOP", v_NGAY_DONG_GOP) :
-                new ObjectParameter("V_NGAY_DONG_GOP", typeof(System.DateTime));
-    
-            var v_SO_TIEN_DONG_GOPParameter = v_SO_TIEN_DONG_GOP.HasValue ?
-                new ObjectParameter("V_SO_TIEN_DONG_GOP", v_SO_TIEN_DONG_GOP) :
-                new ObjectParameter("V_SO_TIEN_DONG_GOP", typeof(decimal));
-    
-            var v_MA_DON_VIParameter = v_MA_DON_VI.HasValue ?
-                new ObjectParameter("V_MA_DON_VI", v_MA_DON_VI) :
-                new ObjectParameter("V_MA_DON_VI", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_DONG_GOP_INSERT", v_NGAY_DONG_GOPParameter, v_SO_TIEN_DONG_GOPParameter, v_MA_DON_VIParameter);
         }
     
         public virtual int SP_PHIEU_DONG_GOP_UPDATE(Nullable<decimal> v_MA_PHIEU_DONG_GOP, Nullable<System.DateTime> v_NGAY_DONG_GOP, Nullable<decimal> v_SO_TIEN_DONG_GOP, Nullable<decimal> v_MA_DON_VI)
@@ -522,31 +467,6 @@ namespace QLHoiNguoiCaoTuoi
                 new ObjectParameter("V_MA_PHIEU_THU", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_THU_DELETE", v_MA_PHIEU_THUParameter);
-        }
-    
-        public virtual int SP_PHIEU_THU_INSERT(Nullable<System.DateTime> v_NGAY_LAP_PHIEU_THU, string v_NOI_DUNG_PHIEU_THU, Nullable<decimal> v_SO_TIEN_THU, Nullable<decimal> v_MA_BCH, Nullable<decimal> v_MA_THANH_VIEN)
-        {
-            var v_NGAY_LAP_PHIEU_THUParameter = v_NGAY_LAP_PHIEU_THU.HasValue ?
-                new ObjectParameter("V_NGAY_LAP_PHIEU_THU", v_NGAY_LAP_PHIEU_THU) :
-                new ObjectParameter("V_NGAY_LAP_PHIEU_THU", typeof(System.DateTime));
-    
-            var v_NOI_DUNG_PHIEU_THUParameter = v_NOI_DUNG_PHIEU_THU != null ?
-                new ObjectParameter("V_NOI_DUNG_PHIEU_THU", v_NOI_DUNG_PHIEU_THU) :
-                new ObjectParameter("V_NOI_DUNG_PHIEU_THU", typeof(string));
-    
-            var v_SO_TIEN_THUParameter = v_SO_TIEN_THU.HasValue ?
-                new ObjectParameter("V_SO_TIEN_THU", v_SO_TIEN_THU) :
-                new ObjectParameter("V_SO_TIEN_THU", typeof(decimal));
-    
-            var v_MA_BCHParameter = v_MA_BCH.HasValue ?
-                new ObjectParameter("V_MA_BCH", v_MA_BCH) :
-                new ObjectParameter("V_MA_BCH", typeof(decimal));
-    
-            var v_MA_THANH_VIENParameter = v_MA_THANH_VIEN.HasValue ?
-                new ObjectParameter("V_MA_THANH_VIEN", v_MA_THANH_VIEN) :
-                new ObjectParameter("V_MA_THANH_VIEN", typeof(decimal));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_THU_INSERT", v_NGAY_LAP_PHIEU_THUParameter, v_NOI_DUNG_PHIEU_THUParameter, v_SO_TIEN_THUParameter, v_MA_BCHParameter, v_MA_THANH_VIENParameter);
         }
     
         public virtual int SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI(string dIACHI)
@@ -605,15 +525,6 @@ namespace QLHoiNguoiCaoTuoi
                 new ObjectParameter("DIACHI", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI", dIACHIParameter);
-        }
-    
-        public virtual int SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN(string hO_TEN)
-        {
-            var hO_TENParameter = hO_TEN != null ?
-                new ObjectParameter("HO_TEN", hO_TEN) :
-                new ObjectParameter("HO_TEN", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN", hO_TENParameter);
         }
     
         public virtual int SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG(Nullable<System.DateTime> nGAYTG)
@@ -925,6 +836,95 @@ namespace QLHoiNguoiCaoTuoi
                 new ObjectParameter("V_MA_CHUC_VU", typeof(decimal));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_TV_BAN_CHAP_HANH_INSERT", v_MA_BCHParameter, v_DAN_TOCParameter, v_TON_GIAOParameter, v_NGHE_NGHIEPParameter, v_DON_VI_CONG_TACParameter, v_TRINH_DO_HOC_VANParameter, v_TRINH_DO_CHUYEN_MONParameter, v_TRINH_DO_LY_LUAN_CHINH_TRIParameter, v_USERNAMEParameter, v_PASSWORDParameter, v_EMAILParameter, v_MA_CHUC_VUParameter);
+        }
+    
+        public virtual int SP_PHIEU_CHI_DUYET(Nullable<decimal> v_MA_PHIEU_CHI, string v_NGAY_DUYET)
+        {
+            var v_MA_PHIEU_CHIParameter = v_MA_PHIEU_CHI.HasValue ?
+                new ObjectParameter("V_MA_PHIEU_CHI", v_MA_PHIEU_CHI) :
+                new ObjectParameter("V_MA_PHIEU_CHI", typeof(decimal));
+    
+            var v_NGAY_DUYETParameter = v_NGAY_DUYET != null ?
+                new ObjectParameter("V_NGAY_DUYET", v_NGAY_DUYET) :
+                new ObjectParameter("V_NGAY_DUYET", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_CHI_DUYET", v_MA_PHIEU_CHIParameter, v_NGAY_DUYETParameter);
+        }
+    
+        public virtual int SP_PHIEU_CHI_INSERT(string v_NGAY_LAP_PHIEU_CHI, string v_NOI_DUNG_CHI, Nullable<decimal> v_SO_TIEN_CHI, Nullable<decimal> v_MA_HOAT_DONG, Nullable<decimal> v_MA_BCH)
+        {
+            var v_NGAY_LAP_PHIEU_CHIParameter = v_NGAY_LAP_PHIEU_CHI != null ?
+                new ObjectParameter("V_NGAY_LAP_PHIEU_CHI", v_NGAY_LAP_PHIEU_CHI) :
+                new ObjectParameter("V_NGAY_LAP_PHIEU_CHI", typeof(string));
+    
+            var v_NOI_DUNG_CHIParameter = v_NOI_DUNG_CHI != null ?
+                new ObjectParameter("V_NOI_DUNG_CHI", v_NOI_DUNG_CHI) :
+                new ObjectParameter("V_NOI_DUNG_CHI", typeof(string));
+    
+            var v_SO_TIEN_CHIParameter = v_SO_TIEN_CHI.HasValue ?
+                new ObjectParameter("V_SO_TIEN_CHI", v_SO_TIEN_CHI) :
+                new ObjectParameter("V_SO_TIEN_CHI", typeof(decimal));
+    
+            var v_MA_HOAT_DONGParameter = v_MA_HOAT_DONG.HasValue ?
+                new ObjectParameter("V_MA_HOAT_DONG", v_MA_HOAT_DONG) :
+                new ObjectParameter("V_MA_HOAT_DONG", typeof(decimal));
+    
+            var v_MA_BCHParameter = v_MA_BCH.HasValue ?
+                new ObjectParameter("V_MA_BCH", v_MA_BCH) :
+                new ObjectParameter("V_MA_BCH", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_CHI_INSERT", v_NGAY_LAP_PHIEU_CHIParameter, v_NOI_DUNG_CHIParameter, v_SO_TIEN_CHIParameter, v_MA_HOAT_DONGParameter, v_MA_BCHParameter);
+        }
+    
+        public virtual int SP_PHIEU_THU_INSERT(string v_NGAY_LAP_PHIEU_THU, string v_NOI_DUNG_PHIEU_THU, Nullable<decimal> v_SO_TIEN_THU, Nullable<decimal> v_MA_BCH, Nullable<decimal> v_MA_THANH_VIEN)
+        {
+            var v_NGAY_LAP_PHIEU_THUParameter = v_NGAY_LAP_PHIEU_THU != null ?
+                new ObjectParameter("V_NGAY_LAP_PHIEU_THU", v_NGAY_LAP_PHIEU_THU) :
+                new ObjectParameter("V_NGAY_LAP_PHIEU_THU", typeof(string));
+    
+            var v_NOI_DUNG_PHIEU_THUParameter = v_NOI_DUNG_PHIEU_THU != null ?
+                new ObjectParameter("V_NOI_DUNG_PHIEU_THU", v_NOI_DUNG_PHIEU_THU) :
+                new ObjectParameter("V_NOI_DUNG_PHIEU_THU", typeof(string));
+    
+            var v_SO_TIEN_THUParameter = v_SO_TIEN_THU.HasValue ?
+                new ObjectParameter("V_SO_TIEN_THU", v_SO_TIEN_THU) :
+                new ObjectParameter("V_SO_TIEN_THU", typeof(decimal));
+    
+            var v_MA_BCHParameter = v_MA_BCH.HasValue ?
+                new ObjectParameter("V_MA_BCH", v_MA_BCH) :
+                new ObjectParameter("V_MA_BCH", typeof(decimal));
+    
+            var v_MA_THANH_VIENParameter = v_MA_THANH_VIEN.HasValue ?
+                new ObjectParameter("V_MA_THANH_VIEN", v_MA_THANH_VIEN) :
+                new ObjectParameter("V_MA_THANH_VIEN", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_THU_INSERT", v_NGAY_LAP_PHIEU_THUParameter, v_NOI_DUNG_PHIEU_THUParameter, v_SO_TIEN_THUParameter, v_MA_BCHParameter, v_MA_THANH_VIENParameter);
+        }
+    
+        public virtual int SP_PHIEU_DONG_GOP_INSERT(string v_NGAY_DONG_GOP, Nullable<decimal> v_SO_TIEN_DONG_GOP, Nullable<decimal> v_MA_DON_VI)
+        {
+            var v_NGAY_DONG_GOPParameter = v_NGAY_DONG_GOP != null ?
+                new ObjectParameter("V_NGAY_DONG_GOP", v_NGAY_DONG_GOP) :
+                new ObjectParameter("V_NGAY_DONG_GOP", typeof(string));
+    
+            var v_SO_TIEN_DONG_GOPParameter = v_SO_TIEN_DONG_GOP.HasValue ?
+                new ObjectParameter("V_SO_TIEN_DONG_GOP", v_SO_TIEN_DONG_GOP) :
+                new ObjectParameter("V_SO_TIEN_DONG_GOP", typeof(decimal));
+    
+            var v_MA_DON_VIParameter = v_MA_DON_VI.HasValue ?
+                new ObjectParameter("V_MA_DON_VI", v_MA_DON_VI) :
+                new ObjectParameter("V_MA_DON_VI", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SP_PHIEU_DONG_GOP_INSERT", v_NGAY_DONG_GOPParameter, v_SO_TIEN_DONG_GOPParameter, v_MA_DON_VIParameter);
+        }
+    
+        public virtual ObjectResult<SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result> SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN(string hO_TEN)
+        {
+            var hO_TENParameter = hO_TEN != null ?
+                new ObjectParameter("HO_TEN", hO_TEN) :
+                new ObjectParameter("HO_TEN", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result>("SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN", hO_TENParameter);
         }
     }
 }

@@ -160,6 +160,34 @@ namespace QLHoiNguoiCaoTuoi
             w.ShowDialog();
         }
 
+        private void BtnQLThuChi_Click(object sender, RoutedEventArgs e)
+        {
+            QLThuChi w = new QLThuChi();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void BtnQLDongGop_Click(object sender, RoutedEventArgs e)
+        {
+            QLDongGop w = new QLDongGop();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void BtnTimKiem_Click(object sender, RoutedEventArgs e)
+        {
+            TimKiem w = new TimKiem();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
+        private void BtnThongKe_Click(object sender, RoutedEventArgs e)
+        {
+            ThongKe w = new ThongKe();
+            w.Owner = this;
+            w.ShowDialog();
+        }
+
         //end
     }
 }

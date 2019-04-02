@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="TimKiem" Height="450" Width="800">
+        Title="TimKiem" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Style x:Key="btnBase" TargetType="Button">
             <Setter Property="Template">
@@ -75,12 +75,12 @@
                     <GradientStop Color="#FFECFFFE" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Name="btnThanhVien" Content="Thanh Vien" Style="{StaticResource btnTab}"/>
-            <Button Name="btnHoatDong" Content="Hoat Dong" Style="{StaticResource btnTab}"/>
-            <Button Name="btnDonViDG" Content="Don Vi Dong Gop" Style="{StaticResource btnTab}"/>
+            <Button Name="btnThanhVien" Content="Thành viên" Style="{StaticResource btnTab}" Click="BtnThanhVien_Click"/>
+            <Button Name="btnHoatDong" Content="Hoạt động" Style="{StaticResource btnTab}" Click="BtnHoatDong_Click"/>
+            <Button Name="btnDonViDG" Content="Đơn vị đóng góp" Style="{StaticResource btnTab}" Click="BtnDonViDG_Click"/>
         </StackPanel>
         <!--Content-->
-        <Border Name="brdThanhVien" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+        <Border Name="brdThanhVien" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -89,8 +89,8 @@
 
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
                     <ComboBox Name="cmbThanhVien" Style="{StaticResource InputComboBox}" Margin="5"/>
-                    <TextBox Name="txbThanhVien" Style="{StaticResource InputText}" Width="300"/>
-                    <Button Name="btnSearchThanhVien" Margin="0, 5, 5, 5">
+                    <TextBox Name="txbThanhVien" Style="{StaticResource InputText}" Width="300" KeyDown="TxbThanhVien_KeyDown"/>
+                    <Button Name="btnSearchThanhVien" Margin="0, 5, 5, 5" Click="BtnSearchThanhVien_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -105,11 +105,11 @@
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgThanhVien" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
             </Grid>
         </Border>
 
-        <Border Name="brdHoatDong" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+        <Border Name="brdHoatDong" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -119,7 +119,7 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
                     <ComboBox Name="cmbHoatDong" Style="{StaticResource InputComboBox}" Margin="5"/>
                     <TextBox Name="txbHoatDong" Style="{StaticResource InputText}" Width="300"/>
-                    <Button Name="btnSearchHoatDong" Margin="0, 5, 5, 5">
+                    <Button Name="btnSearchHoatDong" Margin="0, 5, 5, 5" Click="BtnSearchHoatDong_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -134,11 +134,11 @@
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgHoatDong" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
             </Grid>
         </Border>
 
-        <Border Name="brdDonViDG" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+        <Border Name="brdDonViDG" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
@@ -148,7 +148,7 @@
                 <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
                     <ComboBox Name="cmbDonViDG" Style="{StaticResource InputComboBox}" Margin="5"/>
                     <TextBox Name="txbDonViDG" Style="{StaticResource InputText}" Width="300"/>
-                    <Button Name="btnSearchDonViDG" Margin="0, 5, 5, 5">
+                    <Button Name="btnSearchDonViDG" Margin="0, 5, 5, 5" Click="BtnSearchDonViDG_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="White" Offset="0"/>
@@ -163,7 +163,7 @@
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgDonVi" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
             </Grid>
         </Border>
 

@@ -313,7 +313,7 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\people.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Thanh Vien" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Thành Viên" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
@@ -339,7 +339,7 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\manager.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL BCH &amp; Chuc Vu" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL BCH" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
@@ -352,12 +352,12 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\walkperson.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Hoat Dong" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Hoạt Động" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="1" Grid.Column="0" Name="btnLapPhieuThu" Style="{StaticResource btnThuChi}" >
+            <Button Grid.Row="1" Grid.Column="2" Name="btnQLThuChi" Style="{StaticResource btnThuChi}" Click="BtnQLThuChi_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -365,25 +365,14 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\income.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="Lap Phieu Thu" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Thu Chi" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="1" Grid.Column="1" Name="btnLapPhieuChi" Style="{StaticResource btnThuChi}" >
-                <Button.Content>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source=".\Images\outcome.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="Lap Phieu Chi" HorizontalAlignment="Center" FontSize="18"/>
-                    </Grid>
-                </Button.Content>
-            </Button>
+            
 
-            <Button Grid.Row="1" Grid.Column="2" Name="btnQLHopBCH" Style="{StaticResource btnHop}" >
+            <Button Grid.Row="1" Grid.Column="0" Name="btnQLHopBCH" Style="{StaticResource btnHop}" >
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -391,12 +380,12 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\meeting bch member.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Hop BCH" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Họp BCH" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="1" Grid.Column="3" Name="btnQLHopThuongNien" Style="{StaticResource btnHop}" >
+            <Button Grid.Row="1" Grid.Column="1" Name="btnQLHopThuongNien" Style="{StaticResource btnHop}" >
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -404,25 +393,14 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\meeting member.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Hop Thuong Nien" HorizontalAlignment="Center" FontSize="16"/>
+                        <Label Grid.Row="1" Content="QL Họp Thường Niên" HorizontalAlignment="Center" FontSize="16"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="1" Grid.Column="4" Name="btnQLTaiKhoan" Style="{StaticResource btnTaiKhoan}" >
-                <Button.Content>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source=".\Images\account.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL Tai Khoan" HorizontalAlignment="Center" FontSize="18"/>
-                    </Grid>
-                </Button.Content>
-            </Button>
+            
 
-            <Button Grid.Row="2" Grid.Column="0" Name="btnQLDonViDongGop" Style="{StaticResource btnDongGop}" >
+            <Button Grid.Row="1" Grid.Column="3" Name="btnQLDongGop" Style="{StaticResource btnDongGop}" Click="BtnQLDongGop_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -430,25 +408,12 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\don vi dg.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="QL DV Dong Gop" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="QL Đóng góp" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="2" Grid.Column="1" Name="btnLapPhieuDongGop" Style="{StaticResource btnDongGop}" >
-                <Button.Content>
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="1*" />
-                        </Grid.RowDefinitions>
-                        <Image Grid.Row="0" Source=".\Images\phieu dong gop.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="Lap Phieu Dong Gop" HorizontalAlignment="Center" FontSize="16"/>
-                    </Grid>
-                </Button.Content>
-            </Button>
-
-            <Button Grid.Row="2" Grid.Column="2" Name="btnTimKiem" Style="{StaticResource btnTimKiem_ThongKe}" >
+            <Button Grid.Row="2" Grid.Column="0" Name="btnTimKiem" Style="{StaticResource btnTimKiem_ThongKe}" Click="BtnTimKiem_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -456,12 +421,12 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\search.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="Tim Kiem" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="Tìm kiếm" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="2" Grid.Column="3" Name="btnThongKe" Style="{StaticResource btnTimKiem_ThongKe}" >
+            <Button Grid.Row="2" Grid.Column="1" Name="btnThongKe" Style="{StaticResource btnTimKiem_ThongKe}" Click="BtnThongKe_Click">
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>
@@ -469,12 +434,12 @@
                             <RowDefinition Height="1*" />
                         </Grid.RowDefinitions>
                         <Image Grid.Row="0" Source=".\Images\statistic.png" Width="{Binding ActualWidth, ElementName=btnQLKhuPho}" />
-                        <Label Grid.Row="1" Content="Thong Ke" HorizontalAlignment="Center" FontSize="18"/>
+                        <Label Grid.Row="1" Content="Thống kê" HorizontalAlignment="Center" FontSize="18"/>
                     </Grid>
                 </Button.Content>
             </Button>
 
-            <Button Grid.Row="2" Grid.Column="4" Name="btnCaiDat" Style="{StaticResource btnCaiDat}" >
+            <Button Grid.Row="2" Grid.Column="2" Name="btnCaiDat" Style="{StaticResource btnCaiDat}" >
                 <Button.Content>
                     <Grid>
                         <Grid.RowDefinitions>

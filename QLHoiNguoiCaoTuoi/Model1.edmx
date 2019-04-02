@@ -303,7 +303,6 @@ warning 6002: The table/view 'C##QLNCT.V_PHIEU_CHI' does not have a primary key 
             <PropertyRef Name="NOI_DUNG_CHI" />
             <PropertyRef Name="SO_TIEN_CHI" />
             <PropertyRef Name="DA_DUYET" />
-            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
             <PropertyRef Name="MA_BCH" />
           </Key>
           <Property Name="MA_PHIEU_CHI" Type="number" Precision="38" Scale="0" Nullable="false" />
@@ -313,7 +312,7 @@ warning 6002: The table/view 'C##QLNCT.V_PHIEU_CHI' does not have a primary key 
           <Property Name="DA_DUYET" Type="varchar2" MaxLength="1" Nullable="false" />
           <Property Name="NGAY_DUYET" Type="date" />
           <Property Name="MA_HOAT_DONG" Type="number" Precision="38" Scale="0" />
-          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" Nullable="false" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="nvarchar2" MaxLength="256" />
           <Property Name="MA_BCH" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="HOTEN" Type="nvarchar2" MaxLength="71" />
         </EntityType>
@@ -797,10 +796,10 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
         </Function>
         <Function Name="SP_PHIEU_CHI_DUYET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
           <Parameter Name="V_MA_PHIEU_CHI" Type="number" Mode="In" />
-          <Parameter Name="V_NGAY_DUYET" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_DUYET" Type="varchar2" Mode="In" />
         </Function>
         <Function Name="SP_PHIEU_CHI_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Type="varchar2" Mode="In" />
           <Parameter Name="V_NOI_DUNG_CHI" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_SO_TIEN_CHI" Type="number" Mode="In" />
           <Parameter Name="V_MA_HOAT_DONG" Type="number" Mode="In" />
@@ -810,7 +809,7 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
           <Parameter Name="V_MA_PHIEU_DONG_GOP" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_PHIEU_DONG_GOP_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_NGAY_DONG_GOP" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_DONG_GOP" Type="varchar2" Mode="In" />
           <Parameter Name="V_SO_TIEN_DONG_GOP" Type="number" Mode="In" />
           <Parameter Name="V_MA_DON_VI" Type="number" Mode="In" />
         </Function>
@@ -824,7 +823,7 @@ warning 6002: The table/view 'C##QLNCT.V_TV_BAN_CHAP_HANH' does not have a prima
           <Parameter Name="V_MA_PHIEU_THU" Type="number" Mode="In" />
         </Function>
         <Function Name="SP_PHIEU_THU_INSERT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="C##QLNCT">
-          <Parameter Name="V_NGAY_LAP_PHIEU_THU" Type="date" Mode="In" />
+          <Parameter Name="V_NGAY_LAP_PHIEU_THU" Type="varchar2" Mode="In" />
           <Parameter Name="V_NOI_DUNG_PHIEU_THU" Type="nvarchar2" Mode="In" />
           <Parameter Name="V_SO_TIEN_THU" Type="number" Mode="In" />
           <Parameter Name="V_MA_BCH" Type="number" Mode="In" />
@@ -1701,24 +1700,8 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImport Name="SP_PHIEU_CHI_DELETE">
           <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
           </FunctionImport>
-          <FunctionImport Name="SP_PHIEU_CHI_DUYET">
-            <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
-            <Parameter Name="V_NGAY_DUYET" Mode="In" Type="DateTime" />
-          </FunctionImport>
-          <FunctionImport Name="SP_PHIEU_CHI_INSERT">
-            <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Mode="In" Type="DateTime" />
-            <Parameter Name="V_NOI_DUNG_CHI" Mode="In" Type="String" />
-            <Parameter Name="V_SO_TIEN_CHI" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
-          </FunctionImport>
           <FunctionImport Name="SP_PHIEU_DONG_GOP_DELETE">
           <Parameter Name="V_MA_PHIEU_DONG_GOP" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_PHIEU_DONG_GOP_INSERT">
-            <Parameter Name="V_NGAY_DONG_GOP" Mode="In" Type="DateTime" />
-            <Parameter Name="V_SO_TIEN_DONG_GOP" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_PHIEU_DONG_GOP_UPDATE">
             <Parameter Name="V_MA_PHIEU_DONG_GOP" Mode="In" Type="Decimal" />
@@ -1728,13 +1711,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           </FunctionImport>
           <FunctionImport Name="SP_PHIEU_THU_DELETE">
           <Parameter Name="V_MA_PHIEU_THU" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SP_PHIEU_THU_INSERT">
-            <Parameter Name="V_NGAY_LAP_PHIEU_THU" Mode="In" Type="DateTime" />
-            <Parameter Name="V_NOI_DUNG_PHIEU_THU" Mode="In" Type="String" />
-            <Parameter Name="V_SO_TIEN_THU" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
-            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI">
           <Parameter Name="DIACHI" Mode="In" Type="String" />
@@ -1754,9 +1730,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI">
           <Parameter Name="DIACHI" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN">
-          <Parameter Name="HO_TEN" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG">
           <Parameter Name="NGAYTG" Mode="In" Type="DateTime" />
@@ -1824,7 +1797,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <EntitySet Name="V_HOP_BCH" EntityType="Model.V_HOP_BCH" />
           <EntitySet Name="V_HOP_THUONG_NIEN" EntityType="Model.V_HOP_THUONG_NIEN" />
           <EntitySet Name="V_KHU_PHO" EntityType="Model.V_KHU_PHO" />
-          <EntitySet Name="V_PHIEU_CHI" EntityType="Model.V_PHIEU_CHI" />
           <EntitySet Name="V_PHIEU_DONG_GOP" EntityType="Model.V_PHIEU_DONG_GOP" />
           <EntitySet Name="V_PHIEU_THU" EntityType="Model.V_PHIEU_THU" />
           <EntitySet Name="V_THANH_VIEN" EntityType="Model.V_THANH_VIEN" />
@@ -1847,7 +1819,7 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
             <Parameter Name="V_NGAY_THAM_GIA_CLB" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="SP_TV_BAN_CHAP_HANH_DELETE">
-            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="SP_TV_BAN_CHAP_HANH_INSERT">
             <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
@@ -1862,6 +1834,33 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
             <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
             <Parameter Name="V_EMAIL" Mode="In" Type="String" />
             <Parameter Name="V_MA_CHUC_VU" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <EntitySet Name="V_PHIEU_CHI" EntityType="Model.V_PHIEU_CHI" />
+          <FunctionImport Name="SP_PHIEU_CHI_DUYET">
+            <Parameter Name="V_MA_PHIEU_CHI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NGAY_DUYET" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_CHI_INSERT">
+            <Parameter Name="V_NGAY_LAP_PHIEU_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_NOI_DUNG_CHI" Mode="In" Type="String" />
+            <Parameter Name="V_SO_TIEN_CHI" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_HOAT_DONG" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_THU_INSERT">
+            <Parameter Name="V_NGAY_LAP_PHIEU_THU" Mode="In" Type="String" />
+            <Parameter Name="V_NOI_DUNG_PHIEU_THU" Mode="In" Type="String" />
+            <Parameter Name="V_SO_TIEN_THU" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_BCH" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_THANH_VIEN" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PHIEU_DONG_GOP_INSERT">
+            <Parameter Name="V_NGAY_DONG_GOP" Mode="In" Type="String" />
+            <Parameter Name="V_SO_TIEN_DONG_GOP" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MA_DON_VI" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" ReturnType="Collection(Model.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result)">
+            <Parameter Name="HO_TEN" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="V_CHI_TIET_HOP_BCH">
@@ -1966,27 +1965,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           </Key>
           <Property Name="MA_KHU_PHO" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
           <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="V_PHIEU_CHI">
-          <Key>
-            <PropertyRef Name="MA_PHIEU_CHI" />
-            <PropertyRef Name="NGAY_LAP_PHIEU_CHI" />
-            <PropertyRef Name="NOI_DUNG_CHI" />
-            <PropertyRef Name="SO_TIEN_CHI" />
-            <PropertyRef Name="DA_DUYET" />
-            <PropertyRef Name="NOI_DUNG_HOAT_DONG" />
-            <PropertyRef Name="MA_BCH" />
-          </Key>
-          <Property Name="MA_PHIEU_CHI" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="NGAY_LAP_PHIEU_CHI" Type="DateTime" Nullable="false" />
-          <Property Name="NOI_DUNG_CHI" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="SO_TIEN_CHI" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
-          <Property Name="DA_DUYET" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="NGAY_DUYET" Type="DateTime" />
-          <Property Name="MA_HOAT_DONG" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
-          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="V_PHIEU_DONG_GOP">
           <Key>
@@ -2097,6 +2075,38 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <Property Name="DIA_CHI" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="TEN_KHU_PHO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="V_PHIEU_CHI">
+          <Key>
+            <PropertyRef Name="MA_PHIEU_CHI" />
+            <PropertyRef Name="NGAY_LAP_PHIEU_CHI" />
+            <PropertyRef Name="NOI_DUNG_CHI" />
+            <PropertyRef Name="SO_TIEN_CHI" />
+            <PropertyRef Name="DA_DUYET" />
+            <PropertyRef Name="MA_BCH" />
+          </Key>
+          <Property Name="MA_PHIEU_CHI" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="NGAY_LAP_PHIEU_CHI" Type="DateTime" Nullable="false" />
+          <Property Name="NOI_DUNG_CHI" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="SO_TIEN_CHI" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="DA_DUYET" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="NGAY_DUYET" Type="DateTime" />
+          <Property Name="MA_HOAT_DONG" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NOI_DUNG_HOAT_DONG" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MA_BCH" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="HOTEN" Type="String" MaxLength="71" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result">
+          <Property Type="Decimal" Name="MA_THANH_VIEN" Nullable="true" />
+          <Property Type="String" Name="HO" Nullable="true" />
+          <Property Type="String" Name="TEN" Nullable="true" />
+          <Property Type="Decimal" Name="NGAY_SINH" Nullable="true" />
+          <Property Type="Decimal" Name="THANG_SINH" Nullable="true" />
+          <Property Type="Decimal" Name="NAM_SINH" Nullable="true" />
+          <Property Type="String" Name="GIOI_TINH" Nullable="true" />
+          <Property Type="String" Name="DIA_CHI" Nullable="true" />
+          <Property Type="DateTime" Name="NGAY_THAM_GIA" Nullable="true" />
+          <Property Type="String" Name="TEN_KHU_PHO" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2331,20 +2341,15 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_KHU_PHO_INSERT" FunctionName="Model.Store.SP_KHU_PHO_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_KHU_PHO_UPDATE" FunctionName="Model.Store.SP_KHU_PHO_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DELETE" FunctionName="Model.Store.SP_PHIEU_CHI_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DUYET" FunctionName="Model.Store.SP_PHIEU_CHI_DUYET" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_INSERT" FunctionName="Model.Store.SP_PHIEU_CHI_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_DELETE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_INSERT" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_UPDATE" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_UPDATE" />
           <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_DELETE" FunctionName="Model.Store.SP_PHIEU_THU_DELETE" />
-          <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_INSERT" FunctionName="Model.Store.SP_PHIEU_THU_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEODIACHI" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEOEMAIL" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMDONVIDG_TIMTHEOTEN" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" FunctionName="Model.Store.SP_PKG_TIMKIEMHOATDONG_TIMTHEONOIDUNG" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" FunctionName="Model.Store.SP_PKG_TIMKIEMHOATDONG_TIMTHEOTHANGNAM" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEODIACHI" />
-          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" />
           <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEONGAYTG" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_CLB_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_DELETE" FunctionName="Model.Store.SP_THANH_VIEN_DELETE" />
@@ -2445,22 +2450,6 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="V_PHIEU_CHI">
-            <EntityTypeMapping TypeName="Model.V_PHIEU_CHI">
-              <MappingFragment StoreEntitySet="V_PHIEU_CHI">
-                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
-                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
-                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
-                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
-                <ScalarProperty Name="NGAY_DUYET" ColumnName="NGAY_DUYET" />
-                <ScalarProperty Name="DA_DUYET" ColumnName="DA_DUYET" />
-                <ScalarProperty Name="SO_TIEN_CHI" ColumnName="SO_TIEN_CHI" />
-                <ScalarProperty Name="NOI_DUNG_CHI" ColumnName="NOI_DUNG_CHI" />
-                <ScalarProperty Name="NGAY_LAP_PHIEU_CHI" ColumnName="NGAY_LAP_PHIEU_CHI" />
-                <ScalarProperty Name="MA_PHIEU_CHI" ColumnName="MA_PHIEU_CHI" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="V_PHIEU_DONG_GOP">
             <EntityTypeMapping TypeName="Model.V_PHIEU_DONG_GOP">
               <MappingFragment StoreEntitySet="V_PHIEU_DONG_GOP">
@@ -2552,6 +2541,42 @@ FROM "C##QLNCT"."V_TV_BAN_CHAP_HANH" "V_TV_BAN_CHAP_HANH"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="SP_THANH_VIEN_CLB_INSERT" FunctionName="Model.Store.SP_THANH_VIEN_CLB_INSERT" />
           <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_DELETE" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_DELETE" />
           <FunctionImportMapping FunctionImportName="SP_TV_BAN_CHAP_HANH_INSERT" FunctionName="Model.Store.SP_TV_BAN_CHAP_HANH_INSERT" />
+          <EntitySetMapping Name="V_PHIEU_CHI">
+            <EntityTypeMapping TypeName="Model.V_PHIEU_CHI">
+              <MappingFragment StoreEntitySet="V_PHIEU_CHI">
+                <ScalarProperty Name="HOTEN" ColumnName="HOTEN" />
+                <ScalarProperty Name="MA_BCH" ColumnName="MA_BCH" />
+                <ScalarProperty Name="NOI_DUNG_HOAT_DONG" ColumnName="NOI_DUNG_HOAT_DONG" />
+                <ScalarProperty Name="MA_HOAT_DONG" ColumnName="MA_HOAT_DONG" />
+                <ScalarProperty Name="NGAY_DUYET" ColumnName="NGAY_DUYET" />
+                <ScalarProperty Name="DA_DUYET" ColumnName="DA_DUYET" />
+                <ScalarProperty Name="SO_TIEN_CHI" ColumnName="SO_TIEN_CHI" />
+                <ScalarProperty Name="NOI_DUNG_CHI" ColumnName="NOI_DUNG_CHI" />
+                <ScalarProperty Name="NGAY_LAP_PHIEU_CHI" ColumnName="NGAY_LAP_PHIEU_CHI" />
+                <ScalarProperty Name="MA_PHIEU_CHI" ColumnName="MA_PHIEU_CHI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_DUYET" FunctionName="Model.Store.SP_PHIEU_CHI_DUYET" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_CHI_INSERT" FunctionName="Model.Store.SP_PHIEU_CHI_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_THU_INSERT" FunctionName="Model.Store.SP_PHIEU_THU_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PHIEU_DONG_GOP_INSERT" FunctionName="Model.Store.SP_PHIEU_DONG_GOP_INSERT" />
+          <FunctionImportMapping FunctionImportName="SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN" FunctionName="Model.Store.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Model.SP_PKG_TIMKIEMTHANHVIEN_TIMTHEOHOTEN_Result">
+                <ScalarProperty Name="MA_THANH_VIEN" ColumnName="MA_THANH_VIEN" />
+                <ScalarProperty Name="HO" ColumnName="HO" />
+                <ScalarProperty Name="TEN" ColumnName="TEN" />
+                <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+                <ScalarProperty Name="THANG_SINH" ColumnName="THANG_SINH" />
+                <ScalarProperty Name="NAM_SINH" ColumnName="NAM_SINH" />
+                <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+                <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+                <ScalarProperty Name="NGAY_THAM_GIA" ColumnName="NGAY_THAM_GIA" />
+                <ScalarProperty Name="TEN_KHU_PHO" ColumnName="TEN_KHU_PHO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -16,7 +16,7 @@ namespace QLHoiNguoiCaoTuoi
         {
             using (Entities db = new Entities())
             {
-                db.SP_PHIEU_CHI_INSERT(n.NGAY_LAP_PHIEU_CHI, n.NOI_DUNG_CHI, n.SO_TIEN_CHI, n.MA_HOAT_DONG, n.MA_BCH);
+                db.SP_PHIEU_CHI_INSERT(n.NGAY_LAP_PHIEU_CHI.ToString("dd/MM/yyyy"), n.NOI_DUNG_CHI, n.SO_TIEN_CHI, n.MA_HOAT_DONG, n.MA_BCH);
             }
         }
 
@@ -40,7 +40,7 @@ namespace QLHoiNguoiCaoTuoi
         {
             using (Entities db = new Entities())
             {
-                db.SP_PHIEU_CHI_DUYET(n.MA_PHIEU_CHI, n.NGAY_DUYET);
+                db.SP_PHIEU_CHI_DUYET(n.MA_PHIEU_CHI, ((DateTime)n.NGAY_DUYET).ToString("dd/MM/yyyy"));
             }
         }
     }
