@@ -3,9 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QLHoiNguoiCaoTuoi.View"
         mc:Ignorable="d"
-        Title="ThongKe" Height="450" Width="800">
+        Title="Thống kê" Height="450" Width="800" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner">
     <Window.Resources>
         <Style x:Key="btnBase" TargetType="Button">
             <Setter Property="Template">
@@ -76,18 +75,18 @@
                     <GradientStop Color="#FFECFFFE" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Name="btnThanhVien" Content="Thanh Vien" Style="{StaticResource btnTab}"/>
-            <Button Name="btnTest" Content="test" Style="{StaticResource btnTab}"/>
+            <Button Name="btnTKThuChi" Content="Thống kê thu chi" Style="{StaticResource btnTab}" Click="BtnTKThuChi_Click"/>
+            <Button Name="btnTKDongGop" Content="Thống kê đóng góp" Style="{StaticResource btnTab}" Click="BtnTKDongGop_Click"/>
         </StackPanel>
         <!--Content-->
-        <Border Name="brdThanhVien" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Visible">
+        <Border Name="brdTKThuChi" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0">
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0" Visibility="Hidden">
                     <Button Name="btnThem" Margin="0, 5, 5, 5">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -132,8 +131,65 @@
                     </Button>
                 </StackPanel>
 
-                <DataGrid Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+                <DataGrid Grid.Row="1" Name="dgTKThuChi" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
             </Grid>
         </Border>
+
+        <Border Name="brdTKDongGop" Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1,0,0,0" Visibility="Hidden">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <!--<StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0" Visibility="Hidden">
+                    <Button Name="btnThem" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFB3FFBD" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\add.png"/>
+                                <Label Content="Them" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="btnSua" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFFFF8B3" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\edit.png"/>
+                                <Label Content="Sua" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="btnXoa" Margin="0, 5, 5, 5">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="#FFFF7878" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="..\Images\delete.png"/>
+                                <Label Content="Xoa" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>-->
+
+                <DataGrid Grid.Row="1" Name="dgTKDongGop" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserResizeRows="False" IsReadOnly="True"></DataGrid>
+            </Grid>
+        </Border>
+
     </Grid>
 </Window>
